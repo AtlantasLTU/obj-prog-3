@@ -1,6 +1,7 @@
 #include <memory>
 #include <iterator>
 
+// taikomasi į C++20 vektoriaus funkcionalumą;
 template <class T, class Allocator = std::allocator<T>>
 class Vector{
     public:
