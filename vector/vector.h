@@ -23,6 +23,14 @@ class Vector{
         // constructors:
             // default:
                 Vector() : data_(nullptr), size_(0), capacity_(0), alloc_(Allocator{}) {}
+            // copy constructor:
+                Vector(const Vector &other);
+            // copy-assignment operator:
+                Vector& operator=(const Vector&);
+            // move constructor:
+                Vector(Vector&&) noexcept;
+            // move-assignment operator:
+                Vector& operator=(Vector&&) noexcept;
         // destructors:
             ~Vector();
         // operator=:
@@ -91,7 +99,8 @@ class Vector{
             // erase
 
             // push_back
-
+            void push_back(const_reference value);
+            void push_back(value_type&& value);
             // emplace_back
 
             // append_range
