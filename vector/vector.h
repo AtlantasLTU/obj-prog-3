@@ -138,7 +138,13 @@ class Vector{
 
         // element access:
             // at:
+            reference at(size_type pos)
+            {
+                if (pos >= size_)
+                    throw std::out_of_range("Vector::at");
 
+                return *(data_+pos);
+            };
             // operator[]:
             reference operator[](size_type pos)
             {
@@ -181,18 +187,26 @@ class Vector{
             {
                 return data_;
             };
+            const_iterator begin() const
+            {
+                return data_;
+            }
             // cbegin:
-            const_iterator cbegin() const
+            const_iterator cbegin() const noexcept
             {
                 return data_;
             };
             // end:
-            iterator end()
+            iterator end() noexcept
             {
                 return data_+size_;
             };
+            const_iterator end() const noexcept
+            {
+                return data_ + size_;
+            }
             // cend:
-            const_iterator cend() const
+            const_iterator cend() const noexcept
             {
                 return data_+size_;
             };
@@ -202,7 +216,7 @@ class Vector{
                 return reverse_iterator(end());
             };
             // crbegin:
-            const_reverse_iterator crbegin() const
+            const_reverse_iterator crbegin() const noexcept
             {
                 return const_reverse_iterator(cend());
             };
@@ -212,7 +226,7 @@ class Vector{
                 return reverse_iterator(begin());
             };
             // crend:
-            const_reverse_iterator crend() const
+            const_reverse_iterator crend() const noexcept
             {
                 return const_reverse_iterator(cbegin());
             };
@@ -245,7 +259,7 @@ class Vector{
                 for(size_type i = 0; i < size_; i++){
                     std::allocator_traits<Allocator>::construct(
                         alloc_,
-                        new_data,
+                        new_data + i,
                         std::move_if_noexcept(*(data_+i))
                     );
 
@@ -268,7 +282,10 @@ class Vector{
                 capacity_ = new_cap;
             };
             // capacity:
-
+            size_type capacity() const
+            {
+                return capacity_;
+            };
             // shrink_to_fit:
 
         // modifiers:
@@ -330,7 +347,18 @@ class Vector{
             // append_range
 
             // pop_back
+            void pop_back()
+            {
+                if (size_ == 0)
+                    return;
 
+                --size_;
+
+                std::allocator_traits<Allocator>::destroy(
+                    alloc_,
+                    data_ + size_
+                );
+            };
             // resize
 
             // swap
