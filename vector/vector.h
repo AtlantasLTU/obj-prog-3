@@ -76,7 +76,7 @@ class Vector{
 
         // modifiers:
             // clear:
-
+            void clear();
             // insert:
 
             // insert_range jei bus noro
@@ -103,6 +103,9 @@ class Vector{
         //std::swap(vector);
         // erase
         // erase_if
+
+    // destructor
+    ~Vector();
 
 
     private:
