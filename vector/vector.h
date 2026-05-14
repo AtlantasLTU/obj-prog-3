@@ -24,7 +24,7 @@ class Vector{
             // default:
                 Vector() : data_(nullptr), size_(0), capacity_(0), alloc_(Allocator{}) {}
         // destructors:
-
+            ~Vector();
         // operator=:
 
         // assign:
@@ -37,35 +37,40 @@ class Vector{
             // at:
 
             // operator[]:
-
+            reference operator[](size_type pos);
+            const_reference operator[](size_type pos) const;
             // front:
-
+            reference front();
+            const_reference front() const;
             // back:
-            
+            reference back();
+            const_reference back() const;
             // data:
-
+            pointer data();
+            const_pointer data() const;
         // iterators:
             // begin:
-
+            iterator begin();
             // cbegin:
-
+            const_iterator cbegin() const;
             // end:
-
+            iterator end();
             // cend:
-
+            const_iterator cend() const;
             // rbegin:
-
+            reverse_iterator rbegin();
             // crbegin:
-
+            const_reverse_iterator crbegin() const;
             // rend:
-
+            reverse_iterator rend();
             // crend:
+            const_reverse_iterator crend() const;
 
         // capacity:
             // empty:
-
+            bool empty() const;
             // size:
-
+            size_type size() const;
             // max_size:
 
             // reserve:
@@ -103,11 +108,6 @@ class Vector{
         //std::swap(vector);
         // erase
         // erase_if
-
-    // destructor
-    ~Vector();
-
-
     private:
         pointer data_ = nullptr;
         size_type size_ = 0;
