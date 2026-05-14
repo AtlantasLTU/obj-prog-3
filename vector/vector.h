@@ -74,7 +74,7 @@ class Vector{
             // max_size:
 
             // reserve:
-
+            void reserve(size_type new_cap);
             // capacity:
 
             // shrink_to_fit:

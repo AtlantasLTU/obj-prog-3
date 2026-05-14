@@ -151,3 +151,41 @@ Vector<T, Allocator>::crend() const
 {
     return const_reverse_iterator(cbegin());
 }
+
+template<class T, class Allocator>
+void Vector<T, Allocator>::reserve(size_type new_cap)
+{
+    if(new_cap <= capacity_)
+        return;
+    
+    pointer new_data = 
+        std::allocator_traits<Allocator>::allocate(
+            alloc_,
+            new_cap
+        );
+    
+    for(size_type i = 0; i < size_; i++){
+        std::allocator_traits<Allocator>::construct(
+            alloc_,
+            new_data,
+            std::move_if_noexcept(*(data_+i))
+        );
+
+        std::allocator_traits<Allocator>::destroy(
+            alloc_,
+            data_ + i
+        );
+    }
+
+    if(data_)
+    {
+        std::allocator_traits<Allocator>::deallocate(
+            alloc_,
+            data_,
+            capacity_
+        );
+    }
+
+    data_ = new_data;
+    capacity_ = new_cap;
+}
