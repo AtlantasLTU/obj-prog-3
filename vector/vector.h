@@ -224,8 +224,6 @@ class Vector{
             void assign(std::initializer_list<T> ilist) {
                 assign(ilist.begin(), ilist.end());
             }
-        // assign_range, jei bus noro
-
         // get_allocator:
             allocator_type get_allocator() const {
                 return alloc_;
@@ -498,10 +496,32 @@ class Vector{
             {
                 return insert(pos, ilist.begin(), ilist.end());
             }
-            // insert_range jei bus noro
-
             // emplace
-
+            template<class... Args>
+            iterator emplace(const_iterator pos, Args&&... args)
+            {
+                size_type index = pos - cbegin();
+                if(size_ >= capacity_) reserve(capacity_ == 0 ? 1 : capacity_ * 2);
+                for(size_type i = size_; i > index; --i)
+                {
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_+i,
+                        std::move(*(data_+i-1))
+                    );
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_+i-1;
+                    );
+                }
+                std::allocator_traits<Allocator>::construct(
+                    alloc_,
+                    data_+index,
+                    std::forward<Args>(args)...
+                );
+                ++size_;
+                return begin() + index;
+            }
             // erase
             iterator erase(const_iterator pos)
             {
