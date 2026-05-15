@@ -5,18 +5,23 @@
     git
 
   ## Programos diegimas:
-    git clone https://github.com/AtlantasLTU/obj-prog-2.git
-    cd ./obj-prog-2
+    git clone https://github.com/AtlantasLTU/obj-prog-3.git
+    cd ./obj-prog-3
   
   ### main (paprastas programos veikimas):
     make main
     ./main
 
-  ### test (programos testas):
+  ### test (studento klasės testas):
     make test
 
     Jei jau sukompiliuotas tests paleidimo failas, tai tiesiog:
     ./tests
+
+  ### testVector (nuosavo vektoriaus konteinerio testas):
+    make testVector
+    Jei jau sukompiliuotas testv paleidimo failas, tai tiesiog:
+    ./testv
 
   ### clean (ištrina main bei tests sukompiliuotas programas):
     make clean
@@ -36,10 +41,54 @@
     5 parinktis - testavimas su failais, pasirenkamas failas, konteinerio tipas, strategija, testų skaičius, failai apdorojami (nuskaitymas, skaičiavimas, rūšiavimas, skirstymas) ir išvedami testo rezultatai į terminalą.
     6 parinktis - studentų failų generavimas, studentų, namų darbų kiekio pasirinkimas ir išvedimas į studentai*.txt failą.
     7 parinktis - studento klasės testavimas.
-    8 parinktis - programos nutraukimas.
+    8 parinktis - nuosavo vektoriaus ir STL vektoriaus palyginimas.
+    9 parinktis - programos nutraukimas.
 
   ### test:
       `make test` paleidžia testus, kurie ištestuoja rule of five, pasitelkiant gtest bibliotekos įrankiais.
+
+  ### testVector:
+      'make testV' paleidžia testus, kurie ištestuoja mano realizuotą vektoriaus konteinerį, pasitelkiant gtest biblioteka.
+
+# v3.0:
+  ## Realizuotas nuosavas vektorius:
+  ### 5 funkcijų aprašymai:
+  void push_back(*kintamasis*)
+
+      Prie vektoriaus pabaigos prideda norimą kintamąjį, jei nėra pakankamai talpos, paskiria daugiau atminties vektoriui ir perkelia jį ten.
+      Pavyzdžiui:
+
+      Vector<int> v;
+      v.push_back(42);
+
+  void reserve(size_type)
+
+      Iš anksto rezervuoja atmintį, kad išvengti pakartotinių perskirstymų.
+      Pavyzdžiui:
+
+      v.reserve(10000);
+
+  operator[]
+
+      Elemento prieiga be ribų tikrinimo (O(1))
+      Pavyzdžiui:
+
+      int x = v[0];
+
+  emplace_back(Args&&...)
+
+      Sukuria elementą vietoje, perduodant argumentus konstruktoriui.
+      Pavyzdžiui:
+
+      v.emplace_back(1);
+
+  swap(Vector&)
+
+      Efektyviai sukeičia dviejų vektorių turinį (O(1)).
+      Pavyzdžiui:
+
+      Vector<int> v2
+      v.swap(v2);
 
 # v2.0:
   ## Pridėta doxygen sukurta dokumentacija:
