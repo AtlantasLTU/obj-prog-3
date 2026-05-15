@@ -85,6 +85,11 @@ int main()
                             failoTestavimas<std::list<Studentas>>(fPasirinkimas, rezervas, tPasirinkimas, sPasirinkimas, ndKiekis, medianos);
                             break;
                         }
+                        case 4:
+                        {
+                            failoTestavimas<Vector<Studentas>>(fPasirinkimas, rezervas, tPasirinkimas, sPasirinkimas, ndKiekis, medianos);
+                            break;
+                        }
                         default:
                         {
 

@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 #include <memory>
 #include <iterator>
 #include <utility>
@@ -879,3 +882,5 @@ typename Vector<T, Alloc>::size_type erase_if(Vector<T, Alloc>& c, Pred pred)
     c.erase(it, c.end());
     return count;
 }
+
+#endif

@@ -13,7 +13,7 @@ int rusiavimoPasirinkimas()
 
 int gautiTipoPasirinkima()
 {
-    return gautiSkaiciu("Kokį konteinerio tipą norite testuoti?\n1 - vektorių,\n2 - deque,\n3 - list: ", 1, 3);
+    return gautiSkaiciu("Kokį konteinerio tipą norite testuoti?\n1 - STL vektorių,\n2 - deque,\n3 - list,\n4 - nuosavas vektorius: ", 1, 4);
 }
 
 int testavimoPasirinkimas()
