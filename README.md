@@ -1,28 +1,45 @@
 # Programos naudojimas:
   ## Reikalavimai:
+  Paprastiems vartotojams:
+    Windows OS
+
+  Patyrusiems vartotojams, kurie nori redaguoti kodą arba kompiliuotis savarankiškai:
+  
     C++ kompiliatorius su C++20 palaikymu.
     Unix OS (Linux arba MacOS) arba WSL (Windows Subsystem for Linux)
     git
 
-  ## Programos diegimas:
-    git clone https://github.com/AtlantasLTU/obj-prog-2.git
-    cd ./obj-prog-2
+  ## Programos diegimas (paprastiems vartotojams):
+
+    Atsisiųsti setup.exe failą esanti https://github.com/AtlantasLTU/obj-prog-3 puslapyje.
+    Paleisti setup.exe failą ir suteikti jam administratoriaus privilegijas (paprašo paleidimo metu).
+    Sekti setup.exe nurodymus.
+    Pasibaigus setup'ui, turėtų būti programos paleisties nuorodos Atlantas-Alisauskas darbalaukyje bei starto meniu.
+
+  ## Programos diegimas (patyrusiems vartotojams iš source):
+    git clone https://github.com/AtlantasLTU/obj-prog-3.git
+    cd ./obj-prog-3
   
   ### main (paprastas programos veikimas):
     make main
     ./main
 
-  ### test (programos testas):
+  ### test (studento klasės testas):
     make test
 
     Jei jau sukompiliuotas tests paleidimo failas, tai tiesiog:
     ./tests
 
+  ### testVector (nuosavo vektoriaus konteinerio testas):
+    make testVector
+    Jei jau sukompiliuotas testv paleidimo failas, tai tiesiog:
+    ./testv
+
   ### clean (ištrina main bei tests sukompiliuotas programas):
     make clean
     
   ## Programos naudojimas:
-  ### main:
+  ### main arba studenturezultatai.exe (Atlantas-Alisauskas.lnk):
     Funkcijos:
       Pasirinktina išvestis į failą arba į terminalą.
       Pasirinktinas galutinio rezultato skaičiavimas, remiantis vidurkiu arba mediana.
@@ -36,10 +53,58 @@
     5 parinktis - testavimas su failais, pasirenkamas failas, konteinerio tipas, strategija, testų skaičius, failai apdorojami (nuskaitymas, skaičiavimas, rūšiavimas, skirstymas) ir išvedami testo rezultatai į terminalą.
     6 parinktis - studentų failų generavimas, studentų, namų darbų kiekio pasirinkimas ir išvedimas į studentai*.txt failą.
     7 parinktis - studento klasės testavimas.
-    8 parinktis - programos nutraukimas.
+    8 parinktis - nuosavo vektoriaus ir STL vektoriaus palyginimas.
+    9 parinktis - programos nutraukimas.
 
-  ### test:
+  ### test (patyrusiems vartotojams):
       `make test` paleidžia testus, kurie ištestuoja rule of five, pasitelkiant gtest bibliotekos įrankiais.
+
+  ### testVector (patyrusiems vartotojams):
+      'make testV' paleidžia testus, kurie ištestuoja mano realizuotą vektoriaus konteinerį, pasitelkiant gtest biblioteka.
+
+# v3.0:
+  ## Realizuotas nuosavas vektorius:
+  ### 5 funkcijų aprašymai:
+  void push_back(*kintamasis*)
+
+      Prie vektoriaus pabaigos prideda norimą kintamąjį, jei nėra pakankamai talpos, paskiria daugiau atminties vektoriui ir perkelia jį ten.
+      Pavyzdžiui:
+
+      Vector<int> v;
+      v.push_back(42);
+
+  void reserve(size_type)
+
+      Iš anksto rezervuoja atmintį, kad išvengti pakartotinių perskirstymų.
+      Pavyzdžiui:
+
+      v.reserve(10000);
+
+  operator[]
+
+      Elemento prieiga be ribų tikrinimo (O(1))
+      Pavyzdžiui:
+
+      int x = v[0];
+
+  emplace_back(Args&&...)
+
+      Sukuria elementą vietoje, perduodant argumentus konstruktoriui.
+      Pavyzdžiui:
+
+      v.emplace_back(1);
+
+  swap(Vector&)
+
+      Efektyviai sukeičia dviejų vektorių turinį (O(1)).
+      Pavyzdžiui:
+
+      Vector<int> v2
+      v.swap(v2);
+
+  ## Nuosavo vektoriaus unit test:
+  <img width="628" height="1440" alt="image" src="https://github.com/user-attachments/assets/69fa03f3-e1b4-4910-8600-b9f7fc42015e" />
+
 
 # v2.0:
   ## Pridėta doxygen sukurta dokumentacija:
