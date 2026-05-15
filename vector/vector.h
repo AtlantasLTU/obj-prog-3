@@ -133,7 +133,95 @@ class Vector{
                 }
             };
         // assign:
-        
+            void assign(size_type count, const_reference value)
+            {
+                if(count > capacity_)
+                {
+                    reserve(count);
+                }
+
+                if(count <= size_)
+                {
+                    std::fill_n(data_, count, value);
+                    for(size_type i = count; i < size_; ++i) {
+                        std::allocator_traits<Allocator>::destroy(
+                            alloc_,
+                            data_ + i
+                        );
+                    }
+                }
+                else
+                {
+                    std::fill_n(data_, size_, value);
+                    size_type i = size_;
+                    try {
+                        for(; i < count; ++i)
+                        {
+                            std::allocator_traits<Allocator>::construct(
+                                alloc_,
+                                data_ + i,
+                                value
+                            );
+                        }
+                    } catch (...) {
+                        for(size_type j = size_; j < i; ++j)
+                        {
+                            std::allocator_traits<Allocator>::destroy(
+                                alloc_,
+                                data_ + j
+                            );
+                        }
+                        throw;
+                    }
+                }
+                size_ = count;
+            }
+
+            template <class InputIt>
+            void assign(InputIt first, InputIt last)
+            {
+                size_type new_size = static_cast<size_type>(std::distance(first, last));
+
+                if (new_size > capacity_)
+                    reserve(new_size);
+
+                size_type i = 0;
+
+                for(; i < size_ && first != last; ++i, ++first){
+                    *(data_+i) = *first;
+                }
+                size_type constructed = i;
+                try {
+                    for(; first != last; ++first, ++i){
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_ + i,
+                            *first
+                        );
+                    }
+                } catch (...) {
+                    for(size_type j = constructed; j < i; ++j){
+                        std::allocator_traits<Allocator>::destroy(
+                            alloc_,
+                            data_ + j
+                        );
+                    }    
+                    size_ = constructed;
+                    throw;
+                }
+
+                for(size_type j = new_size; j < size_; ++j){
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_ + j
+                    );
+                }
+                size_ = new_size;
+            }
+
+            void assign(std::initializer_list<T> ilist) {
+                assign(ilist.begin(), ilist.end());
+            }
         // assign_range, jei bus noro
 
         // get_allocator:
