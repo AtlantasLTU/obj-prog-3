@@ -39,4 +39,4 @@ testVector: testV
 	./testv
 
 clean:
-	rm -f main tests *.o
+	rm -f main tests testv *.o
