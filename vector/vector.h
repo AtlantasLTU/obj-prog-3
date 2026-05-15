@@ -2,6 +2,8 @@
 #include <iterator>
 #include <utility>
 #include <stdexcept>
+#include <algorithm>
+#include <initializer_list>
 
 // taikomasi į C++20 vektoriaus funkcionalumą;
 template <class T, class Allocator = std::allocator<T>>
@@ -237,6 +239,13 @@ class Vector{
 
                 return *(data_+pos);
             };
+            const_reference at(size_type pos) const
+            {
+                if (pos >= size_)
+                    throw std::out_of_range("Vector::at");
+
+                return data_[pos];
+            }
             // operator[]:
             reference operator[](size_type pos)
             {
@@ -375,7 +384,120 @@ class Vector{
                 size_ = 0;
             };
             // insert:
+            iterator insert(const_iterator pos, const_reference value)
+            {
+                size_type index = pos - cbegin();
+                if(size_ >= capacity_)
+                {
+                    reserve(capacity_ == 0 ? 1 : capacity_ * 2);
+                }
 
+                for(size_type i = size_; i > index; --i)
+                {
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_ + i,
+                        std::move(*(data_ + i - 1))
+                    );
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_ + i - 1
+                    );
+                }
+                std::allocator_traits<Allocator>::construct(
+                    alloc_,
+                    data_ + index,
+                    value
+                );
+                ++size_;
+                return begin() + index;
+            }
+
+            iterator insert(const_iterator pos, T&& value)
+            {
+                size_type index = pos - cbegin();
+                if(size_ >= capacity_) reserve(capacity_ == 0 ? 1 : capacity_ * 2);
+                for(size_type i = size_; i > index; --i)
+                {
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_+i,
+                        std::move(*(data_+i-1))
+                    );
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_+i-1
+                    );
+                }
+                std::allocator_traits<Allocator>::construct(
+                    alloc_,
+                    data_ + index,
+                    std::move(value)
+                );
+                ++size_;
+                return begin() + index;
+            }
+
+            iterator insert(const_iterator pos, size_type count, const_reference value)
+            {
+                size_type index = pos - cbegin();
+                if(size_ + count > capacity_) reserve(size_ + count);
+                for(size_type i = size_; i > index; --i)
+                {
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_+i+count-1,
+                        std::move(*(data_+i-1))
+                    );
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_+i-1
+                    );
+                }
+                for(size_type i = 0; i < count; ++i){
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_+index+i,
+                        std::move(value)
+                    );
+                }
+                size_ += count;
+                return begin() + index;
+            }
+
+            template<class InputIt>
+            iterator insert(const_iterator pos, InputIt first, InputIt last)
+            {
+                size_type index = pos - cbegin();
+                size_type count = static_cast<size_type>(std::distance(first, last));
+                if(size_ + count > capacity_) reserve(size_ + count);
+                for(size_type i = size_; i > index; --i)
+                {
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_ + i + count - 1,
+                        std::move(*(data_ + i - 1))
+                    );
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_ + i - 1
+                    );
+                }
+                for(size_type i = 0; first != last; ++first, ++i){
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_+index+i,
+                        *first
+                    );
+                }
+                size_ += count;
+                return begin() + index;
+            }
+
+            iterator insert(const_iterator pos, std::initializer_list<T> ilist)
+            {
+                return insert(pos, ilist.begin(), ilist.end());
+            }
             // insert_range jei bus noro
 
             // emplace
