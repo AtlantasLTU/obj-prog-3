@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['isvestis_0',['isvestis',['../isvestis_8tpp.html#afe788040edb3d597d86f48358e790735',1,'isvestis.tpp']]],
-  ['ivestistudentus_1',['ivestiStudentus',['../ivestis_8cpp.html#a62948c8acdbd060e1d0a69e5f6ffa4ff',1,'ivestiStudentus():&#160;ivestis.cpp'],['../ivestis_8h.html#a62948c8acdbd060e1d0a69e5f6ffa4ff',1,'ivestiStudentus():&#160;ivestis.cpp']]],
-  ['ivestistudentusrandom_2',['ivestiStudentusRandom',['../random_8cpp.html#a5d9e65b8616fd8fdd7c55800d631bcc9',1,'ivestiStudentusRandom(int pasirinkimas):&#160;random.cpp'],['../random_8h.html#a5d9e65b8616fd8fdd7c55800d631bcc9',1,'ivestiStudentusRandom(int pasirinkimas):&#160;random.cpp']]]
+  ['failoapdorojimas_0',['failoApdorojimas',['../main_8cpp.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp'],['../main_8h.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp']]],
+  ['failogeneravimas_1',['failoGeneravimas',['../apdorojimas_8cpp.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp'],['../apdorojimas_8h.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp']]],
+  ['failopasirinkimas_2',['failoPasirinkimas',['../isvestis_8cpp.html#a2238ea78c5ea81cbc6c7d0c91bc02cb3',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta):&#160;isvestis.cpp'],['../isvestis_8h.html#a7c1be6cdb7e2a4f937073e9f9538b0ef',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta=&quot;.&quot;):&#160;isvestis.cpp']]],
+  ['failotestavimas_3',['failoTestavimas',['../main_8tpp.html#a6f7850540f3e71520e1b234a1786b166',1,'main.tpp']]],
+  ['failouzklausa_4',['failoUzklausa',['../isvestis_8cpp.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp'],['../isvestis_8h.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp']]],
+  ['front_5',['front',['../classVector.html#a50ff0e4eccfdabf16696498bc42a823c',1,'Vector::front()'],['../classVector.html#a8aefd44e7e4fd416558706d505483972',1,'Vector::front() const']]]
 ];

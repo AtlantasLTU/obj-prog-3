@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['failoapdorojimas_0',['failoApdorojimas',['../main_8cpp.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp'],['../main_8h.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp']]],
-  ['failogeneravimas_1',['failoGeneravimas',['../apdorojimas_8cpp.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp'],['../apdorojimas_8h.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp']]],
-  ['failopasirinkimas_2',['failoPasirinkimas',['../isvestis_8cpp.html#a2238ea78c5ea81cbc6c7d0c91bc02cb3',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta):&#160;isvestis.cpp'],['../isvestis_8h.html#a7c1be6cdb7e2a4f937073e9f9538b0ef',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta=&quot;.&quot;):&#160;isvestis.cpp']]],
-  ['failotestavimas_3',['failoTestavimas',['../main_8tpp.html#a6f7850540f3e71520e1b234a1786b166',1,'main.tpp']]],
-  ['failouzklausa_4',['failoUzklausa',['../isvestis_8cpp.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp'],['../isvestis_8h.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp']]],
-  ['five_20_3a_5',['Realizuota &quot;Rule of Five&quot;:',['../md_README.html#autotoc_md7',1,'']]]
+  ['egzaminorezultatoivestis_0',['egzaminoRezultatoIvestis',['../classStudentas.html#a1806c47989ed2a80a028dbc78f5e802c',1,'Studentas::egzaminoRezultatoIvestis()'],['../ivestis_8h.html#a3a0b6322f595edc84cd562eafcb1ff6d',1,'egzaminoRezultatoIvestis():&#160;ivestis.h']]],
+  ['egzrandom_1',['egzRandom',['../classStudentas.html#a02aabdf2ab375533c447759fe33243c9',1,'Studentas']]],
+  ['elapsed_2',['elapsed',['../classTimer.html#a6a89a613c2af9b0d1e5f7e4ba9e46c54',1,'Timer']]],
+  ['emplace_3',['emplace',['../classVector.html#a6a7f65e9b8e57122c868d0aa4f326c19',1,'Vector']]],
+  ['emplace_5fback_4',['emplace_back',['../classVector.html#a5d19b8e8fd6ded1e2e99045c3962c7e9',1,'Vector']]],
+  ['empty_5',['empty',['../classVector.html#a9c3d67183ca7348dce8bc2ecb73a6af4',1,'Vector']]],
+  ['end_6',['end',['../classVector.html#abaaafc8a6696d49ceb4f799d2f78e299',1,'Vector::end() noexcept'],['../classVector.html#aeebdc6009ad387f9e2f1d37613d98f83',1,'Vector::end() const noexcept']]],
+  ['erase_7',['erase',['../classVector.html#a9475371e34e4ce47ec3359ff25fed6ec',1,'Vector::erase(const_iterator pos)'],['../classVector.html#a475eb3d5040ead87de3e58e19fe954a3',1,'Vector::erase(const_iterator first, const_iterator last)'],['../vector_8h.html#ae0b864ef9c6d8ba07a7318c892c52633',1,'erase(Vector&lt; T, Alloc &gt; &amp;c, const U &amp;value):&#160;vector.h']]],
+  ['erase_5fif_8',['erase_if',['../vector_8h.html#a26045fc8523579c2d1a7abcff2a5599b',1,'vector.h']]]
 ];

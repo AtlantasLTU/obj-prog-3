@@ -2,21 +2,26 @@
 \hypertarget{Timer_8h_source}{}\label{Timer_8h_source}\index{vector/Timer.h@{vector/Timer.h}}
 \doxymbox{\hyperlink{Timer_8h}{Eiti į šio failo dokumentaciją.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <chrono>}}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00002}\doxymbox{\hyperlink{classTimer}{00002}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}}\ \{}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00003}00003\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00004}00004\ \ \ \ \ \textcolor{comment}{//\ panaudojame\ using}}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00005}\doxymbox{\hyperlink{classTimer_a5e72191005a6b2238ed91c3839374093}{00005}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classTimer_a5e72191005a6b2238ed91c3839374093}{hrClock}}\ =\ std::chrono::high\_resolution\_clock;}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00006}\doxymbox{\hyperlink{classTimer_a0774383e69e89a22ea605e6841d1eaca}{00006}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classTimer_a0774383e69e89a22ea605e6841d1eaca}{durationDouble}}\ =\ std::chrono::duration<double>;}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00007}\doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{00007}}\ \ \ \ \ std::chrono::time\_point<hrClock>\ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}};}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00008}00008\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00009}\doxymbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{00009}}\ \ \ \ \ \doxymbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}}()\ :\ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}}\{\ \doxymbox{\hyperlink{classTimer_a5e72191005a6b2238ed91c3839374093}{hrClock}}::now()\ \}\ \{\}}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00010}\doxymbox{\hyperlink{classTimer_a9020542d73357a4eef512eefaf57524b}{00010}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classTimer_a9020542d73357a4eef512eefaf57524b}{reset}}()\ \{}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00011}00011\ \ \ \ \ \ \ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}}\ =\ hrClock::now();}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00012}00012\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00013}\doxymbox{\hyperlink{classTimer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{00013}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classTimer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{elapsed}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00014}00014\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classTimer_a0774383e69e89a22ea605e6841d1eaca}{durationDouble}}\ (hrClock::now()\ -\/\ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}}).count();}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ TIMER\_H}}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ TIMER\_H}}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00005}\doxymbox{\hyperlink{classTimer}{00005}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}}\ \{}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00006}00006\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ panaudojame\ using}}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00008}\doxymbox{\hyperlink{classTimer_a5e72191005a6b2238ed91c3839374093}{00008}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classTimer_a5e72191005a6b2238ed91c3839374093}{hrClock}}\ =\ std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00009}\doxymbox{\hyperlink{classTimer_a0774383e69e89a22ea605e6841d1eaca}{00009}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classTimer_a0774383e69e89a22ea605e6841d1eaca}{durationDouble}}\ =\ std::chrono::duration<double>;}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00010}\doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{00010}}\ \ \ \ \ std::chrono::time\_point<hrClock>\ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}};}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00011}00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00012}\doxymbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{00012}}\ \ \ \ \ \doxymbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}}()\ :\ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}}\{\ \doxymbox{\hyperlink{classTimer_a5e72191005a6b2238ed91c3839374093}{hrClock}}::now()\ \}\ \{\}}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00013}\doxymbox{\hyperlink{classTimer_a9020542d73357a4eef512eefaf57524b}{00013}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classTimer_a9020542d73357a4eef512eefaf57524b}{reset}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00014}00014\ \ \ \ \ \ \ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}}\ =\ hrClock::now();}
 \DoxyCodeLine{\Hypertarget{Timer_8h_source_l00015}00015\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00016}00016\ \};}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00016}\doxymbox{\hyperlink{classTimer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{00016}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classTimer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{elapsed}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classTimer_a0774383e69e89a22ea605e6841d1eaca}{durationDouble}}\ (hrClock::now()\ -\/\ \doxymbox{\hyperlink{classTimer_ad3c6240154d9bcccb88b701849919822}{start}}).count();}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Timer_8h_source_l00021}00021\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pavarde_0',['pavarde',['../classZmogus.html#a99cc96defe5d014db052cc754e989b16',1,'Zmogus']]]
+  ['data_5f_0',['data_',['../classVector.html#abc1b8771c37d008c43246a2ac0922580',1,'Vector']]]
 ];

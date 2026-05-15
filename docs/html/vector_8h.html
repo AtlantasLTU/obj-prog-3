@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>obj-prog: vector/vector.h Failo Nuoroda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">obj-prog<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">studentų rezultatų skaičiuoklė</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('vector_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vector.h Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;compare&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+</div>
+<p><a href="vector_8h_source.html">Eiti į šio failo programos kodą.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Klasės</h2></td></tr>
+<tr class="memitem:Vector_3C_20T_2C_20Allocator_20_3E" id="r_Vector_3C_20T_2C_20Allocator_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classVector.html">Vector&lt; T, Allocator &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dinaminio masyvo konteineris, atitinkantis std::vector sąsają (C++20).  <a href="classVector.html#details">Daugiau...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:a1a9580c876dfc3bc2354cd9b82a5464d" id="r_a1a9580c876dfc3bc2354cd9b82a5464d"><td class="memTemplParams" colspan="2">template&lt;class T, class Alloc&gt; </td></tr>
+<tr class="memitem:a1a9580c876dfc3bc2354cd9b82a5464d template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1a9580c876dfc3bc2354cd9b82a5464d">operator==</a> (const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;lhs, const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:a1a9580c876dfc3bc2354cd9b82a5464d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Palygina du vektorius lygybei.  <br /></td></tr>
+<tr class="memitem:aa5a6644837b9c26ffa9420369c8d5f7b" id="r_aa5a6644837b9c26ffa9420369c8d5f7b"><td class="memTemplParams" colspan="2">template&lt;class T, class Alloc&gt; </td></tr>
+<tr class="memitem:aa5a6644837b9c26ffa9420369c8d5f7b template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa5a6644837b9c26ffa9420369c8d5f7b">operator&lt;=&gt;</a> (const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;lhs, const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;rhs) -&gt; std::compare_three_way_result_t&lt; T &gt;</td></tr>
+<tr class="memdesc:aa5a6644837b9c26ffa9420369c8d5f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atlieka trijų krypčių palyginimą (C++20).  <br /></td></tr>
+<tr class="memitem:a7f6ca257d707bbf1ae3ed86f36655f73" id="r_a7f6ca257d707bbf1ae3ed86f36655f73"><td class="memTemplParams" colspan="2">template&lt;class T, class Alloc&gt; </td></tr>
+<tr class="memitem:a7f6ca257d707bbf1ae3ed86f36655f73 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7f6ca257d707bbf1ae3ed86f36655f73">swap</a> (<a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;lhs, <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;rhs) noexcept(noexcept(lhs.swap(rhs)))</td></tr>
+<tr class="memdesc:a7f6ca257d707bbf1ae3ed86f36655f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sukeičia dviejų vektorių turinius (specializacija std::swap).  <br /></td></tr>
+<tr class="memitem:ae0b864ef9c6d8ba07a7318c892c52633" id="r_ae0b864ef9c6d8ba07a7318c892c52633"><td class="memTemplParams" colspan="2">template&lt;class T, class Alloc, class U&gt; </td></tr>
+<tr class="memitem:ae0b864ef9c6d8ba07a7318c892c52633 template"><td class="memItemLeft"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt;::size_type&#160;</td><td class="memItemRight"><a class="el" href="#ae0b864ef9c6d8ba07a7318c892c52633">erase</a> (<a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;c, const U &amp;value)</td></tr>
+<tr class="memdesc:ae0b864ef9c6d8ba07a7318c892c52633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pašalina visus elementus, lygius <span class="tt">value</span>.  <br /></td></tr>
+<tr class="memitem:a26045fc8523579c2d1a7abcff2a5599b" id="r_a26045fc8523579c2d1a7abcff2a5599b"><td class="memTemplParams" colspan="2">template&lt;class T, class Alloc, class Pred&gt; </td></tr>
+<tr class="memitem:a26045fc8523579c2d1a7abcff2a5599b template"><td class="memItemLeft"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt;::size_type&#160;</td><td class="memItemRight"><a class="el" href="#a26045fc8523579c2d1a7abcff2a5599b">erase_if</a> (<a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;c, Pred pred)</td></tr>
+<tr class="memdesc:a26045fc8523579c2d1a7abcff2a5599b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pašalina visus elementus, tenkinančius predikatą <span class="tt">pred</span>.  <br /></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="ae0b864ef9c6d8ba07a7318c892c52633" name="ae0b864ef9c6d8ba07a7318c892c52633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b864ef9c6d8ba07a7318c892c52633">&#9670;&#160;</a></span>erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Alloc, class U&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt;::size_type erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const U &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pašalina visus elementus, lygius <span class="tt">value</span>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Elemento tipas. </td></tr>
+    <tr><td class="paramname">Alloc</td><td>Paskirstytojas. </td></tr>
+    <tr><td class="paramname">U</td><td>Palyginamos reikšmės tipas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Vektorius, iš kurio šalinama. </td></tr>
+    <tr><td class="paramname">value</td><td>Reikšmė, su kuria lyginama. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Gražina</dt><dd>Pašalintų elementų skaičius. </dd></dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="vector_8h_source.html">vector.h</a> eilutėje <a class="el" href="vector_8h_source.html#l01004">1004</a>.</p>
+
+</div>
+</div>
+<a id="a26045fc8523579c2d1a7abcff2a5599b" name="a26045fc8523579c2d1a7abcff2a5599b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26045fc8523579c2d1a7abcff2a5599b">&#9670;&#160;</a></span>erase_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Alloc, class Pred&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt;::size_type erase_if </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pred</td>          <td class="paramname"><span class="paramname"><em>pred</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pašalina visus elementus, tenkinančius predikatą <span class="tt">pred</span>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Elemento tipas. </td></tr>
+    <tr><td class="paramname">Alloc</td><td>Paskirstytojas. </td></tr>
+    <tr><td class="paramname">Pred</td><td>Predikato tipas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Vektorius, iš kurio šalinama. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predikatas, grąžinantis true šalinamiems elementams. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Gražina</dt><dd>Pašalintų elementų skaičius. </dd></dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="vector_8h_source.html">vector.h</a> eilutėje <a class="el" href="vector_8h_source.html#l01022">1022</a>.</p>
+
+</div>
+</div>
+<a id="aa5a6644837b9c26ffa9420369c8d5f7b" name="aa5a6644837b9c26ffa9420369c8d5f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5a6644837b9c26ffa9420369c8d5f7b">&#9670;&#160;</a></span>operator&lt;=&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Alloc&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt; std::compare_three_way_result_t&lt; T &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atlieka trijų krypčių palyginimą (C++20). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Elemento tipas. </td></tr>
+    <tr><td class="paramname">Alloc</td><td>Paskirstytojas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Pirmasis vektorius. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Antrasis vektorius. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Gražina</dt><dd>Rezultatas pagal &lt;=&gt; operatorių. </dd></dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="vector_8h_source.html">vector.h</a> eilutėje <a class="el" href="vector_8h_source.html#l00973">973</a>.</p>
+
+</div>
+</div>
+<a id="a1a9580c876dfc3bc2354cd9b82a5464d" name="a1a9580c876dfc3bc2354cd9b82a5464d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9580c876dfc3bc2354cd9b82a5464d">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Alloc&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Palygina du vektorius lygybei. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Elemento tipas. </td></tr>
+    <tr><td class="paramname">Alloc</td><td>Paskirstytojas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Pirmasis vektorius. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Antrasis vektorius. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Gražina</dt><dd>true jei abiejų dydžiai lygūs ir visi elementai lygūs, kitaip false. </dd></dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="vector_8h_source.html">vector.h</a> eilutėje <a class="el" href="vector_8h_source.html#l00956">956</a>.</p>
+
+</div>
+</div>
+<a id="a7f6ca257d707bbf1ae3ed86f36655f73" name="a7f6ca257d707bbf1ae3ed86f36655f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f6ca257d707bbf1ae3ed86f36655f73">&#9670;&#160;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Alloc&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classVector.html">Vector</a>&lt; T, Alloc &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sukeičia dviejų vektorių turinius (specializacija std::swap). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Elemento tipas. </td></tr>
+    <tr><td class="paramname">Alloc</td><td>Paskirstytojas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Pirmasis vektorius. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Antrasis vektorius. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="vector_8h_source.html">vector.h</a> eilutėje <a class="el" href="vector_8h_source.html#l00989">989</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_1fe2e3f40887fbec9fd2493c34e7d145.html">vector</a></li><li class="navelem"><a href="vector_8h.html">vector.h</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

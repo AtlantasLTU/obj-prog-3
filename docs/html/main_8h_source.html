@@ -132,22 +132,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('main_8h_source
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="main_8tpp.html">main.tpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifdef _WIN32 </span><span class="comment">// naudojame preprocesorių, kad kompiliatorius, naudojant Windows, pridėtų windows.h antraščių failą, kad vėliau galėtume pakeistį terminalo išvesties ir įvesties užkodavimą į UTF-8</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;windows.h&gt;</span> <span class="comment">// windows antraščių failas</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a951ddc56c325c99ef018fc2731778e69">failoApdorojimas</a>(<span class="keyword">const</span> std::string &amp;failoPavadinimas, <span class="keywordtype">int</span> rezervas, <span class="keywordtype">int</span> &amp;ndKiekis, <span class="keywordtype">bool</span> medianos, <span class="keywordtype">int</span> rPasirinkimas, <span class="keywordtype">bool</span> failas);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="vector__compare_8h.html">vector_compare.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef _WIN32 </span><span class="comment">// naudojame preprocesorių, kad kompiliatorius, naudojant Windows, pridėtų windows.h antraščių failą, kad vėliau galėtume pakeistį terminalo išvesties ir įvesties užkodavimą į UTF-8</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;windows.h&gt;</span> <span class="comment">// windows antraščių failas</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a951ddc56c325c99ef018fc2731778e69">failoApdorojimas</a>(<span class="keyword">const</span> std::string &amp;failoPavadinimas, <span class="keywordtype">int</span> rezervas, <span class="keywordtype">int</span> &amp;ndKiekis, <span class="keywordtype">bool</span> medianos, <span class="keywordtype">int</span> rPasirinkimas, <span class="keywordtype">bool</span> failas);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aTimer_8h_html"><div class="ttname"><a href="Timer_8h.html">Timer.h</a></div></div>
 <div class="ttc" id="aapdorojimas_8h_html"><div class="ttname"><a href="apdorojimas_8h.html">apdorojimas.h</a></div></div>
 <div class="ttc" id="aisvestis_8h_html"><div class="ttname"><a href="isvestis_8h.html">isvestis.h</a></div></div>
 <div class="ttc" id="aivestis_8h_html"><div class="ttname"><a href="ivestis_8h.html">ivestis.h</a></div></div>
-<div class="ttc" id="amain_8h_html_a951ddc56c325c99ef018fc2731778e69"><div class="ttname"><a href="main_8h.html#a951ddc56c325c99ef018fc2731778e69">failoApdorojimas</a></div><div class="ttdeci">void failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas)</div><div class="ttdoc">Apdoroja failą: nuskaito, surūšiuoja, išveda.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00145">main.cpp:145</a></div></div>
+<div class="ttc" id="amain_8h_html_a951ddc56c325c99ef018fc2731778e69"><div class="ttname"><a href="main_8h.html#a951ddc56c325c99ef018fc2731778e69">failoApdorojimas</a></div><div class="ttdeci">void failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas)</div><div class="ttdoc">Apdoroja failą: nuskaito, surūšiuoja, išveda.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00155">main.cpp:155</a></div></div>
 <div class="ttc" id="amain_8tpp_html"><div class="ttname"><a href="main_8tpp.html">main.tpp</a></div></div>
 <div class="ttc" id="arandom_8h_html"><div class="ttname"><a href="random_8h.html">random.h</a></div></div>
 <div class="ttc" id="atest_8h_html"><div class="ttname"><a href="test_8h.html">test.h</a></div></div>
+<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div></div>
+<div class="ttc" id="avector__compare_8h_html"><div class="ttname"><a href="vector__compare_8h.html">vector_compare.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

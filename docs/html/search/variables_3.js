@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rez_0',['rez',['../classStudentas.html#aeec8f9e378bcad83462885750cfbf718',1,'Studentas']]]
+  ['maxndkiekis_0',['maxNdKiekis',['../studentas_8h.html#ab359bd1a1269a815578dad7c21c19bf4',1,'studentas.h']]]
 ];

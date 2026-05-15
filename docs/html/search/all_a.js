@@ -1,14 +1,10 @@
 var searchData=
 [
-  ['galutinis_0',['galutinis',['../classStudentas.html#af01c19deb0d892ce159f999669ab9dbb',1,'Studentas']]],
-  ['gautipatvirtinima_1',['gautiPatvirtinima',['../ivestis_8cpp.html#a4751505778e2da671709f50539907dc6',1,'gautiPatvirtinima(const std::string &amp;pranesimas):&#160;ivestis.cpp'],['../ivestis_8h.html#a4751505778e2da671709f50539907dc6',1,'gautiPatvirtinima(const std::string &amp;pranesimas):&#160;ivestis.cpp']]],
-  ['gautiskaiciu_2',['gautiSkaiciu',['../ivestis_8cpp.html#ac2dae081b24e42aea7c22a96791da8b7',1,'gautiSkaiciu(const std::string &amp;pranešimas, int min, int max, bool galiButiTuscia):&#160;ivestis.cpp'],['../ivestis_8h.html#ace87af1e5da0943529cb3d41015da651',1,'gautiSkaiciu(const std::string &amp;pranešimas, int min, int max, bool galiButiTuscia=false):&#160;ivestis.cpp']]],
-  ['gautitipopasirinkima_3',['gautiTipoPasirinkima',['../isvestis_8cpp.html#a344271a7bddae48a6099445c8f0035c4',1,'gautiTipoPasirinkima():&#160;isvestis.cpp'],['../isvestis_8h.html#a344271a7bddae48a6099445c8f0035c4',1,'gautiTipoPasirinkima():&#160;isvestis.cpp']]],
-  ['genvardapavarde_4',['genVardaPavarde',['../classStudentas.html#acf41188db980fd586c93564a6cce35e9',1,'Studentas']]],
-  ['getnd_5',['getNd',['../classStudentas.html#a61b219cdeb4b697c2fa547f4b1a256c2',1,'Studentas']]],
-  ['getpavarde_6',['getPavarde',['../classZmogus.html#af6fa0216be160cd70589a193709a0b36',1,'Zmogus']]],
-  ['getrez_7',['getRez',['../classStudentas.html#adcf500594aed346af5f72316c0fd7980',1,'Studentas']]],
-  ['getvardas_8',['getVardas',['../classZmogus.html#acf4a7481cb123bbb30cb82dd50102ebd',1,'Zmogus']]],
-  ['greičio_20spartos_20analizė_3a_9',['Atlikta programos veikimo greičio (spartos) analizė:',['../md_README.html#autotoc_md13',1,'']]],
-  ['gtest_2ecpp_10',['gtest.cpp',['../gtest_8cpp.html',1,'']]]
+  ['failoapdorojimas_0',['failoApdorojimas',['../main_8cpp.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp'],['../main_8h.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp']]],
+  ['failogeneravimas_1',['failoGeneravimas',['../apdorojimas_8cpp.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp'],['../apdorojimas_8h.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp']]],
+  ['failopasirinkimas_2',['failoPasirinkimas',['../isvestis_8cpp.html#a2238ea78c5ea81cbc6c7d0c91bc02cb3',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta):&#160;isvestis.cpp'],['../isvestis_8h.html#a7c1be6cdb7e2a4f937073e9f9538b0ef',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta=&quot;.&quot;):&#160;isvestis.cpp']]],
+  ['failotestavimas_3',['failoTestavimas',['../main_8tpp.html#a6f7850540f3e71520e1b234a1786b166',1,'main.tpp']]],
+  ['failouzklausa_4',['failoUzklausa',['../isvestis_8cpp.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp'],['../isvestis_8h.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp']]],
+  ['five_20_3a_5',['Realizuota &quot;Rule of Five&quot;:',['../md_README.html#autotoc_md15',1,'']]],
+  ['front_6',['front',['../classVector.html#a50ff0e4eccfdabf16696498bc42a823c',1,'Vector::front()'],['../classVector.html#a8aefd44e7e4fd416558706d505483972',1,'Vector::front() const']]]
 ];

@@ -1,0 +1,33 @@
+\doxysection{vector\+\_\+compare.\+cpp}
+\hypertarget{vector__compare_8cpp_source}{}\label{vector__compare_8cpp_source}\index{vector/vector\_compare.cpp@{vector/vector\_compare.cpp}}
+\doxymbox{\hyperlink{vector__compare_8cpp}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{vector__compare_8h}{vector\_compare.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00003}\doxymbox{\hyperlink{vector__compare_8cpp_acbdc2b4efb903d270363c136df15b3ff}{00003}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{vector__compare_8cpp_acbdc2b4efb903d270363c136df15b3ff}{vector\_compare}}()\{}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00004}00004\ \ \ \ \ std::vector<unsigned\ int>\ sz\{10000,\ 100000,\ 1000000,\ 10000000,\ 100000000\};}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ x\ :\ sz)\{}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ perskirstymai\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classTimer}{Timer}}\ t;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ std::vector<int>\ v1;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ x;\ ++i)}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ v1.push\_back(i);}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v1.size()\ ==\ v1.capacity())\ perskirstymai++;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vektoriaus\ dydis\ -\/\ "{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{}\ Užpildymo\ laikas\ -\/\ "{}}\ <<\ t.\doxymbox{\hyperlink{classTimer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{elapsed}}()\ <<\ \textcolor{stringliteral}{"{}s."{}}\ <<\ \textcolor{stringliteral}{"{}\ Perskirstymų\ kiekis\ -\/\ "{}}\ <<\ perskirstymai\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ perskirstymai\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ t.\doxymbox{\hyperlink{classTimer_a9020542d73357a4eef512eefaf57524b}{reset}}();}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v2;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ x;\ ++i)}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ v2.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(i);}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v2.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}()\ ==\ v2.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}())\ perskirstymai++;}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vektoriaus\ dydis\ -\/\ "{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{}\ Užpildymo\ laikas\ -\/\ "{}}\ <<\ t.\doxymbox{\hyperlink{classTimer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{elapsed}}()\ <<\ \textcolor{stringliteral}{"{}s."{}}\ <<\ \textcolor{stringliteral}{"{}\ Perskirstymų\ kiekis\ -\/\ "{}}\ <<\ perskirstymai\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__compare_8cpp_source_l00027}00027\ \}}
+
+\end{DoxyCode}

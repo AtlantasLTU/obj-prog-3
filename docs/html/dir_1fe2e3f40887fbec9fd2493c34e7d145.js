@@ -19,6 +19,9 @@ var dir_1fe2e3f40887fbec9fd2493c34e7d145 =
     [ "test.cpp", "test_8cpp.html", "test_8cpp" ],
     [ "test.h", "test_8h.html", "test_8h" ],
     [ "Timer.h", "Timer_8h.html", "Timer_8h" ],
+    [ "vector.h", "vector_8h.html", "vector_8h" ],
+    [ "vector_compare.cpp", "vector__compare_8cpp.html", "vector__compare_8cpp" ],
+    [ "vector_compare.h", "vector__compare_8h.html", "vector__compare_8h" ],
     [ "zmogus.cpp", "zmogus_8cpp.html", null ],
     [ "zmogus.h", "zmogus_8h.html", "zmogus_8h" ]
 ];

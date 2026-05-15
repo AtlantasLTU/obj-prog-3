@@ -1,0 +1,693 @@
+\doxysection{gtest\+\_\+vector.\+cpp Failo Nuoroda}
+\hypertarget{gtest__vector_8cpp}{}\label{gtest__vector_8cpp}\index{gtest\_vector.cpp@{gtest\_vector.cpp}}
+{\ttfamily \+\#include $<$gtest/\+gtest.\+h$>$}\newline
+{\ttfamily \+\#include "{}./\+vector/\+vector.\+h"{}}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$utility$>$}\newline
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structCounted}{Counted}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}} (Vector\+Test, Default\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_aae331036e41272ab9ae65e78c3ff8979}{TEST}} (Vector\+Test, Size\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_acb655baf2bb90904dbcc72d6e4b49b3c}{TEST}} (Vector\+Test, Size\+Value\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a9cfdd52c32eedeb2384546e30af77ddc}{TEST}} (Vector\+Test, Range\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ab152a9a0c8f1cf5c26daaaa7b0cd8400}{TEST}} (Vector\+Test, Initializer\+List\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ab755359bcd7b49717859bc97292f71f0}{TEST}} (Vector\+Test, Copy\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ac2771ae0a926994a262d2279d8d2ab1c}{TEST}} (Vector\+Test, Copy\+Constructor\+With\+Allocator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a2857354258f983b171ba9547fe9c099b}{TEST}} (Vector\+Test, Move\+Constructor)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ab7591dee5b2f0e1574c7b78e6b35e4d5}{TEST}} (Vector\+Test, Move\+Constructor\+With\+Same\+Allocator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ae48beeee04855e4607bb6f94476e2f46}{TEST}} (Vector\+Test, Move\+Constructor\+With\+Different\+Allocator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ac312074019fb1dd48f2b03d2545ecbfe}{TEST}} (Vector\+Test, Destructor\+Deallocates)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a45f2d4eaca17851499922078d086f08d}{TEST}} (Vector\+Test, Copy\+Assignment)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ac6413eef214aa565144361cc1ccf6e43}{TEST}} (Vector\+Test, Move\+Assignment)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a3d2f32f16587fa732ff6a9a0175860e6}{TEST}} (Vector\+Test, Initializer\+List\+Assignment)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ab736b476daa71bcd83c058961b0cbe81}{TEST}} (Vector\+Test, Assign\+Count\+Value)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a172753c648ebcf4cc2a7e9084b7504ea}{TEST}} (Vector\+Test, Assign\+Range)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_adf365ef4ec85a8045336cbc0b8d88cfb}{TEST}} (Vector\+Test, Assign\+Initializer\+List)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a7846a0968bd0c83b8d87ce53b0564ebf}{TEST}} (Vector\+Test, Get\+Allocator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a29eeb44dd8d09657405df480357bf512}{TEST}} (Vector\+Test, At)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_afc9b8c7932bcc3718d7b96ce79a265da}{TEST}} (Vector\+Test, Subscript\+Operator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a89e8e350e9a6c77b46e8f61ed64ea2b8}{TEST}} (Vector\+Test, Front\+Back)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_acb43fcebcf75351d4852acf603db3a18}{TEST}} (Vector\+Test, Data)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_afb39cd572557d33a06e01d4af3975189}{TEST}} (Vector\+Test, Begin\+End)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_abbd41a85d4769eabab41b4d1f97a3aca}{TEST}} (Vector\+Test, CBegin\+CEnd)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a68d58d0b6ec56b2d0476efe9dc8feb0c}{TEST}} (Vector\+Test, Reverse\+Iterators)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a2e025fb70c9d453f23eca8c1f3aca13f}{TEST}} (Vector\+Test, Empty)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_abf93c01fd940ffd187b539cc0856f9dc}{TEST}} (Vector\+Test, Size)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a7aedc528f498a06d1642204ad5b0f3c9}{TEST}} (Vector\+Test, Max\+Size)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a122590d13b244948d9e3e45262265331}{TEST}} (Vector\+Test, Reserve)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ab86e3e2116f24834045fa41099873142}{TEST}} (Vector\+Test, Capacity)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ac971f7e855b68e0c0a8d71f55a2c08e0}{TEST}} (Vector\+Test, Shrink\+To\+Fit)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a4f2240094bbd691d3ac15225741953b8}{TEST}} (Vector\+Test, Clear)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ac50a7d2778afec7ab2720a2843758141}{TEST}} (Vector\+Test, Insert\+Single\+Lvalue)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a7a1cee959dbea73b50d852767259f1bc}{TEST}} (Vector\+Test, Insert\+Single\+Rvalue)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a8156cd239a4315de6887ebabf90719f9}{TEST}} (Vector\+Test, Insert\+Count\+Value)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_abc31c6761be5e1d00375dcaf8457c495}{TEST}} (Vector\+Test, Insert\+Range)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a028a5d60e7d3fdf4a2d1f17c0fa82e42}{TEST}} (Vector\+Test, Insert\+Initializer\+List)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ac9fb7a569876f8c852b7f9a981abdf08}{TEST}} (Vector\+Test, Emplace)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a3e6f5b04c7dd18e66fd250e732d2e055}{TEST}} (Vector\+Test, Erase\+Single)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a23070d803b5e0a2439aa5ab65e6e2121}{TEST}} (Vector\+Test, Erase\+Range)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a13556326fb16cc35167f89432c9e81b2}{TEST}} (Vector\+Test, Push\+Back\+Lvalue)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a243a81ebe3f90a7897bd1174dac8918a}{TEST}} (Vector\+Test, Push\+Back\+Rvalue)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a91d0c095de83539415a6e2f42d9f4b9e}{TEST}} (Vector\+Test, Emplace\+Back)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a7501a59daaaa8d6f125a2e6ef7b39c05}{TEST}} (Vector\+Test, Pop\+Back)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a9b8833c618356f413f040fa4e03be659}{TEST}} (Vector\+Test, Resize\+Count)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a051ee1e48b8608553ef4f2a5a4568a5b}{TEST}} (Vector\+Test, Resize\+Count\+Value)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a522542d5fceed669d01f3fd360feb747}{TEST}} (Vector\+Test, Swap\+Member)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a0e24779306e55393d5200ef63334d7c9}{TEST}} (Vector\+Test, Equality\+Operator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_ab5cff955082e4786736139cd7e15a058}{TEST}} (Vector\+Test, Spaceship\+Operator)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a9edcb605d44daf9d98714d3c6c221cc4}{TEST}} (Vector\+Test, Non\+Member\+Swap)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_accc83cb676ca168388890e97b83abad0}{TEST}} (Vector\+Test, Erase\+Value)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a0958a7689ffd57e34c4c40beaf048d18}{TEST}} (Vector\+Test, Erase\+If)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_aa38384ef6001e06e511a0c2f9b5059bd}{TEST}} (Vector\+Test, Large\+Insert)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a2e0d6bc548ef9854c18d1db7e51ec035}{TEST}} (Vector\+Test, Insert\+At\+End)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a308fa268135bde729deac8993240173e}{TEST}} (Vector\+Test, Erase\+All\+Elements)
+\item 
+\doxymbox{\hyperlink{gtest__vector_8cpp_a7ec8785beaeda9ecd32703896a84b9ed}{TEST}} (Vector\+Test, Counted\+Element\+Lifecycle)
+\end{DoxyCompactItemize}
+
+
+\label{gtest__vector_8cpp_doc-func-members}
+\Hypertarget{gtest__vector_8cpp_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{gtest__vector_8cpp_ab736b476daa71bcd83c058961b0cbe81}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ab736b476daa71bcd83c058961b0cbe81} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Assign\+Count\+Value}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00136}{136}}.
+
+\Hypertarget{gtest__vector_8cpp_adf365ef4ec85a8045336cbc0b8d88cfb}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_adf365ef4ec85a8045336cbc0b8d88cfb} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Assign\+Initializer\+List}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00157}{157}}.
+
+\Hypertarget{gtest__vector_8cpp_a172753c648ebcf4cc2a7e9084b7504ea}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a172753c648ebcf4cc2a7e9084b7504ea} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Assign\+Range}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00148}{148}}.
+
+\Hypertarget{gtest__vector_8cpp_a29eeb44dd8d09657405df480357bf512}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a29eeb44dd8d09657405df480357bf512} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{At}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00173}{173}}.
+
+\Hypertarget{gtest__vector_8cpp_afb39cd572557d33a06e01d4af3975189}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_afb39cd572557d33a06e01d4af3975189} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Begin\+End}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00214}{214}}.
+
+\Hypertarget{gtest__vector_8cpp_ab86e3e2116f24834045fa41099873142}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ab86e3e2116f24834045fa41099873142} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Capacity}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00266}{266}}.
+
+\Hypertarget{gtest__vector_8cpp_abbd41a85d4769eabab41b4d1f97a3aca}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_abbd41a85d4769eabab41b4d1f97a3aca} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{CBegin\+CEnd}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00224}{224}}.
+
+\Hypertarget{gtest__vector_8cpp_a4f2240094bbd691d3ac15225741953b8}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a4f2240094bbd691d3ac15225741953b8} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Clear}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00287}{287}}.
+
+\Hypertarget{gtest__vector_8cpp_a45f2d4eaca17851499922078d086f08d}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [9/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a45f2d4eaca17851499922078d086f08d} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Copy\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00103}{103}}.
+
+\Hypertarget{gtest__vector_8cpp_ab755359bcd7b49717859bc97292f71f0}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [10/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ab755359bcd7b49717859bc97292f71f0} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Copy\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00048}{48}}.
+
+\Hypertarget{gtest__vector_8cpp_ac2771ae0a926994a262d2279d8d2ab1c}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [11/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ac2771ae0a926994a262d2279d8d2ab1c} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Copy\+Constructor\+With\+Allocator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00060}{60}}.
+
+\Hypertarget{gtest__vector_8cpp_a7ec8785beaeda9ecd32703896a84b9ed}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [12/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a7ec8785beaeda9ecd32703896a84b9ed} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Counted\+Element\+Lifecycle}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00522}{522}}.
+
+\Hypertarget{gtest__vector_8cpp_acb43fcebcf75351d4852acf603db3a18}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [13/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_acb43fcebcf75351d4852acf603db3a18} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Data}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00202}{202}}.
+
+\Hypertarget{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [14/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Default\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00009}{9}}.
+
+\Hypertarget{gtest__vector_8cpp_ac312074019fb1dd48f2b03d2545ecbfe}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [15/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ac312074019fb1dd48f2b03d2545ecbfe} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Destructor\+Deallocates}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00095}{95}}.
+
+\Hypertarget{gtest__vector_8cpp_ac9fb7a569876f8c852b7f9a981abdf08}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [16/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ac9fb7a569876f8c852b7f9a981abdf08} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Emplace}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00342}{342}}.
+
+\Hypertarget{gtest__vector_8cpp_a91d0c095de83539415a6e2f42d9f4b9e}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [17/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a91d0c095de83539415a6e2f42d9f4b9e} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Emplace\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00387}{387}}.
+
+\Hypertarget{gtest__vector_8cpp_a2e025fb70c9d453f23eca8c1f3aca13f}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [18/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a2e025fb70c9d453f23eca8c1f3aca13f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Empty}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00240}{240}}.
+
+\Hypertarget{gtest__vector_8cpp_a0e24779306e55393d5200ef63334d7c9}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [19/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a0e24779306e55393d5200ef63334d7c9} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Equality\+Operator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00438}{438}}.
+
+\Hypertarget{gtest__vector_8cpp_a308fa268135bde729deac8993240173e}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [20/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a308fa268135bde729deac8993240173e} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Erase\+All\+Elements}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00505}{505}}.
+
+\Hypertarget{gtest__vector_8cpp_a0958a7689ffd57e34c4c40beaf048d18}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [21/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a0958a7689ffd57e34c4c40beaf048d18} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Erase\+If}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00477}{477}}.
+
+\Hypertarget{gtest__vector_8cpp_a23070d803b5e0a2439aa5ab65e6e2121}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [22/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a23070d803b5e0a2439aa5ab65e6e2121} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Erase\+Range}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00359}{359}}.
+
+\Hypertarget{gtest__vector_8cpp_a3e6f5b04c7dd18e66fd250e732d2e055}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [23/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a3e6f5b04c7dd18e66fd250e732d2e055} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Erase\+Single}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00350}{350}}.
+
+\Hypertarget{gtest__vector_8cpp_accc83cb676ca168388890e97b83abad0}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [24/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_accc83cb676ca168388890e97b83abad0} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Erase\+Value}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00467}{467}}.
+
+\Hypertarget{gtest__vector_8cpp_a89e8e350e9a6c77b46e8f61ed64ea2b8}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [25/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a89e8e350e9a6c77b46e8f61ed64ea2b8} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Front\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00191}{191}}.
+
+\Hypertarget{gtest__vector_8cpp_a7846a0968bd0c83b8d87ce53b0564ebf}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [26/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a7846a0968bd0c83b8d87ce53b0564ebf} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Get\+Allocator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00165}{165}}.
+
+\Hypertarget{gtest__vector_8cpp_a3d2f32f16587fa732ff6a9a0175860e6}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [27/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a3d2f32f16587fa732ff6a9a0175860e6} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Initializer\+List\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00127}{127}}.
+
+\Hypertarget{gtest__vector_8cpp_ab152a9a0c8f1cf5c26daaaa7b0cd8400}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [28/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ab152a9a0c8f1cf5c26daaaa7b0cd8400} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Initializer\+List\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00040}{40}}.
+
+\Hypertarget{gtest__vector_8cpp_a2e0d6bc548ef9854c18d1db7e51ec035}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [29/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a2e0d6bc548ef9854c18d1db7e51ec035} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Insert\+At\+End}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00497}{497}}.
+
+\Hypertarget{gtest__vector_8cpp_a8156cd239a4315de6887ebabf90719f9}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [30/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a8156cd239a4315de6887ebabf90719f9} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Insert\+Count\+Value}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00313}{313}}.
+
+\Hypertarget{gtest__vector_8cpp_a028a5d60e7d3fdf4a2d1f17c0fa82e42}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [31/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a028a5d60e7d3fdf4a2d1f17c0fa82e42} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Insert\+Initializer\+List}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00334}{334}}.
+
+\Hypertarget{gtest__vector_8cpp_abc31c6761be5e1d00375dcaf8457c495}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [32/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_abc31c6761be5e1d00375dcaf8457c495} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Insert\+Range}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00323}{323}}.
+
+\Hypertarget{gtest__vector_8cpp_ac50a7d2778afec7ab2720a2843758141}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [33/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ac50a7d2778afec7ab2720a2843758141} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Insert\+Single\+Lvalue}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00294}{294}}.
+
+\Hypertarget{gtest__vector_8cpp_a7a1cee959dbea73b50d852767259f1bc}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [34/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a7a1cee959dbea73b50d852767259f1bc} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Insert\+Single\+Rvalue}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00304}{304}}.
+
+\Hypertarget{gtest__vector_8cpp_aa38384ef6001e06e511a0c2f9b5059bd}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [35/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_aa38384ef6001e06e511a0c2f9b5059bd} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Large\+Insert}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00488}{488}}.
+
+\Hypertarget{gtest__vector_8cpp_a7aedc528f498a06d1642204ad5b0f3c9}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [36/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a7aedc528f498a06d1642204ad5b0f3c9} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Max\+Size}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00252}{252}}.
+
+\Hypertarget{gtest__vector_8cpp_ac6413eef214aa565144361cc1ccf6e43}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [37/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ac6413eef214aa565144361cc1ccf6e43} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Move\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00115}{115}}.
+
+\Hypertarget{gtest__vector_8cpp_a2857354258f983b171ba9547fe9c099b}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [38/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a2857354258f983b171ba9547fe9c099b} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Move\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00067}{67}}.
+
+\Hypertarget{gtest__vector_8cpp_ae48beeee04855e4607bb6f94476e2f46}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [39/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ae48beeee04855e4607bb6f94476e2f46} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Move\+Constructor\+With\+Different\+Allocator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00084}{84}}.
+
+\Hypertarget{gtest__vector_8cpp_ab7591dee5b2f0e1574c7b78e6b35e4d5}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [40/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ab7591dee5b2f0e1574c7b78e6b35e4d5} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Move\+Constructor\+With\+Same\+Allocator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00076}{76}}.
+
+\Hypertarget{gtest__vector_8cpp_a9edcb605d44daf9d98714d3c6c221cc4}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [41/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a9edcb605d44daf9d98714d3c6c221cc4} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Non\+Member\+Swap}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00456}{456}}.
+
+\Hypertarget{gtest__vector_8cpp_a7501a59daaaa8d6f125a2e6ef7b39c05}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [42/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a7501a59daaaa8d6f125a2e6ef7b39c05} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Pop\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00396}{396}}.
+
+\Hypertarget{gtest__vector_8cpp_a13556326fb16cc35167f89432c9e81b2}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [43/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a13556326fb16cc35167f89432c9e81b2} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Push\+Back\+Lvalue}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00369}{369}}.
+
+\Hypertarget{gtest__vector_8cpp_a243a81ebe3f90a7897bd1174dac8918a}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [44/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a243a81ebe3f90a7897bd1174dac8918a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Push\+Back\+Rvalue}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00378}{378}}.
+
+\Hypertarget{gtest__vector_8cpp_a9cfdd52c32eedeb2384546e30af77ddc}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [45/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a9cfdd52c32eedeb2384546e30af77ddc} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Range\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00032}{32}}.
+
+\Hypertarget{gtest__vector_8cpp_a122590d13b244948d9e3e45262265331}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [46/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a122590d13b244948d9e3e45262265331} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Reserve}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00257}{257}}.
+
+\Hypertarget{gtest__vector_8cpp_a9b8833c618356f413f040fa4e03be659}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [47/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a9b8833c618356f413f040fa4e03be659} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Resize\+Count}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00404}{404}}.
+
+\Hypertarget{gtest__vector_8cpp_a051ee1e48b8608553ef4f2a5a4568a5b}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [48/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a051ee1e48b8608553ef4f2a5a4568a5b} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Resize\+Count\+Value}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00416}{416}}.
+
+\Hypertarget{gtest__vector_8cpp_a68d58d0b6ec56b2d0476efe9dc8feb0c}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [49/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a68d58d0b6ec56b2d0476efe9dc8feb0c} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Reverse\+Iterators}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00230}{230}}.
+
+\Hypertarget{gtest__vector_8cpp_ac971f7e855b68e0c0a8d71f55a2c08e0}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [50/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ac971f7e855b68e0c0a8d71f55a2c08e0} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Shrink\+To\+Fit}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00273}{273}}.
+
+\Hypertarget{gtest__vector_8cpp_abf93c01fd940ffd187b539cc0856f9dc}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [51/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_abf93c01fd940ffd187b539cc0856f9dc} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Size}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00247}{247}}.
+
+\Hypertarget{gtest__vector_8cpp_aae331036e41272ab9ae65e78c3ff8979}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [52/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_aae331036e41272ab9ae65e78c3ff8979} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Size\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00017}{17}}.
+
+\Hypertarget{gtest__vector_8cpp_acb655baf2bb90904dbcc72d6e4b49b3c}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [53/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_acb655baf2bb90904dbcc72d6e4b49b3c} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Size\+Value\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00025}{25}}.
+
+\Hypertarget{gtest__vector_8cpp_ab5cff955082e4786736139cd7e15a058}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [54/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_ab5cff955082e4786736139cd7e15a058} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Spaceship\+Operator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00446}{446}}.
+
+\Hypertarget{gtest__vector_8cpp_afc9b8c7932bcc3718d7b96ce79a265da}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [55/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_afc9b8c7932bcc3718d7b96ce79a265da} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Subscript\+Operator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00183}{183}}.
+
+\Hypertarget{gtest__vector_8cpp_a522542d5fceed669d01f3fd360feb747}\index{gtest\_vector.cpp@{gtest\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!gtest\_vector.cpp@{gtest\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [56/56]}}
+{\footnotesize\ttfamily \label{gtest__vector_8cpp_a522542d5fceed669d01f3fd360feb747} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Test}]{}{, }\item[{Swap\+Member}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{gtest__vector_8cpp_source}{gtest\+\_\+vector.\+cpp}} eilutėje \doxymbox{\hyperlink{gtest__vector_8cpp_source_l00427}{427}}.
+

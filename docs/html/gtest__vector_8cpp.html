@@ -1,0 +1,1501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>obj-prog: gtest_vector.cpp Failo Nuoroda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">obj-prog<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">studentų rezultatų skaičiuoklė</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('gtest__vector_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">gtest_vector.cpp Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="vector_8h_source.html">./vector/vector.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+</div>
+<p><a href="gtest__vector_8cpp_source.html">Eiti į šio failo programos kodą.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Klasės</h2></td></tr>
+<tr class="memitem:Counted" id="r_Counted"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structCounted.html">Counted</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:aa1b8b5f1b5aea6a31c1ef67199f6b48d" id="r_aa1b8b5f1b5aea6a31c1ef67199f6b48d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa1b8b5f1b5aea6a31c1ef67199f6b48d">TEST</a> (VectorTest, DefaultConstructor)</td></tr>
+<tr class="memitem:aae331036e41272ab9ae65e78c3ff8979" id="r_aae331036e41272ab9ae65e78c3ff8979"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aae331036e41272ab9ae65e78c3ff8979">TEST</a> (VectorTest, SizeConstructor)</td></tr>
+<tr class="memitem:acb655baf2bb90904dbcc72d6e4b49b3c" id="r_acb655baf2bb90904dbcc72d6e4b49b3c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acb655baf2bb90904dbcc72d6e4b49b3c">TEST</a> (VectorTest, SizeValueConstructor)</td></tr>
+<tr class="memitem:a9cfdd52c32eedeb2384546e30af77ddc" id="r_a9cfdd52c32eedeb2384546e30af77ddc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9cfdd52c32eedeb2384546e30af77ddc">TEST</a> (VectorTest, RangeConstructor)</td></tr>
+<tr class="memitem:ab152a9a0c8f1cf5c26daaaa7b0cd8400" id="r_ab152a9a0c8f1cf5c26daaaa7b0cd8400"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab152a9a0c8f1cf5c26daaaa7b0cd8400">TEST</a> (VectorTest, InitializerListConstructor)</td></tr>
+<tr class="memitem:ab755359bcd7b49717859bc97292f71f0" id="r_ab755359bcd7b49717859bc97292f71f0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab755359bcd7b49717859bc97292f71f0">TEST</a> (VectorTest, CopyConstructor)</td></tr>
+<tr class="memitem:ac2771ae0a926994a262d2279d8d2ab1c" id="r_ac2771ae0a926994a262d2279d8d2ab1c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac2771ae0a926994a262d2279d8d2ab1c">TEST</a> (VectorTest, CopyConstructorWithAllocator)</td></tr>
+<tr class="memitem:a2857354258f983b171ba9547fe9c099b" id="r_a2857354258f983b171ba9547fe9c099b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2857354258f983b171ba9547fe9c099b">TEST</a> (VectorTest, MoveConstructor)</td></tr>
+<tr class="memitem:ab7591dee5b2f0e1574c7b78e6b35e4d5" id="r_ab7591dee5b2f0e1574c7b78e6b35e4d5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab7591dee5b2f0e1574c7b78e6b35e4d5">TEST</a> (VectorTest, MoveConstructorWithSameAllocator)</td></tr>
+<tr class="memitem:ae48beeee04855e4607bb6f94476e2f46" id="r_ae48beeee04855e4607bb6f94476e2f46"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae48beeee04855e4607bb6f94476e2f46">TEST</a> (VectorTest, MoveConstructorWithDifferentAllocator)</td></tr>
+<tr class="memitem:ac312074019fb1dd48f2b03d2545ecbfe" id="r_ac312074019fb1dd48f2b03d2545ecbfe"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac312074019fb1dd48f2b03d2545ecbfe">TEST</a> (VectorTest, DestructorDeallocates)</td></tr>
+<tr class="memitem:a45f2d4eaca17851499922078d086f08d" id="r_a45f2d4eaca17851499922078d086f08d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a45f2d4eaca17851499922078d086f08d">TEST</a> (VectorTest, CopyAssignment)</td></tr>
+<tr class="memitem:ac6413eef214aa565144361cc1ccf6e43" id="r_ac6413eef214aa565144361cc1ccf6e43"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac6413eef214aa565144361cc1ccf6e43">TEST</a> (VectorTest, MoveAssignment)</td></tr>
+<tr class="memitem:a3d2f32f16587fa732ff6a9a0175860e6" id="r_a3d2f32f16587fa732ff6a9a0175860e6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3d2f32f16587fa732ff6a9a0175860e6">TEST</a> (VectorTest, InitializerListAssignment)</td></tr>
+<tr class="memitem:ab736b476daa71bcd83c058961b0cbe81" id="r_ab736b476daa71bcd83c058961b0cbe81"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab736b476daa71bcd83c058961b0cbe81">TEST</a> (VectorTest, AssignCountValue)</td></tr>
+<tr class="memitem:a172753c648ebcf4cc2a7e9084b7504ea" id="r_a172753c648ebcf4cc2a7e9084b7504ea"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a172753c648ebcf4cc2a7e9084b7504ea">TEST</a> (VectorTest, AssignRange)</td></tr>
+<tr class="memitem:adf365ef4ec85a8045336cbc0b8d88cfb" id="r_adf365ef4ec85a8045336cbc0b8d88cfb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adf365ef4ec85a8045336cbc0b8d88cfb">TEST</a> (VectorTest, AssignInitializerList)</td></tr>
+<tr class="memitem:a7846a0968bd0c83b8d87ce53b0564ebf" id="r_a7846a0968bd0c83b8d87ce53b0564ebf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7846a0968bd0c83b8d87ce53b0564ebf">TEST</a> (VectorTest, GetAllocator)</td></tr>
+<tr class="memitem:a29eeb44dd8d09657405df480357bf512" id="r_a29eeb44dd8d09657405df480357bf512"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a29eeb44dd8d09657405df480357bf512">TEST</a> (VectorTest, At)</td></tr>
+<tr class="memitem:afc9b8c7932bcc3718d7b96ce79a265da" id="r_afc9b8c7932bcc3718d7b96ce79a265da"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afc9b8c7932bcc3718d7b96ce79a265da">TEST</a> (VectorTest, SubscriptOperator)</td></tr>
+<tr class="memitem:a89e8e350e9a6c77b46e8f61ed64ea2b8" id="r_a89e8e350e9a6c77b46e8f61ed64ea2b8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a89e8e350e9a6c77b46e8f61ed64ea2b8">TEST</a> (VectorTest, FrontBack)</td></tr>
+<tr class="memitem:acb43fcebcf75351d4852acf603db3a18" id="r_acb43fcebcf75351d4852acf603db3a18"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acb43fcebcf75351d4852acf603db3a18">TEST</a> (VectorTest, Data)</td></tr>
+<tr class="memitem:afb39cd572557d33a06e01d4af3975189" id="r_afb39cd572557d33a06e01d4af3975189"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afb39cd572557d33a06e01d4af3975189">TEST</a> (VectorTest, BeginEnd)</td></tr>
+<tr class="memitem:abbd41a85d4769eabab41b4d1f97a3aca" id="r_abbd41a85d4769eabab41b4d1f97a3aca"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abbd41a85d4769eabab41b4d1f97a3aca">TEST</a> (VectorTest, CBeginCEnd)</td></tr>
+<tr class="memitem:a68d58d0b6ec56b2d0476efe9dc8feb0c" id="r_a68d58d0b6ec56b2d0476efe9dc8feb0c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a68d58d0b6ec56b2d0476efe9dc8feb0c">TEST</a> (VectorTest, ReverseIterators)</td></tr>
+<tr class="memitem:a2e025fb70c9d453f23eca8c1f3aca13f" id="r_a2e025fb70c9d453f23eca8c1f3aca13f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2e025fb70c9d453f23eca8c1f3aca13f">TEST</a> (VectorTest, Empty)</td></tr>
+<tr class="memitem:abf93c01fd940ffd187b539cc0856f9dc" id="r_abf93c01fd940ffd187b539cc0856f9dc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abf93c01fd940ffd187b539cc0856f9dc">TEST</a> (VectorTest, Size)</td></tr>
+<tr class="memitem:a7aedc528f498a06d1642204ad5b0f3c9" id="r_a7aedc528f498a06d1642204ad5b0f3c9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7aedc528f498a06d1642204ad5b0f3c9">TEST</a> (VectorTest, MaxSize)</td></tr>
+<tr class="memitem:a122590d13b244948d9e3e45262265331" id="r_a122590d13b244948d9e3e45262265331"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a122590d13b244948d9e3e45262265331">TEST</a> (VectorTest, Reserve)</td></tr>
+<tr class="memitem:ab86e3e2116f24834045fa41099873142" id="r_ab86e3e2116f24834045fa41099873142"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab86e3e2116f24834045fa41099873142">TEST</a> (VectorTest, Capacity)</td></tr>
+<tr class="memitem:ac971f7e855b68e0c0a8d71f55a2c08e0" id="r_ac971f7e855b68e0c0a8d71f55a2c08e0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac971f7e855b68e0c0a8d71f55a2c08e0">TEST</a> (VectorTest, ShrinkToFit)</td></tr>
+<tr class="memitem:a4f2240094bbd691d3ac15225741953b8" id="r_a4f2240094bbd691d3ac15225741953b8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4f2240094bbd691d3ac15225741953b8">TEST</a> (VectorTest, Clear)</td></tr>
+<tr class="memitem:ac50a7d2778afec7ab2720a2843758141" id="r_ac50a7d2778afec7ab2720a2843758141"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac50a7d2778afec7ab2720a2843758141">TEST</a> (VectorTest, InsertSingleLvalue)</td></tr>
+<tr class="memitem:a7a1cee959dbea73b50d852767259f1bc" id="r_a7a1cee959dbea73b50d852767259f1bc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7a1cee959dbea73b50d852767259f1bc">TEST</a> (VectorTest, InsertSingleRvalue)</td></tr>
+<tr class="memitem:a8156cd239a4315de6887ebabf90719f9" id="r_a8156cd239a4315de6887ebabf90719f9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8156cd239a4315de6887ebabf90719f9">TEST</a> (VectorTest, InsertCountValue)</td></tr>
+<tr class="memitem:abc31c6761be5e1d00375dcaf8457c495" id="r_abc31c6761be5e1d00375dcaf8457c495"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abc31c6761be5e1d00375dcaf8457c495">TEST</a> (VectorTest, InsertRange)</td></tr>
+<tr class="memitem:a028a5d60e7d3fdf4a2d1f17c0fa82e42" id="r_a028a5d60e7d3fdf4a2d1f17c0fa82e42"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a028a5d60e7d3fdf4a2d1f17c0fa82e42">TEST</a> (VectorTest, InsertInitializerList)</td></tr>
+<tr class="memitem:ac9fb7a569876f8c852b7f9a981abdf08" id="r_ac9fb7a569876f8c852b7f9a981abdf08"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac9fb7a569876f8c852b7f9a981abdf08">TEST</a> (VectorTest, Emplace)</td></tr>
+<tr class="memitem:a3e6f5b04c7dd18e66fd250e732d2e055" id="r_a3e6f5b04c7dd18e66fd250e732d2e055"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3e6f5b04c7dd18e66fd250e732d2e055">TEST</a> (VectorTest, EraseSingle)</td></tr>
+<tr class="memitem:a23070d803b5e0a2439aa5ab65e6e2121" id="r_a23070d803b5e0a2439aa5ab65e6e2121"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a23070d803b5e0a2439aa5ab65e6e2121">TEST</a> (VectorTest, EraseRange)</td></tr>
+<tr class="memitem:a13556326fb16cc35167f89432c9e81b2" id="r_a13556326fb16cc35167f89432c9e81b2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a13556326fb16cc35167f89432c9e81b2">TEST</a> (VectorTest, PushBackLvalue)</td></tr>
+<tr class="memitem:a243a81ebe3f90a7897bd1174dac8918a" id="r_a243a81ebe3f90a7897bd1174dac8918a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a243a81ebe3f90a7897bd1174dac8918a">TEST</a> (VectorTest, PushBackRvalue)</td></tr>
+<tr class="memitem:a91d0c095de83539415a6e2f42d9f4b9e" id="r_a91d0c095de83539415a6e2f42d9f4b9e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a91d0c095de83539415a6e2f42d9f4b9e">TEST</a> (VectorTest, EmplaceBack)</td></tr>
+<tr class="memitem:a7501a59daaaa8d6f125a2e6ef7b39c05" id="r_a7501a59daaaa8d6f125a2e6ef7b39c05"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7501a59daaaa8d6f125a2e6ef7b39c05">TEST</a> (VectorTest, PopBack)</td></tr>
+<tr class="memitem:a9b8833c618356f413f040fa4e03be659" id="r_a9b8833c618356f413f040fa4e03be659"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9b8833c618356f413f040fa4e03be659">TEST</a> (VectorTest, ResizeCount)</td></tr>
+<tr class="memitem:a051ee1e48b8608553ef4f2a5a4568a5b" id="r_a051ee1e48b8608553ef4f2a5a4568a5b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a051ee1e48b8608553ef4f2a5a4568a5b">TEST</a> (VectorTest, ResizeCountValue)</td></tr>
+<tr class="memitem:a522542d5fceed669d01f3fd360feb747" id="r_a522542d5fceed669d01f3fd360feb747"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a522542d5fceed669d01f3fd360feb747">TEST</a> (VectorTest, SwapMember)</td></tr>
+<tr class="memitem:a0e24779306e55393d5200ef63334d7c9" id="r_a0e24779306e55393d5200ef63334d7c9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0e24779306e55393d5200ef63334d7c9">TEST</a> (VectorTest, EqualityOperator)</td></tr>
+<tr class="memitem:ab5cff955082e4786736139cd7e15a058" id="r_ab5cff955082e4786736139cd7e15a058"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab5cff955082e4786736139cd7e15a058">TEST</a> (VectorTest, SpaceshipOperator)</td></tr>
+<tr class="memitem:a9edcb605d44daf9d98714d3c6c221cc4" id="r_a9edcb605d44daf9d98714d3c6c221cc4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9edcb605d44daf9d98714d3c6c221cc4">TEST</a> (VectorTest, NonMemberSwap)</td></tr>
+<tr class="memitem:accc83cb676ca168388890e97b83abad0" id="r_accc83cb676ca168388890e97b83abad0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#accc83cb676ca168388890e97b83abad0">TEST</a> (VectorTest, EraseValue)</td></tr>
+<tr class="memitem:a0958a7689ffd57e34c4c40beaf048d18" id="r_a0958a7689ffd57e34c4c40beaf048d18"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0958a7689ffd57e34c4c40beaf048d18">TEST</a> (VectorTest, EraseIf)</td></tr>
+<tr class="memitem:aa38384ef6001e06e511a0c2f9b5059bd" id="r_aa38384ef6001e06e511a0c2f9b5059bd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa38384ef6001e06e511a0c2f9b5059bd">TEST</a> (VectorTest, LargeInsert)</td></tr>
+<tr class="memitem:a2e0d6bc548ef9854c18d1db7e51ec035" id="r_a2e0d6bc548ef9854c18d1db7e51ec035"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2e0d6bc548ef9854c18d1db7e51ec035">TEST</a> (VectorTest, InsertAtEnd)</td></tr>
+<tr class="memitem:a308fa268135bde729deac8993240173e" id="r_a308fa268135bde729deac8993240173e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a308fa268135bde729deac8993240173e">TEST</a> (VectorTest, EraseAllElements)</td></tr>
+<tr class="memitem:a7ec8785beaeda9ecd32703896a84b9ed" id="r_a7ec8785beaeda9ecd32703896a84b9ed"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7ec8785beaeda9ecd32703896a84b9ed">TEST</a> (VectorTest, CountedElementLifecycle)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="ab736b476daa71bcd83c058961b0cbe81" name="ab736b476daa71bcd83c058961b0cbe81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab736b476daa71bcd83c058961b0cbe81">&#9670;&#160;</a></span>TEST() <span class="overload">[1/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AssignCountValue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00136">136</a>.</p>
+
+</div>
+</div>
+<a id="adf365ef4ec85a8045336cbc0b8d88cfb" name="adf365ef4ec85a8045336cbc0b8d88cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf365ef4ec85a8045336cbc0b8d88cfb">&#9670;&#160;</a></span>TEST() <span class="overload">[2/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AssignInitializerList</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00157">157</a>.</p>
+
+</div>
+</div>
+<a id="a172753c648ebcf4cc2a7e9084b7504ea" name="a172753c648ebcf4cc2a7e9084b7504ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172753c648ebcf4cc2a7e9084b7504ea">&#9670;&#160;</a></span>TEST() <span class="overload">[3/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AssignRange</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00148">148</a>.</p>
+
+</div>
+</div>
+<a id="a29eeb44dd8d09657405df480357bf512" name="a29eeb44dd8d09657405df480357bf512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29eeb44dd8d09657405df480357bf512">&#9670;&#160;</a></span>TEST() <span class="overload">[4/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">At</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00173">173</a>.</p>
+
+</div>
+</div>
+<a id="afb39cd572557d33a06e01d4af3975189" name="afb39cd572557d33a06e01d4af3975189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb39cd572557d33a06e01d4af3975189">&#9670;&#160;</a></span>TEST() <span class="overload">[5/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BeginEnd</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00214">214</a>.</p>
+
+</div>
+</div>
+<a id="ab86e3e2116f24834045fa41099873142" name="ab86e3e2116f24834045fa41099873142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab86e3e2116f24834045fa41099873142">&#9670;&#160;</a></span>TEST() <span class="overload">[6/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Capacity</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00266">266</a>.</p>
+
+</div>
+</div>
+<a id="abbd41a85d4769eabab41b4d1f97a3aca" name="abbd41a85d4769eabab41b4d1f97a3aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd41a85d4769eabab41b4d1f97a3aca">&#9670;&#160;</a></span>TEST() <span class="overload">[7/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CBeginCEnd</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00224">224</a>.</p>
+
+</div>
+</div>
+<a id="a4f2240094bbd691d3ac15225741953b8" name="a4f2240094bbd691d3ac15225741953b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f2240094bbd691d3ac15225741953b8">&#9670;&#160;</a></span>TEST() <span class="overload">[8/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Clear</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00287">287</a>.</p>
+
+</div>
+</div>
+<a id="a45f2d4eaca17851499922078d086f08d" name="a45f2d4eaca17851499922078d086f08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f2d4eaca17851499922078d086f08d">&#9670;&#160;</a></span>TEST() <span class="overload">[9/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CopyAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00103">103</a>.</p>
+
+</div>
+</div>
+<a id="ab755359bcd7b49717859bc97292f71f0" name="ab755359bcd7b49717859bc97292f71f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab755359bcd7b49717859bc97292f71f0">&#9670;&#160;</a></span>TEST() <span class="overload">[10/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CopyConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00048">48</a>.</p>
+
+</div>
+</div>
+<a id="ac2771ae0a926994a262d2279d8d2ab1c" name="ac2771ae0a926994a262d2279d8d2ab1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2771ae0a926994a262d2279d8d2ab1c">&#9670;&#160;</a></span>TEST() <span class="overload">[11/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CopyConstructorWithAllocator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00060">60</a>.</p>
+
+</div>
+</div>
+<a id="a7ec8785beaeda9ecd32703896a84b9ed" name="a7ec8785beaeda9ecd32703896a84b9ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec8785beaeda9ecd32703896a84b9ed">&#9670;&#160;</a></span>TEST() <span class="overload">[12/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CountedElementLifecycle</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00522">522</a>.</p>
+
+</div>
+</div>
+<a id="acb43fcebcf75351d4852acf603db3a18" name="acb43fcebcf75351d4852acf603db3a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb43fcebcf75351d4852acf603db3a18">&#9670;&#160;</a></span>TEST() <span class="overload">[13/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Data</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00202">202</a>.</p>
+
+</div>
+</div>
+<a id="aa1b8b5f1b5aea6a31c1ef67199f6b48d" name="aa1b8b5f1b5aea6a31c1ef67199f6b48d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b8b5f1b5aea6a31c1ef67199f6b48d">&#9670;&#160;</a></span>TEST() <span class="overload">[14/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DefaultConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00009">9</a>.</p>
+
+</div>
+</div>
+<a id="ac312074019fb1dd48f2b03d2545ecbfe" name="ac312074019fb1dd48f2b03d2545ecbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac312074019fb1dd48f2b03d2545ecbfe">&#9670;&#160;</a></span>TEST() <span class="overload">[15/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DestructorDeallocates</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00095">95</a>.</p>
+
+</div>
+</div>
+<a id="ac9fb7a569876f8c852b7f9a981abdf08" name="ac9fb7a569876f8c852b7f9a981abdf08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9fb7a569876f8c852b7f9a981abdf08">&#9670;&#160;</a></span>TEST() <span class="overload">[16/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Emplace</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00342">342</a>.</p>
+
+</div>
+</div>
+<a id="a91d0c095de83539415a6e2f42d9f4b9e" name="a91d0c095de83539415a6e2f42d9f4b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91d0c095de83539415a6e2f42d9f4b9e">&#9670;&#160;</a></span>TEST() <span class="overload">[17/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EmplaceBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00387">387</a>.</p>
+
+</div>
+</div>
+<a id="a2e025fb70c9d453f23eca8c1f3aca13f" name="a2e025fb70c9d453f23eca8c1f3aca13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e025fb70c9d453f23eca8c1f3aca13f">&#9670;&#160;</a></span>TEST() <span class="overload">[18/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Empty</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00240">240</a>.</p>
+
+</div>
+</div>
+<a id="a0e24779306e55393d5200ef63334d7c9" name="a0e24779306e55393d5200ef63334d7c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e24779306e55393d5200ef63334d7c9">&#9670;&#160;</a></span>TEST() <span class="overload">[19/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualityOperator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00438">438</a>.</p>
+
+</div>
+</div>
+<a id="a308fa268135bde729deac8993240173e" name="a308fa268135bde729deac8993240173e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308fa268135bde729deac8993240173e">&#9670;&#160;</a></span>TEST() <span class="overload">[20/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseAllElements</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00505">505</a>.</p>
+
+</div>
+</div>
+<a id="a0958a7689ffd57e34c4c40beaf048d18" name="a0958a7689ffd57e34c4c40beaf048d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0958a7689ffd57e34c4c40beaf048d18">&#9670;&#160;</a></span>TEST() <span class="overload">[21/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseIf</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00477">477</a>.</p>
+
+</div>
+</div>
+<a id="a23070d803b5e0a2439aa5ab65e6e2121" name="a23070d803b5e0a2439aa5ab65e6e2121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23070d803b5e0a2439aa5ab65e6e2121">&#9670;&#160;</a></span>TEST() <span class="overload">[22/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseRange</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00359">359</a>.</p>
+
+</div>
+</div>
+<a id="a3e6f5b04c7dd18e66fd250e732d2e055" name="a3e6f5b04c7dd18e66fd250e732d2e055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6f5b04c7dd18e66fd250e732d2e055">&#9670;&#160;</a></span>TEST() <span class="overload">[23/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseSingle</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00350">350</a>.</p>
+
+</div>
+</div>
+<a id="accc83cb676ca168388890e97b83abad0" name="accc83cb676ca168388890e97b83abad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc83cb676ca168388890e97b83abad0">&#9670;&#160;</a></span>TEST() <span class="overload">[24/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseValue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00467">467</a>.</p>
+
+</div>
+</div>
+<a id="a89e8e350e9a6c77b46e8f61ed64ea2b8" name="a89e8e350e9a6c77b46e8f61ed64ea2b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89e8e350e9a6c77b46e8f61ed64ea2b8">&#9670;&#160;</a></span>TEST() <span class="overload">[25/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FrontBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00191">191</a>.</p>
+
+</div>
+</div>
+<a id="a7846a0968bd0c83b8d87ce53b0564ebf" name="a7846a0968bd0c83b8d87ce53b0564ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7846a0968bd0c83b8d87ce53b0564ebf">&#9670;&#160;</a></span>TEST() <span class="overload">[26/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GetAllocator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00165">165</a>.</p>
+
+</div>
+</div>
+<a id="a3d2f32f16587fa732ff6a9a0175860e6" name="a3d2f32f16587fa732ff6a9a0175860e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2f32f16587fa732ff6a9a0175860e6">&#9670;&#160;</a></span>TEST() <span class="overload">[27/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InitializerListAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00127">127</a>.</p>
+
+</div>
+</div>
+<a id="ab152a9a0c8f1cf5c26daaaa7b0cd8400" name="ab152a9a0c8f1cf5c26daaaa7b0cd8400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab152a9a0c8f1cf5c26daaaa7b0cd8400">&#9670;&#160;</a></span>TEST() <span class="overload">[28/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InitializerListConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00040">40</a>.</p>
+
+</div>
+</div>
+<a id="a2e0d6bc548ef9854c18d1db7e51ec035" name="a2e0d6bc548ef9854c18d1db7e51ec035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e0d6bc548ef9854c18d1db7e51ec035">&#9670;&#160;</a></span>TEST() <span class="overload">[29/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertAtEnd</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00497">497</a>.</p>
+
+</div>
+</div>
+<a id="a8156cd239a4315de6887ebabf90719f9" name="a8156cd239a4315de6887ebabf90719f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8156cd239a4315de6887ebabf90719f9">&#9670;&#160;</a></span>TEST() <span class="overload">[30/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertCountValue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00313">313</a>.</p>
+
+</div>
+</div>
+<a id="a028a5d60e7d3fdf4a2d1f17c0fa82e42" name="a028a5d60e7d3fdf4a2d1f17c0fa82e42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a028a5d60e7d3fdf4a2d1f17c0fa82e42">&#9670;&#160;</a></span>TEST() <span class="overload">[31/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertInitializerList</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00334">334</a>.</p>
+
+</div>
+</div>
+<a id="abc31c6761be5e1d00375dcaf8457c495" name="abc31c6761be5e1d00375dcaf8457c495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc31c6761be5e1d00375dcaf8457c495">&#9670;&#160;</a></span>TEST() <span class="overload">[32/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertRange</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00323">323</a>.</p>
+
+</div>
+</div>
+<a id="ac50a7d2778afec7ab2720a2843758141" name="ac50a7d2778afec7ab2720a2843758141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50a7d2778afec7ab2720a2843758141">&#9670;&#160;</a></span>TEST() <span class="overload">[33/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertSingleLvalue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00294">294</a>.</p>
+
+</div>
+</div>
+<a id="a7a1cee959dbea73b50d852767259f1bc" name="a7a1cee959dbea73b50d852767259f1bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1cee959dbea73b50d852767259f1bc">&#9670;&#160;</a></span>TEST() <span class="overload">[34/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertSingleRvalue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00304">304</a>.</p>
+
+</div>
+</div>
+<a id="aa38384ef6001e06e511a0c2f9b5059bd" name="aa38384ef6001e06e511a0c2f9b5059bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38384ef6001e06e511a0c2f9b5059bd">&#9670;&#160;</a></span>TEST() <span class="overload">[35/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LargeInsert</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00488">488</a>.</p>
+
+</div>
+</div>
+<a id="a7aedc528f498a06d1642204ad5b0f3c9" name="a7aedc528f498a06d1642204ad5b0f3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aedc528f498a06d1642204ad5b0f3c9">&#9670;&#160;</a></span>TEST() <span class="overload">[36/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MaxSize</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00252">252</a>.</p>
+
+</div>
+</div>
+<a id="ac6413eef214aa565144361cc1ccf6e43" name="ac6413eef214aa565144361cc1ccf6e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6413eef214aa565144361cc1ccf6e43">&#9670;&#160;</a></span>TEST() <span class="overload">[37/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00115">115</a>.</p>
+
+</div>
+</div>
+<a id="a2857354258f983b171ba9547fe9c099b" name="a2857354258f983b171ba9547fe9c099b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2857354258f983b171ba9547fe9c099b">&#9670;&#160;</a></span>TEST() <span class="overload">[38/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00067">67</a>.</p>
+
+</div>
+</div>
+<a id="ae48beeee04855e4607bb6f94476e2f46" name="ae48beeee04855e4607bb6f94476e2f46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48beeee04855e4607bb6f94476e2f46">&#9670;&#160;</a></span>TEST() <span class="overload">[39/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveConstructorWithDifferentAllocator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00084">84</a>.</p>
+
+</div>
+</div>
+<a id="ab7591dee5b2f0e1574c7b78e6b35e4d5" name="ab7591dee5b2f0e1574c7b78e6b35e4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7591dee5b2f0e1574c7b78e6b35e4d5">&#9670;&#160;</a></span>TEST() <span class="overload">[40/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveConstructorWithSameAllocator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00076">76</a>.</p>
+
+</div>
+</div>
+<a id="a9edcb605d44daf9d98714d3c6c221cc4" name="a9edcb605d44daf9d98714d3c6c221cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edcb605d44daf9d98714d3c6c221cc4">&#9670;&#160;</a></span>TEST() <span class="overload">[41/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NonMemberSwap</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00456">456</a>.</p>
+
+</div>
+</div>
+<a id="a7501a59daaaa8d6f125a2e6ef7b39c05" name="a7501a59daaaa8d6f125a2e6ef7b39c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7501a59daaaa8d6f125a2e6ef7b39c05">&#9670;&#160;</a></span>TEST() <span class="overload">[42/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PopBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00396">396</a>.</p>
+
+</div>
+</div>
+<a id="a13556326fb16cc35167f89432c9e81b2" name="a13556326fb16cc35167f89432c9e81b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13556326fb16cc35167f89432c9e81b2">&#9670;&#160;</a></span>TEST() <span class="overload">[43/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBackLvalue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00369">369</a>.</p>
+
+</div>
+</div>
+<a id="a243a81ebe3f90a7897bd1174dac8918a" name="a243a81ebe3f90a7897bd1174dac8918a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243a81ebe3f90a7897bd1174dac8918a">&#9670;&#160;</a></span>TEST() <span class="overload">[44/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBackRvalue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00378">378</a>.</p>
+
+</div>
+</div>
+<a id="a9cfdd52c32eedeb2384546e30af77ddc" name="a9cfdd52c32eedeb2384546e30af77ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfdd52c32eedeb2384546e30af77ddc">&#9670;&#160;</a></span>TEST() <span class="overload">[45/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RangeConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00032">32</a>.</p>
+
+</div>
+</div>
+<a id="a122590d13b244948d9e3e45262265331" name="a122590d13b244948d9e3e45262265331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122590d13b244948d9e3e45262265331">&#9670;&#160;</a></span>TEST() <span class="overload">[46/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Reserve</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00257">257</a>.</p>
+
+</div>
+</div>
+<a id="a9b8833c618356f413f040fa4e03be659" name="a9b8833c618356f413f040fa4e03be659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b8833c618356f413f040fa4e03be659">&#9670;&#160;</a></span>TEST() <span class="overload">[47/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResizeCount</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00404">404</a>.</p>
+
+</div>
+</div>
+<a id="a051ee1e48b8608553ef4f2a5a4568a5b" name="a051ee1e48b8608553ef4f2a5a4568a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a051ee1e48b8608553ef4f2a5a4568a5b">&#9670;&#160;</a></span>TEST() <span class="overload">[48/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResizeCountValue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00416">416</a>.</p>
+
+</div>
+</div>
+<a id="a68d58d0b6ec56b2d0476efe9dc8feb0c" name="a68d58d0b6ec56b2d0476efe9dc8feb0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d58d0b6ec56b2d0476efe9dc8feb0c">&#9670;&#160;</a></span>TEST() <span class="overload">[49/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReverseIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00230">230</a>.</p>
+
+</div>
+</div>
+<a id="ac971f7e855b68e0c0a8d71f55a2c08e0" name="ac971f7e855b68e0c0a8d71f55a2c08e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac971f7e855b68e0c0a8d71f55a2c08e0">&#9670;&#160;</a></span>TEST() <span class="overload">[50/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ShrinkToFit</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00273">273</a>.</p>
+
+</div>
+</div>
+<a id="abf93c01fd940ffd187b539cc0856f9dc" name="abf93c01fd940ffd187b539cc0856f9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf93c01fd940ffd187b539cc0856f9dc">&#9670;&#160;</a></span>TEST() <span class="overload">[51/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Size</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00247">247</a>.</p>
+
+</div>
+</div>
+<a id="aae331036e41272ab9ae65e78c3ff8979" name="aae331036e41272ab9ae65e78c3ff8979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae331036e41272ab9ae65e78c3ff8979">&#9670;&#160;</a></span>TEST() <span class="overload">[52/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SizeConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00017">17</a>.</p>
+
+</div>
+</div>
+<a id="acb655baf2bb90904dbcc72d6e4b49b3c" name="acb655baf2bb90904dbcc72d6e4b49b3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb655baf2bb90904dbcc72d6e4b49b3c">&#9670;&#160;</a></span>TEST() <span class="overload">[53/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SizeValueConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00025">25</a>.</p>
+
+</div>
+</div>
+<a id="ab5cff955082e4786736139cd7e15a058" name="ab5cff955082e4786736139cd7e15a058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cff955082e4786736139cd7e15a058">&#9670;&#160;</a></span>TEST() <span class="overload">[54/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SpaceshipOperator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00446">446</a>.</p>
+
+</div>
+</div>
+<a id="afc9b8c7932bcc3718d7b96ce79a265da" name="afc9b8c7932bcc3718d7b96ce79a265da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9b8c7932bcc3718d7b96ce79a265da">&#9670;&#160;</a></span>TEST() <span class="overload">[55/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SubscriptOperator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00183">183</a>.</p>
+
+</div>
+</div>
+<a id="a522542d5fceed669d01f3fd360feb747" name="a522542d5fceed669d01f3fd360feb747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a522542d5fceed669d01f3fd360feb747">&#9670;&#160;</a></span>TEST() <span class="overload">[56/56]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SwapMember</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="gtest__vector_8cpp_source.html">gtest_vector.cpp</a> eilutėje <a class="el" href="gtest__vector_8cpp_source.html#l00427">427</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="gtest__vector_8cpp.html">gtest_vector.cpp</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

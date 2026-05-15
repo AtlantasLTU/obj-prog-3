@@ -4,11 +4,23 @@
 \Hypertarget{md_README_autotoc_md0}%
 \hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Reikalavimai:\+}{Reikalavimai:\+}}\label{md_README_autotoc_md1}
 C++ kompiliatorius su C++20 palaikymu. Unix OS (Linux arba Mac\+OS) arba WSL (Windows Subsystem for Linux) git\hypertarget{md_README_autotoc_md2}{}\doxysection{\texorpdfstring{Programos diegimas:\+}{Programos diegimas:\+}}\label{md_README_autotoc_md2}
-git clone \href{https://github.com/AtlantasLTU/obj-prog-2.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Atlantas\+LTU/\+obj-\/prog-\/2.\+git}} cd ./\+obj-\/prog-\/2 make ./\+main\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{Programos naudojimas:\+}{Programos naudojimas:\+}}\label{md_README_autotoc_md3}
+git clone \href{https://github.com/AtlantasLTU/obj-prog-2.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Atlantas\+LTU/\+obj-\/prog-\/2.\+git}} cd ./\+obj-\/prog-\/2\hypertarget{md_README_autotoc_md3}{}\doxysubsection{\texorpdfstring{main (paprastas programos veikimas):\+}{main (paprastas programos veikimas):\+}}\label{md_README_autotoc_md3}
+make main ./\+main\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{test (programos testas):\+}{test (programos testas):\+}}\label{md_README_autotoc_md4}
+make test
+
+Jei jau sukompiliuotas tests paleidimo failas, tai tiesiog:\+ ./\+tests\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{clean (ištrina main bei tests sukompiliuotas programas):\+}{clean (ištrina main bei tests sukompiliuotas programas):\+}}\label{md_README_autotoc_md5}
+make clean\hypertarget{md_README_autotoc_md6}{}\doxysection{\texorpdfstring{Programos naudojimas:\+}{Programos naudojimas:\+}}\label{md_README_autotoc_md6}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{\texorpdfstring{main:\+}{main:\+}}\label{md_README_autotoc_md7}
 Funkcijos:\+ Pasirinktina išvestis į failą arba į terminalą. Pasirinktinas galutinio rezultato skaičiavimas, remiantis vidurkiu arba mediana. Direktorijoje esančių .txt failų pasirinkimas. Rūšiavimas pasirinktu būdu.
 
-1 parinktis -\/ rankinis duomenų įvedimas, studento vardo, pavardės, namų darbų rezultatų, egzamino rezultato, jų apdorojimas ir išvedimas. 2 parinktis -\/ pusiau rankinis duomenų įvedimas, studento vardo, pavardės, rezultatų generavimas, duomenų apdorojimas ir išvedimas. 3 parinktis -\/ automatinis studentų vardų, pavardžių, rezultatų generavimas, jų apdorojimas ir išvedimas. 4 parinktis -\/ skaitymas iš pasirinktino failo, rūšiavimas pasirinktinu būdu, duomenų apdorojimas ir išvedimas. 5 parinktis -\/ testavimas su failais, pasirenkamas failas, konteinerio tipas, strategija, testų skaičius, failai apdorojami (nuskaitymas, skaičiavimas, rūšiavimas, skirstymas) ir išvedami testo rezultatai į terminalą. 6 parinktis -\/ studentų failų generavimas, studentų, namų darbų kiekio pasirinkimas ir išvedimas į studentai\texorpdfstring{$\ast$}{*}.txt failą. 7 parinktis -\/ studento klasės testavimas. 8 parinktis -\/ programos nutraukimas.\hypertarget{md_README_autotoc_md4}{}\doxysection{\texorpdfstring{v1.\+5:\+}{v1.\+5:\+}}\label{md_README_autotoc_md4}
-\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{Pridėta bazinė klasė Zmogus:\+}{Pridėta bazinė klasė Zmogus:\+}}\label{md_README_autotoc_md5}
+1 parinktis -\/ rankinis duomenų įvedimas, studento vardo, pavardės, namų darbų rezultatų, egzamino rezultato, jų apdorojimas ir išvedimas. 2 parinktis -\/ pusiau rankinis duomenų įvedimas, studento vardo, pavardės, rezultatų generavimas, duomenų apdorojimas ir išvedimas. 3 parinktis -\/ automatinis studentų vardų, pavardžių, rezultatų generavimas, jų apdorojimas ir išvedimas. 4 parinktis -\/ skaitymas iš pasirinktino failo, rūšiavimas pasirinktinu būdu, duomenų apdorojimas ir išvedimas. 5 parinktis -\/ testavimas su failais, pasirenkamas failas, konteinerio tipas, strategija, testų skaičius, failai apdorojami (nuskaitymas, skaičiavimas, rūšiavimas, skirstymas) ir išvedami testo rezultatai į terminalą. 6 parinktis -\/ studentų failų generavimas, studentų, namų darbų kiekio pasirinkimas ir išvedimas į studentai\texorpdfstring{$\ast$}{*}.txt failą. 7 parinktis -\/ studento klasės testavimas. 8 parinktis -\/ programos nutraukimas.\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{test:\+}{test:\+}}\label{md_README_autotoc_md8}
+{\ttfamily make test} paleidžia testus, kurie ištestuoja rule of five, pasitelkiant gtest bibliotekos įrankiais.\hypertarget{md_README_autotoc_md9}{}\doxysection{\texorpdfstring{v2.\+0:\+}{v2.\+0:\+}}\label{md_README_autotoc_md9}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsection{\texorpdfstring{Pridėta doxygen sukurta dokumentacija:\+}{Pridėta doxygen sukurta dokumentacija:\+}}\label{md_README_autotoc_md10}
+Aprašyti metodai bei klasės. Sukurtos nuorodos tarp metodų.\hypertarget{md_README_autotoc_md11}{}\doxysubsection{\texorpdfstring{Pridėtas unit testing:\+}{Pridėtas unit testing:\+}}\label{md_README_autotoc_md11}
+Naudojamas gtest Automatinis studento klasės rule of five testavimas
+
+\hypertarget{md_README_autotoc_md12}{}\doxysection{\texorpdfstring{v1.\+5:\+}{v1.\+5:\+}}\label{md_README_autotoc_md12}
+\hypertarget{md_README_autotoc_md13}{}\doxysubsection{\texorpdfstring{Pridėta bazinė klasė Zmogus:\+}{Pridėta bazinė klasė Zmogus:\+}}\label{md_README_autotoc_md13}
 Klasė studentas dabar išvestinė. Studento klasė paveldi iš žmogaus klasės vardą bei pavardę, metodus susijusiais su šiais kintamaisiais Klasė abstrakti dėl virtualaus destruktoriaus.
 
 
@@ -18,32 +30,32 @@ Klasė studentas dabar išvestinė. Studento klasė paveldi iš žmogaus klasės
 \item Išlaikytas v1.\+2 testas bei funkcionalumas.
 \end{DoxyItemize}
 
-Bandant sukurti Zmogaus tipo objektą, išmeta klaidą, kad klasė abstrakti:\+ \hypertarget{md_README_autotoc_md6}{}\doxysection{\texorpdfstring{v1.\+2:\+}{v1.\+2:\+}}\label{md_README_autotoc_md6}
-\hypertarget{md_README_autotoc_md7}{}\doxysubsection{\texorpdfstring{Realizuota "{}\+Rule of Five"{}:\+}{Realizuota "{}\+Rule of Five"{}:\+}}\label{md_README_autotoc_md7}
+Bandant sukurti Zmogaus tipo objektą, išmeta klaidą, kad klasė abstrakti:\+ \hypertarget{md_README_autotoc_md14}{}\doxysection{\texorpdfstring{v1.\+2:\+}{v1.\+2:\+}}\label{md_README_autotoc_md14}
+\hypertarget{md_README_autotoc_md15}{}\doxysubsection{\texorpdfstring{Realizuota "{}\+Rule of Five"{}:\+}{Realizuota "{}\+Rule of Five"{}:\+}}\label{md_README_autotoc_md15}
 Destruktorius Copy konstruktorius Copy assignment operatorius Move konstruktorius Move assignment operatorius
 \begin{DoxyItemize}
 \item Realizuotas įvesties ir išvesties operatorių perdengimas.
 \item Sukurtas studento klasės metodų testas.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):\+}{Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):\+}}\label{md_README_autotoc_md8}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):\+}{Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):\+}}\label{md_README_autotoc_md16}
 Kai naudojamas {\ttfamily operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} su failo srautu, pažymių kiekis nustatomas automatiškai:\+ visi skaičiai po vardo ir pavardės laikomi namų darbų pažymiais, o pats paskutinis – egzamino balu. \begin{DoxyVerb}Studentas A;
 std::istringstream iss("Jonas Jonaitis 1 2 10");
 iss >> A; // įvestis iš įvedimo srauto.
 std::cin >> A; // įvestis iš konsolės.
 \end{DoxyVerb}
- \hypertarget{md_README_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):\+}{Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):\+}}\label{md_README_autotoc_md9}
-\doxylink{classStudentas}{Studentas} A; std::\+cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} A; /\+/\+ išvestis į ekraną std::\+ostringstream out; out \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} A; /\+/\+ išvesties srauto kūrimas std::\+ofstream fout("{}studentai.\+txt"{}); fout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} A; /\+/\+ išveda į failą\hypertarget{md_README_autotoc_md10}{}\doxysubsection{\texorpdfstring{Studento klasės metodų testas.}{Studento klasės metodų testas.}}\label{md_README_autotoc_md10}
-\hypertarget{md_README_autotoc_md11}{}\doxysection{\texorpdfstring{v1.\+1 testavimas:\+}{v1.\+1 testavimas:\+}}\label{md_README_autotoc_md11}
+ \hypertarget{md_README_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):\+}{Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):\+}}\label{md_README_autotoc_md17}
+\doxylink{classStudentas}{Studentas} A; std::\+cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} A; /\+/\+ išvestis į ekraną std::\+ostringstream out; out \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} A; /\+/\+ išvesties srauto kūrimas std::\+ofstream fout("{}studentai.\+txt"{}); fout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} A; /\+/\+ išveda į failą\hypertarget{md_README_autotoc_md18}{}\doxysubsection{\texorpdfstring{Studento klasės metodų testas.}{Studento klasės metodų testas.}}\label{md_README_autotoc_md18}
+\hypertarget{md_README_autotoc_md19}{}\doxysection{\texorpdfstring{v1.\+1 testavimas:\+}{v1.\+1 testavimas:\+}}\label{md_README_autotoc_md19}
 
 \begin{DoxyItemize}
 \item Kompiuterio, su kuriuo testuota parametrai:\+ 
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md12}{}\doxysubsubsubsection{\texorpdfstring{Skirstymo strategijos:\+}{Skirstymo strategijos:\+}}\label{md_README_autotoc_md12}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysubsubsubsection{\texorpdfstring{Skirstymo strategijos:\+}{Skirstymo strategijos:\+}}\label{md_README_autotoc_md20}
 
 \begin{DoxyItemize}
 \item 0 -\/ pradiniame relize naudota strategija. Dviejų konteinerių "{}vargšiukų"{} ir "{}kietiakų"{} sukūrimas, duomenys perkeliami iš "{}studentai"{} konteinerio su std::\+move.
 \item 1 strategija:\+ Bendro studentai konteinerio (vector, list ir deque tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius:\+ "{}vargšiukų"{} ir "{}kietiakų"{}. Dviejų konteinerių "{}vargšiukų"{} ir "{}kietiakų"{} sukūrimas, duomenys kopijuojami iš "{}studentai"{} konteinerio.
 \item 2 strategija:\+ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį:\+ "{}vargšiukai"{}. Studentai konteineris išrūšiuotas, randamas iteratorius rodantis į pirmąjį galvočių, viskas iki iteratoriaus perkeliama į vargšiukų konteinerį ir ištrinama iš studentai konteinerio. Iteratoriui rasti naudojamas lower\+\_\+bound metodas
 \item 3 strategija:\+ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) panaudojant greičiausiai veikianti 1 arba 2 strategiją įtraukiant į ją "{}efektyvius"{} darbo su konteineriais metodus. Šioje strategijoje naudojamas partition metodas.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md13}{}\doxysubsubsubsection{\texorpdfstring{Atlikta programos veikimo greičio (spartos) analizė:\+}{Atlikta programos veikimo greičio (spartos) analizė:\+}}\label{md_README_autotoc_md13}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md21}{}\doxysubsubsubsection{\texorpdfstring{Atlikta programos veikimo greičio (spartos) analizė:\+}{Atlikta programos veikimo greičio (spartos) analizė:\+}}\label{md_README_autotoc_md21}
 
 \begin{DoxyItemize}
 \item lyginamas v1.\+0 struct tipas su v1.\+1 realizuota klasė.
@@ -52,8 +64,8 @@ std::cin >> A; // įvestis iš konsolės.
 \item lyginamos kompiliatoriaus optimizavimo vėliavėlės (-\/Ofast, -\/O1, -\/O2, -\/O3).
 \end{DoxyItemize}
 
-Testuota tik naudojant terminalą, visos kitos pašalinės programos testavimo metu buvo išjungtos bei įrenginys "{}performance"{} režime. Visi testavimo atvejai testuoti 10 kartų, su medianų skaičiavimu.\hypertarget{md_README_autotoc_md14}{}\doxysubsection{\texorpdfstring{Spartos palyginimas:\+}{Spartos palyginimas:\+}}\label{md_README_autotoc_md14}
-\hypertarget{md_README_autotoc_md15}{}\doxysubsubsubsection{\texorpdfstring{100000 studentų:\+}{100000 studentų:\+}}\label{md_README_autotoc_md15}
+Testuota tik naudojant terminalą, visos kitos pašalinės programos testavimo metu buvo išjungtos bei įrenginys "{}performance"{} režime. Visi testavimo atvejai testuoti 10 kartų, su medianų skaičiavimu.\hypertarget{md_README_autotoc_md22}{}\doxysubsection{\texorpdfstring{Spartos palyginimas:\+}{Spartos palyginimas:\+}}\label{md_README_autotoc_md22}
+\hypertarget{md_README_autotoc_md23}{}\doxysubsubsubsection{\texorpdfstring{100000 studentų:\+}{100000 studentų:\+}}\label{md_README_autotoc_md23}
 
 \begin{DoxyTable}{4}{}{}{1}
 \SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Tipas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Optimizavimo vėliavėlė  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Bendras veikimo laikas (s)  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Failo dydis (KB)  \\
@@ -66,7 +78,7 @@ class  &-\/O2  &6.\+3197 s  &308.\+2 KB  \\
 struct  &-\/O3  &2.\+1662 s  &349.\+5 KB  \\
 class  &-\/O3  &5.\+94076 s  &332.\+7 KB  \\
 \end{DoxyTable}
-\hypertarget{md_README_autotoc_md16}{}\doxysubsubsubsection{\texorpdfstring{1000000 studentų:\+}{1000000 studentų:\+}}\label{md_README_autotoc_md16}
+\hypertarget{md_README_autotoc_md24}{}\doxysubsubsubsection{\texorpdfstring{1000000 studentų:\+}{1000000 studentų:\+}}\label{md_README_autotoc_md24}
 
 \begin{DoxyTable}{4}{}{}{1}
 \SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Tipas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Optimizavimo vėliavėlė  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Bendras veikimo laikas (s)  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Failo dydis (KB)  \\
@@ -79,11 +91,15 @@ class  &-\/O2  &72.\+3371 s  &308.\+2 KB  \\
 struct  &-\/O3  &18.\+0112 s  &349.\+5 KB  \\
 class  &-\/O3  &55.\+4038 s  &332.\+7 KB  \\
 \end{DoxyTable}
-\hypertarget{md_README_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Pastebėjimai}{Pastebėjimai}}\label{md_README_autotoc_md17}
+\hypertarget{md_README_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{Pastebėjimai}{Pastebėjimai}}\label{md_README_autotoc_md25}
 Ta pati programa perdaryta su class tipu lėtesnė \texorpdfstring{$\sim$}{\string~}3x negu su struct, priklausomai nuo optimzacijos vėliavėlės. Taip yra todėl, kad class tipo programoje, galutinis balas skaičiuojamas, kai jo prireikia ir nėra saugojamas atminty, tai sutaupo atminties, tačiau padidina skaičiavimų laiką. Pagrinde -\/Ofast vėliavėlė greičiausia, tačiau esant milijonui studentų -\/O3 aplenkia -\/Ofast vėliavėlė, galbūt -\/O3 geriau suoptimizuoja failų skaitymą. Mažiausią failą sukuria -\/O1 vėliavėlė, o didžiausią -\/O3. Taip yra todėl, kad -\/O1 skirtas balansui tarp greičio ir dydžio, o -\/O3 skirtas našesniam programos veikimui.
 
-Nors struct tipas greitesnis, tačiau class tipas saugesnis ir plečiant programos apimtį, enkapsuliacija, paveldamumas ir kitos class tipo ypatybės padaro jį naudingesniu.\hypertarget{md_README_autotoc_md18}{}\doxysection{\texorpdfstring{Relizų aprašas}{Relizų aprašas}}\label{md_README_autotoc_md18}
-v1.\+2 \begin{DoxyVerb}Realizuota rule of five.
+Nors struct tipas greitesnis, tačiau class tipas saugesnis ir plečiant programos apimtį, enkapsuliacija, paveldamumas ir kitos class tipo ypatybės padaro jį naudingesniu.\hypertarget{md_README_autotoc_md26}{}\doxysection{\texorpdfstring{Relizų aprašas}{Relizų aprašas}}\label{md_README_autotoc_md26}
+v1.\+5 \begin{DoxyVerb}Sukurta bazinė klasė Zmogus.
+Klasė Studentas paveldi vardą bei pavardę iš klasės Zmogus.
+Kodas pritaikytas darbui su bazine klase.
+\end{DoxyVerb}
+ v1.\+2 \begin{DoxyVerb}Realizuota rule of five.
 Realizuotas įvesties išvesties operatorių perkrovimas.
 Sukurtas studento klasės metodų testas.
 \end{DoxyVerb}

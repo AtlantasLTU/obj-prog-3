@@ -27,24 +27,35 @@ var NAVTREE =
   [ "obj-prog", "index.html", [
     [ "Programos naudojimas:", "md_README.html", [
       [ "Reikalavimai:", "md_README.html#autotoc_md1", null ],
-      [ "Programos diegimas:", "md_README.html#autotoc_md2", null ],
-      [ "Programos naudojimas:", "md_README.html#autotoc_md3", null ],
-      [ "v1.5:", "md_README.html#autotoc_md4", [
-        [ "Pridėta bazinė klasė Zmogus:", "md_README.html#autotoc_md5", null ]
+      [ "Programos diegimas:", "md_README.html#autotoc_md2", [
+        [ "main (paprastas programos veikimas):", "md_README.html#autotoc_md3", null ],
+        [ "test (programos testas):", "md_README.html#autotoc_md4", null ],
+        [ "clean (ištrina main bei tests sukompiliuotas programas):", "md_README.html#autotoc_md5", null ]
       ] ],
-      [ "v1.2:", "md_README.html#autotoc_md6", [
-        [ "Realizuota \"Rule of Five\":", "md_README.html#autotoc_md7", [
-          [ "Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):", "md_README.html#autotoc_md8", null ],
-          [ "Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):", "md_README.html#autotoc_md9", null ]
+      [ "Programos naudojimas:", "md_README.html#autotoc_md6", [
+        [ "main:", "md_README.html#autotoc_md7", null ],
+        [ "test:", "md_README.html#autotoc_md8", null ]
+      ] ],
+      [ "v2.0:", "md_README.html#autotoc_md9", [
+        [ "Pridėta doxygen sukurta dokumentacija:", "md_README.html#autotoc_md10", null ],
+        [ "Pridėtas unit testing:", "md_README.html#autotoc_md11", null ]
+      ] ],
+      [ "v1.5:", "md_README.html#autotoc_md12", [
+        [ "Pridėta bazinė klasė Zmogus:", "md_README.html#autotoc_md13", null ]
+      ] ],
+      [ "v1.2:", "md_README.html#autotoc_md14", [
+        [ "Realizuota \"Rule of Five\":", "md_README.html#autotoc_md15", [
+          [ "Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):", "md_README.html#autotoc_md16", null ],
+          [ "Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):", "md_README.html#autotoc_md17", null ]
         ] ],
-        [ "Studento klasės metodų testas.", "md_README.html#autotoc_md10", null ]
+        [ "Studento klasės metodų testas.", "md_README.html#autotoc_md18", null ]
       ] ],
-      [ "v1.1 testavimas:", "md_README.html#autotoc_md11", [
-        [ "Spartos palyginimas:", "md_README.html#autotoc_md14", [
-          [ "Pastebėjimai", "md_README.html#autotoc_md17", null ]
+      [ "v1.1 testavimas:", "md_README.html#autotoc_md19", [
+        [ "Spartos palyginimas:", "md_README.html#autotoc_md22", [
+          [ "Pastebėjimai", "md_README.html#autotoc_md25", null ]
         ] ]
       ] ],
-      [ "Relizų aprašas", "md_README.html#autotoc_md18", null ]
+      [ "Relizų aprašas", "md_README.html#autotoc_md26", null ]
     ] ],
     [ "Klasės", "annotated.html", [
       [ "Klasės", "annotated.html", "annotated_dup" ],
@@ -71,7 +82,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Timer_8h.html"
+"Timer_8h.html",
+"md_README.html#autotoc_md25"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

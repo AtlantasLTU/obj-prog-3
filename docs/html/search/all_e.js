@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lietuviskosraides_0',['lietuviskosRaides',['../isvestis_8cpp.html#a92c5e50aa22a4d6fc19c3e1ca6a67578',1,'lietuviskosRaides(const std::string &amp;eilute):&#160;isvestis.cpp'],['../isvestis_8h.html#a92c5e50aa22a4d6fc19c3e1ca6a67578',1,'lietuviskosRaides(const std::string &amp;eilute):&#160;isvestis.cpp']]]
+  ['klasė_20zmogus_3a_0',['Pridėta bazinė klasė Zmogus:',['../md_README.html#autotoc_md13',1,'']]],
+  ['klasės_20metodų_20testas_1',['Studento klasės metodų testas.',['../md_README.html#autotoc_md18',1,'']]]
 ];

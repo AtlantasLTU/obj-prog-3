@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['start_0',['start',['../classTimer.html#ad3c6240154d9bcccb88b701849919822',1,'Timer']]]
+  ['nd_0',['nd',['../classStudentas.html#a38f5d821b9e66c9235e8ef4e6f190001',1,'Studentas']]]
 ];

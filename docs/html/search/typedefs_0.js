@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['durationdouble_0',['durationDouble',['../classTimer.html#a0774383e69e89a22ea605e6841d1eaca',1,'Timer']]]
+  ['allocator_5ftype_0',['allocator_type',['../classVector.html#aab464cb541521d4a0fce87f0a9ba43a3',1,'Vector']]]
 ];

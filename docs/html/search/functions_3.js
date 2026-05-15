@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['failoapdorojimas_0',['failoApdorojimas',['../main_8cpp.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp'],['../main_8h.html#a951ddc56c325c99ef018fc2731778e69',1,'failoApdorojimas(const std::string &amp;failoPavadinimas, int rezervas, int &amp;ndKiekis, bool medianos, int rPasirinkimas, bool failas):&#160;main.cpp']]],
-  ['failogeneravimas_1',['failoGeneravimas',['../apdorojimas_8cpp.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp'],['../apdorojimas_8h.html#acaef23d883bee3e85414cf0993204e38',1,'failoGeneravimas(int studentuKiekis, int ndKiekis):&#160;apdorojimas.cpp']]],
-  ['failopasirinkimas_2',['failoPasirinkimas',['../isvestis_8cpp.html#a2238ea78c5ea81cbc6c7d0c91bc02cb3',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta):&#160;isvestis.cpp'],['../isvestis_8h.html#a7c1be6cdb7e2a4f937073e9f9538b0ef',1,'failoPasirinkimas(int &amp;rezervas, bool &amp;egzistuoja, std::string &amp;failoPavadinimas, const std::string &amp;vieta=&quot;.&quot;):&#160;isvestis.cpp']]],
-  ['failotestavimas_3',['failoTestavimas',['../main_8tpp.html#a6f7850540f3e71520e1b234a1786b166',1,'main.tpp']]],
-  ['failouzklausa_4',['failoUzklausa',['../isvestis_8cpp.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp'],['../isvestis_8h.html#a8db3eedd51092856804fc47d17991638',1,'failoUzklausa():&#160;isvestis.cpp']]]
+  ['data_0',['data',['../classVector.html#a416f64c38817cb854c2c57f1adc53160',1,'Vector::data()'],['../classVector.html#ad6d2afd0003dbcb1a96440042b989abb',1,'Vector::data() const']]]
 ];

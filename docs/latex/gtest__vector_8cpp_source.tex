@@ -1,0 +1,537 @@
+\doxysection{gtest\+\_\+vector.\+cpp}
+\hypertarget{gtest__vector_8cpp_source}{}\label{gtest__vector_8cpp_source}\doxymbox{\hyperlink{gtest__vector_8cpp}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{vector_8h}{./vector/vector.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ your\ header}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00008}00008\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Constructors\ \&\ Destructor\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00009}\doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{00009}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ DefaultConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00010}00010\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00011}00011\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00012}00012\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00013}00013\ \ \ \ \ EXPECT\_TRUE(v.\doxymbox{\hyperlink{classVector_a9c3d67183ca7348dce8bc2ecb73a6af4}{empty}}());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00014}00014\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a416f64c38817cb854c2c57f1adc53160}{data}}(),\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00017}\doxymbox{\hyperlink{gtest__vector_8cpp_aae331036e41272ab9ae65e78c3ff8979}{00017}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ SizeConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00018}00018\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v(5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00019}00019\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00020}00020\ \ \ \ \ EXPECT\_GE(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ EXPECT\_EQ(v[i],\ 0);\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ value-\/initialised}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00025}\doxymbox{\hyperlink{gtest__vector_8cpp_acb655baf2bb90904dbcc72d6e4b49b3c}{00025}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ SizeValueConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00026}00026\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v(4,\ 42);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00027}00027\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 4u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ EXPECT\_EQ(v[i],\ 42);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00032}\doxymbox{\hyperlink{gtest__vector_8cpp_a9cfdd52c32eedeb2384546e30af77ddc}{00032}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ RangeConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00033}00033\ \ \ \ \ std::string\ s\ =\ \textcolor{stringliteral}{"{}hello"{}};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00034}00034\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<char>}}\ v(s.begin(),\ s.end());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00035}00035\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00036}00036\ \ \ \ \ EXPECT\_EQ(v[0],\ \textcolor{charliteral}{'h'});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00037}00037\ \ \ \ \ EXPECT\_EQ(v[4],\ \textcolor{charliteral}{'o'});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00040}\doxymbox{\hyperlink{gtest__vector_8cpp_ab152a9a0c8f1cf5c26daaaa7b0cd8400}{00040}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InitializerListConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00041}00041\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{10,\ 20,\ 30\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00042}00042\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00043}00043\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00044}00044\ \ \ \ \ EXPECT\_EQ(v[1],\ 20);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00045}00045\ \ \ \ \ EXPECT\_EQ(v[2],\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00048}\doxymbox{\hyperlink{gtest__vector_8cpp_ab755359bcd7b49717859bc97292f71f0}{00048}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ CopyConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00049}00049\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ original\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00050}00050\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ copy(original);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00051}00051\ \ \ \ \ EXPECT\_EQ(copy.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00052}00052\ \ \ \ \ EXPECT\_EQ(copy[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00053}00053\ \ \ \ \ EXPECT\_EQ(copy[1],\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00054}00054\ \ \ \ \ EXPECT\_EQ(copy[2],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ Ensure\ deep\ copy}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00056}00056\ \ \ \ \ copy[0]\ =\ 99;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00057}00057\ \ \ \ \ EXPECT\_EQ(original[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00060}\doxymbox{\hyperlink{gtest__vector_8cpp_ac2771ae0a926994a262d2279d8d2ab1c}{00060}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ CopyConstructorWithAllocator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00061}00061\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ original\{5,\ 6,\ 7\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00062}00062\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ copy(original,\ std::allocator<int>\{\});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00063}00063\ \ \ \ \ EXPECT\_EQ(copy.size(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00064}00064\ \ \ \ \ EXPECT\_EQ(copy[0],\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00067}\doxymbox{\hyperlink{gtest__vector_8cpp_a2857354258f983b171ba9547fe9c099b}{00067}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ MoveConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00068}00068\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ original\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00069}00069\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ moved(std::move(original));}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00070}00070\ \ \ \ \ EXPECT\_EQ(moved.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00071}00071\ \ \ \ \ EXPECT\_EQ(moved[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00072}00072\ \ \ \ \ EXPECT\_EQ(original.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00073}00073\ \ \ \ \ EXPECT\_EQ(original.\doxymbox{\hyperlink{classVector_a416f64c38817cb854c2c57f1adc53160}{data}}(),\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00076}\doxymbox{\hyperlink{gtest__vector_8cpp_ab7591dee5b2f0e1574c7b78e6b35e4d5}{00076}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ MoveConstructorWithSameAllocator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00077}00077\ \ \ \ \ std::allocator<int>\ alloc;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00078}00078\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ original(\{7,8,9\},\ alloc);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00079}00079\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ moved(std::move(original),\ alloc);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00080}00080\ \ \ \ \ EXPECT\_EQ(moved.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00081}00081\ \ \ \ \ EXPECT\_EQ(original.data(),\ \textcolor{keyword}{nullptr});\ \ \textcolor{comment}{//\ pointers\ swapped}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00084}\doxymbox{\hyperlink{gtest__vector_8cpp_ae48beeee04855e4607bb6f94476e2f46}{00084}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ MoveConstructorWithDifferentAllocator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{comment}{//\ std::allocator<int>\ always\ compares\ equal,\ but\ we\ can\ still\ test\ the\ path}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ The\ code\ uses\ \`{}if(alloc\ ==\ other.alloc\_)`\ –\ with\ equal\ allocators\ it\ swaps;}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ with\ unequal\ it\ moves\ elements.\ Both\ paths\ are\ functionally\ correct.}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00088}00088\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ original\{10,\ 11,\ 12\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00089}00089\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ moved(std::move(original),\ std::allocator<int>\{\});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00090}00090\ \ \ \ \ EXPECT\_EQ(moved.size(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00091}00091\ \ \ \ \ EXPECT\_EQ(original.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);\ \ \ \textcolor{comment}{//\ original\ cleared}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00092}00092\ \ \ \ \ EXPECT\_EQ(moved[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00095}\doxymbox{\hyperlink{gtest__vector_8cpp_ac312074019fb1dd48f2b03d2545ecbfe}{00095}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ DestructorDeallocates)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ Just\ ensure\ no\ memory\ leak\ /\ double\ free\ by\ letting\ v\ go\ out\ of\ scope.}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00097}00097\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<std::string>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00098}00098\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(\textcolor{stringliteral}{"{}test"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//\ No\ assertion\ –\ ASan\ would\ catch\ leaks.}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00102}00102\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Assignment\ Operators\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00103}\doxymbox{\hyperlink{gtest__vector_8cpp_a45f2d4eaca17851499922078d086f08d}{00103}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ CopyAssignment)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00104}00104\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ src\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00105}00105\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ dst\{4,\ 5\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00106}00106\ \ \ \ \ dst\ =\ src;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00107}00107\ \ \ \ \ EXPECT\_EQ(dst.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00108}00108\ \ \ \ \ EXPECT\_EQ(dst[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00109}00109\ \ \ \ \ EXPECT\_EQ(dst[2],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ self-\/assignment}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00111}00111\ \ \ \ \ dst\ =\ dst;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00112}00112\ \ \ \ \ EXPECT\_EQ(dst.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00115}\doxymbox{\hyperlink{gtest__vector_8cpp_ac6413eef214aa565144361cc1ccf6e43}{00115}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ MoveAssignment)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00116}00116\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ src\{10,\ 20,\ 30\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00117}00117\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ dst\{40\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00118}00118\ \ \ \ \ dst\ =\ std::move(src);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00119}00119\ \ \ \ \ EXPECT\_EQ(dst.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00120}00120\ \ \ \ \ EXPECT\_EQ(dst[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00121}00121\ \ \ \ \ EXPECT\_EQ(src.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{comment}{//\ self-\/move-\/assignment\ (should\ be\ safe)}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00123}00123\ \ \ \ \ dst\ =\ std::move(dst);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00124}00124\ \ \ \ \ EXPECT\_EQ(dst.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00127}\doxymbox{\hyperlink{gtest__vector_8cpp_a3d2f32f16587fa732ff6a9a0175860e6}{00127}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InitializerListAssignment)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00128}00128\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00129}00129\ \ \ \ \ v\ =\ \{7,\ 8,\ 9,\ 10\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00130}00130\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 4u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00131}00131\ \ \ \ \ EXPECT\_EQ(v[0],\ 7);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00132}00132\ \ \ \ \ EXPECT\_EQ(v[3],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00135}00135\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ assign\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00136}\doxymbox{\hyperlink{gtest__vector_8cpp_ab736b476daa71bcd83c058961b0cbe81}{00136}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ AssignCountValue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00137}00137\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00138}00138\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a1bac5f0dd8eb025749a347ac196afbfb}{assign}}(3,\ 42);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00139}00139\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00140}00140\ \ \ \ \ EXPECT\_EQ(v[0],\ 42);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00141}00141\ \ \ \ \ EXPECT\_EQ(v[2],\ 42);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00143}00143\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a1bac5f0dd8eb025749a347ac196afbfb}{assign}}(2,\ 99);\ \ \ \ \ \ \ \textcolor{comment}{//\ smaller\ count}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00144}00144\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00145}00145\ \ \ \ \ EXPECT\_EQ(v[0],\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00146}00146\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00148}\doxymbox{\hyperlink{gtest__vector_8cpp_a172753c648ebcf4cc2a7e9084b7504ea}{00148}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ AssignRange)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00149}00149\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{10,\ 20,\ 30,\ 40\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00151}00151\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a1bac5f0dd8eb025749a347ac196afbfb}{assign}}(std::begin(arr),\ std::end(arr));}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00152}00152\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 4u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00153}00153\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00154}00154\ \ \ \ \ EXPECT\_EQ(v[3],\ 40);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00157}\doxymbox{\hyperlink{gtest__vector_8cpp_adf365ef4ec85a8045336cbc0b8d88cfb}{00157}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ AssignInitializerList)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00158}00158\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00159}00159\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a1bac5f0dd8eb025749a347ac196afbfb}{assign}}(\{5,\ 6,\ 7\});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00160}00160\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00161}00161\ \ \ \ \ EXPECT\_EQ(v[0],\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00164}00164\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ get\_allocator\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00165}\doxymbox{\hyperlink{gtest__vector_8cpp_a7846a0968bd0c83b8d87ce53b0564ebf}{00165}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ GetAllocator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00166}00166\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{auto}\ alloc\ =\ v.\doxymbox{\hyperlink{classVector_ad30893a6e0250a4e4c0d9b0b90f45514}{get\_allocator}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00168}00168\ \ \ \ \ (void)alloc;\ \ \ \textcolor{comment}{//\ just\ compiles}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00169}00169\ \ \ \ \ SUCCEED();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00172}00172\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Element\ Access\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00173}\doxymbox{\hyperlink{gtest__vector_8cpp_a29eeb44dd8d09657405df480357bf512}{00173}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ At)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00174}00174\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{10,\ 20,\ 30\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00175}00175\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(0),\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00176}00176\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(2),\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00177}00177\ \ \ \ \ EXPECT\_THROW(v.\doxymbox{\hyperlink{classVector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(3),\ std::out\_of\_range);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cv\ =\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00179}00179\ \ \ \ \ EXPECT\_EQ(cv.at(1),\ 20);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00180}00180\ \ \ \ \ EXPECT\_THROW(cv.at(3),\ std::out\_of\_range);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00181}00181\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00183}\doxymbox{\hyperlink{gtest__vector_8cpp_afc9b8c7932bcc3718d7b96ce79a265da}{00183}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ SubscriptOperator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00184}00184\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00185}00185\ \ \ \ \ v[1]\ =\ 99;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00186}00186\ \ \ \ \ EXPECT\_EQ(v[1],\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cv\ =\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00188}00188\ \ \ \ \ EXPECT\_EQ(cv[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00191}\doxymbox{\hyperlink{gtest__vector_8cpp_a89e8e350e9a6c77b46e8f61ed64ea2b8}{00191}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ FrontBack)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00192}00192\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{7,\ 8,\ 9\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00193}00193\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a50ff0e4eccfdabf16696498bc42a823c}{front}}(),\ 7);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00194}00194\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a0977f3472b15fe46a8895efb09494bed}{back}}(),\ 9);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00195}00195\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a50ff0e4eccfdabf16696498bc42a823c}{front}}()\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00196}00196\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a50ff0e4eccfdabf16696498bc42a823c}{front}}(),\ 100);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cv\ =\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00198}00198\ \ \ \ \ EXPECT\_EQ(cv.front(),\ 100);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00199}00199\ \ \ \ \ EXPECT\_EQ(cv.back(),\ 9);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00202}\doxymbox{\hyperlink{gtest__vector_8cpp_acb43fcebcf75351d4852acf603db3a18}{00202}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Data)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00203}00203\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordtype}{int}*\ p\ =\ v.\doxymbox{\hyperlink{classVector_a416f64c38817cb854c2c57f1adc53160}{data}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00205}00205\ \ \ \ \ EXPECT\_EQ(p[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00206}00206\ \ \ \ \ p[1]\ =\ 77;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00207}00207\ \ \ \ \ EXPECT\_EQ(v[1],\ 77);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cv\ =\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ cp\ =\ cv.\doxymbox{\hyperlink{classVector_a416f64c38817cb854c2c57f1adc53160}{data}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00210}00210\ \ \ \ \ EXPECT\_EQ(cp[2],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00213}00213\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Iterators\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00214}\doxymbox{\hyperlink{gtest__vector_8cpp_afb39cd572557d33a06e01d4af3975189}{00214}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ BeginEnd)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00215}00215\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{5,\ 6,\ 7\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00216}00216\ \ \ \ \ EXPECT\_EQ(*v.\doxymbox{\hyperlink{classVector_acc34fa06e93fae345aac75c3c5170588}{begin}}(),\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00217}00217\ \ \ \ \ EXPECT\_EQ(*(v.\doxymbox{\hyperlink{classVector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}()\ -\/\ 1),\ 7);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00218}00218\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}()\ -\/\ v.\doxymbox{\hyperlink{classVector_acc34fa06e93fae345aac75c3c5170588}{begin}}(),\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cv\ =\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00220}00220\ \ \ \ \ EXPECT\_EQ(*cv.begin(),\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00221}00221\ \ \ \ \ EXPECT\_EQ(cv.end()\ -\/\ cv.begin(),\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00222}00222\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00224}\doxymbox{\hyperlink{gtest__vector_8cpp_abbd41a85d4769eabab41b4d1f97a3aca}{00224}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ CBeginCEnd)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00225}00225\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00226}00226\ \ \ \ \ EXPECT\_EQ(*v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}(),\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00227}00227\ \ \ \ \ EXPECT\_EQ(*(v.\doxymbox{\hyperlink{classVector_a8bb1d0ca8b8eefdb6c18c1ea1a90cec9}{cend}}()\ -\/\ 1),\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00228}00228\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00230}\doxymbox{\hyperlink{gtest__vector_8cpp_a68d58d0b6ec56b2d0476efe9dc8feb0c}{00230}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ ReverseIterators)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00231}00231\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{10,\ 20,\ 30\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00232}00232\ \ \ \ \ EXPECT\_EQ(*v.\doxymbox{\hyperlink{classVector_ac51630d33f82c0fe05ee42e3f1731bab}{rbegin}}(),\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00233}00233\ \ \ \ \ EXPECT\_EQ(*(v.\doxymbox{\hyperlink{classVector_a62bf2a2e4b0bcd78e1687c1bde6a85d6}{rend}}()\ -\/\ 1),\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00234}00234\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cv\ =\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00235}00235\ \ \ \ \ EXPECT\_EQ(*cv.crbegin(),\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00236}00236\ \ \ \ \ EXPECT\_EQ(*(cv.crend()\ -\/\ 1),\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00237}00237\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00239}00239\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Capacity\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00240}\doxymbox{\hyperlink{gtest__vector_8cpp_a2e025fb70c9d453f23eca8c1f3aca13f}{00240}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Empty)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00241}00241\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00242}00242\ \ \ \ \ EXPECT\_TRUE(v.\doxymbox{\hyperlink{classVector_a9c3d67183ca7348dce8bc2ecb73a6af4}{empty}}());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00243}00243\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00244}00244\ \ \ \ \ EXPECT\_FALSE(v.\doxymbox{\hyperlink{classVector_a9c3d67183ca7348dce8bc2ecb73a6af4}{empty}}());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00245}00245\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00247}\doxymbox{\hyperlink{gtest__vector_8cpp_abf93c01fd940ffd187b539cc0856f9dc}{00247}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Size)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00248}00248\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00249}00249\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00250}00250\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00252}\doxymbox{\hyperlink{gtest__vector_8cpp_a7aedc528f498a06d1642204ad5b0f3c9}{00252}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ MaxSize)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00253}00253\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00254}00254\ \ \ \ \ EXPECT\_GT(v.\doxymbox{\hyperlink{classVector_a6b39a7bb4aa335b6dd94676037ab9fb8}{max\_size}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00255}00255\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00257}\doxymbox{\hyperlink{gtest__vector_8cpp_a122590d13b244948d9e3e45262265331}{00257}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Reserve)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00258}00258\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00259}00259\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(100);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00260}00260\ \ \ \ \ EXPECT\_GE(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 100u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00261}00261\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);\ \ \ \textcolor{comment}{//\ reserve\ does\ not\ change\ size}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ check\ length\_error\ on\ excessive\ reserve}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00263}00263\ \ \ \ \ EXPECT\_THROW(v.\doxymbox{\hyperlink{classVector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(v.\doxymbox{\hyperlink{classVector_a6b39a7bb4aa335b6dd94676037ab9fb8}{max\_size}}()\ +\ 1),\ std::length\_error);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00264}00264\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00266}\doxymbox{\hyperlink{gtest__vector_8cpp_ab86e3e2116f24834045fa41099873142}{00266}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Capacity)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00267}00267\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00268}00268\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00269}00269\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00270}00270\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 10u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00271}00271\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00273}\doxymbox{\hyperlink{gtest__vector_8cpp_ac971f7e855b68e0c0a8d71f55a2c08e0}{00273}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ ShrinkToFit)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00274}00274\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00275}00275\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(100);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00276}00276\ \ \ \ \ EXPECT\_GE(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 100u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00277}00277\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a5746026edae1b2adb3b2133b99996f32}{shrink\_to\_fit}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00278}00278\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}());\ \ \ \textcolor{comment}{//\ capacity\ ==\ size}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{comment}{//\ test\ empty\ vector\ shrink}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00280}00280\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ empty;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00281}00281\ \ \ \ \ empty.\doxymbox{\hyperlink{classVector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(50);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00282}00282\ \ \ \ \ empty.\doxymbox{\hyperlink{classVector_a5746026edae1b2adb3b2133b99996f32}{shrink\_to\_fit}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00283}00283\ \ \ \ \ EXPECT\_EQ(empty.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00284}00284\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00286}00286\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Modifiers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00287}\doxymbox{\hyperlink{gtest__vector_8cpp_a4f2240094bbd691d3ac15225741953b8}{00287}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Clear)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00288}00288\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00289}00289\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a83c2fdfdabc8ce99a304040f5b4ba1bf}{clear}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00290}00290\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00291}00291\ \ \ \ \ EXPECT\_GT(v.\doxymbox{\hyperlink{classVector_aedbb62c0073fe79be1edf19c9e4bb9f1}{capacity}}(),\ 0u);\ \ \textcolor{comment}{//\ capacity\ unchanged}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00292}00292\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00294}\doxymbox{\hyperlink{gtest__vector_8cpp_ac50a7d2778afec7ab2720a2843758141}{00294}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InsertSingleLvalue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00295}00295\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{10,\ 20,\ 30\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_abd11b2e148ae8a3f0f5b9209571b97f8}{insert}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00297}00297\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 4u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00298}00298\ \ \ \ \ EXPECT\_EQ(v[1],\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00299}00299\ \ \ \ \ EXPECT\_EQ(*it,\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00300}00300\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00301}00301\ \ \ \ \ EXPECT\_EQ(v[3],\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00302}00302\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00304}\doxymbox{\hyperlink{gtest__vector_8cpp_a7a1cee959dbea73b50d852767259f1bc}{00304}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InsertSingleRvalue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00305}00305\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<std::string>}}\ v\{\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}world"{}}\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00306}00306\ \ \ \ \ std::string\ tmp\ =\ \textcolor{stringliteral}{"{}!!!"{}};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00307}00307\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_abd11b2e148ae8a3f0f5b9209571b97f8}{insert}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ std::move(tmp));}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00308}00308\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00309}00309\ \ \ \ \ EXPECT\_EQ(v[1],\ \textcolor{stringliteral}{"{}!!!"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00310}00310\ \ \ \ \ EXPECT\_TRUE(tmp.empty());\ \textcolor{comment}{//\ moved-\/from}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00311}00311\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00313}\doxymbox{\hyperlink{gtest__vector_8cpp_a8156cd239a4315de6887ebabf90719f9}{00313}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InsertCountValue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00314}00314\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00315}00315\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_abd11b2e148ae8a3f0f5b9209571b97f8}{insert}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ 3,\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00316}00316\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00317}00317\ \ \ \ \ EXPECT\_EQ(v[1],\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00318}00318\ \ \ \ \ EXPECT\_EQ(v[3],\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00319}00319\ \ \ \ \ EXPECT\_EQ(*it,\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00320}00320\ \ \ \ \ EXPECT\_EQ(v[4],\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00321}00321\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00323}\doxymbox{\hyperlink{gtest__vector_8cpp_abc31c6761be5e1d00375dcaf8457c495}{00323}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InsertRange)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00324}00324\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 5\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{2,\ 3,\ 4\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00326}00326\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_abd11b2e148ae8a3f0f5b9209571b97f8}{insert}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ std::begin(arr),\ std::end(arr));}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00327}00327\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00328}00328\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00329}00329\ \ \ \ \ EXPECT\_EQ(v[1],\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00330}00330\ \ \ \ \ EXPECT\_EQ(v[4],\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00331}00331\ \ \ \ \ EXPECT\_EQ(*it,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00332}00332\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00334}\doxymbox{\hyperlink{gtest__vector_8cpp_a028a5d60e7d3fdf4a2d1f17c0fa82e42}{00334}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InsertInitializerList)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00335}00335\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 5\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_abd11b2e148ae8a3f0f5b9209571b97f8}{insert}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ \{2,\ 3,\ 4\});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00337}00337\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00338}00338\ \ \ \ \ EXPECT\_EQ(v[1],\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00339}00339\ \ \ \ \ EXPECT\_EQ(v[3],\ 4);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00340}00340\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00342}\doxymbox{\hyperlink{gtest__vector_8cpp_ac9fb7a569876f8c852b7f9a981abdf08}{00342}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ Emplace)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00343}00343\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<std::string>}}\ v\{\textcolor{stringliteral}{"{}start"{}},\ \textcolor{stringliteral}{"{}end"{}}\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00344}00344\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_a6a7f65e9b8e57122c868d0aa4f326c19}{emplace}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ \textcolor{stringliteral}{"{}middle!"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00345}00345\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00346}00346\ \ \ \ \ EXPECT\_EQ(v[1],\ \textcolor{stringliteral}{"{}middle!"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00347}00347\ \ \ \ \ EXPECT\_EQ(*it,\ \textcolor{stringliteral}{"{}middle!"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00350}\doxymbox{\hyperlink{gtest__vector_8cpp_a3e6f5b04c7dd18e66fd250e732d2e055}{00350}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EraseSingle)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00351}00351\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{10,\ 20,\ 30\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00352}00352\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00353}00353\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00354}00354\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00355}00355\ \ \ \ \ EXPECT\_EQ(v[1],\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00356}00356\ \ \ \ \ EXPECT\_EQ(*it,\ 30);\ \ \ \textcolor{comment}{//\ returns\ iterator\ to\ next\ element}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00357}00357\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00359}\doxymbox{\hyperlink{gtest__vector_8cpp_a23070d803b5e0a2439aa5ab65e6e2121}{00359}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EraseRange)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00360}00360\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00361}00361\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 1,\ v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}()\ +\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00362}00362\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00363}00363\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00364}00364\ \ \ \ \ EXPECT\_EQ(v[1],\ 4);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00365}00365\ \ \ \ \ EXPECT\_EQ(v[2],\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00366}00366\ \ \ \ \ EXPECT\_EQ(*it,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00367}00367\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00369}\doxymbox{\hyperlink{gtest__vector_8cpp_a13556326fb16cc35167f89432c9e81b2}{00369}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ PushBackLvalue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00370}00370\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00371}00371\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00372}00372\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(20);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00373}00373\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00374}00374\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00375}00375\ \ \ \ \ EXPECT\_EQ(v[1],\ 20);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00376}00376\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00378}\doxymbox{\hyperlink{gtest__vector_8cpp_a243a81ebe3f90a7897bd1174dac8918a}{00378}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ PushBackRvalue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00379}00379\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<std::string>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00380}00380\ \ \ \ \ std::string\ s\ =\ \textcolor{stringliteral}{"{}temporary"{}};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00381}00381\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(std::move(s));}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00382}00382\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 1u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00383}00383\ \ \ \ \ EXPECT\_EQ(v[0],\ \textcolor{stringliteral}{"{}temporary"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00384}00384\ \ \ \ \ EXPECT\_TRUE(s.empty());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00385}00385\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00387}\doxymbox{\hyperlink{gtest__vector_8cpp_a91d0c095de83539415a6e2f42d9f4b9e}{00387}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EmplaceBack)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00388}00388\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<std::pair<int,\ std::string>}}>\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00389}00389\ \ \ \ \ \textcolor{keyword}{auto}\&\ ref\ =\ v.\doxymbox{\hyperlink{classVector_a5d19b8e8fd6ded1e2e99045c3962c7e9}{emplace\_back}}(42,\ \textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00390}00390\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 1u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00391}00391\ \ \ \ \ EXPECT\_EQ(v[0].first,\ 42);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00392}00392\ \ \ \ \ EXPECT\_EQ(v[0].second,\ \textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00393}00393\ \ \ \ \ EXPECT\_EQ(\&ref,\ \&v.\doxymbox{\hyperlink{classVector_a0977f3472b15fe46a8895efb09494bed}{back}}());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00394}00394\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00396}\doxymbox{\hyperlink{gtest__vector_8cpp_a7501a59daaaa8d6f125a2e6ef7b39c05}{00396}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ PopBack)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00397}00397\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00398}00398\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a96a0a7cacee7603cb7bce3e82c34d0ae}{pop\_back}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00399}00399\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00400}00400\ \ \ \ \ EXPECT\_EQ(v[1],\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00401}00401\ \ \ \ \ \textcolor{comment}{//\ do\ not\ test\ pop\_back\ on\ empty\ –\ debug\ assert\ would\ fire.}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00402}00402\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00404}\doxymbox{\hyperlink{gtest__vector_8cpp_a9b8833c618356f413f040fa4e03be659}{00404}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ ResizeCount)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00405}00405\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00406}00406\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a4cd2d6e5693f1001618fa7f078f5a603}{resize}}(5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00407}00407\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 5u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00408}00408\ \ \ \ \ EXPECT\_EQ(v[3],\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00409}00409\ \ \ \ \ EXPECT\_EQ(v[4],\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00410}00410\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a4cd2d6e5693f1001618fa7f078f5a603}{resize}}(2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00411}00411\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00412}00412\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00413}00413\ \ \ \ \ EXPECT\_EQ(v[1],\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00414}00414\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00416}\doxymbox{\hyperlink{gtest__vector_8cpp_a051ee1e48b8608553ef4f2a5a4568a5b}{00416}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ ResizeCountValue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00417}00417\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{10,\ 20\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00418}00418\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a4cd2d6e5693f1001618fa7f078f5a603}{resize}}(4,\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00419}00419\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 4u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00420}00420\ \ \ \ \ EXPECT\_EQ(v[2],\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00421}00421\ \ \ \ \ EXPECT\_EQ(v[3],\ 99);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00422}00422\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a4cd2d6e5693f1001618fa7f078f5a603}{resize}}(1,\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00423}00423\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 1u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00424}00424\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00425}00425\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00427}\doxymbox{\hyperlink{gtest__vector_8cpp_a522542d5fceed669d01f3fd360feb747}{00427}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ SwapMember)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00428}00428\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ a\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00429}00429\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ b\{4,\ 5\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00430}00430\ \ \ \ \ a.\doxymbox{\hyperlink{classVector_ae1387b115ad4874d76690acc701ce976}{swap}}(b);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00431}00431\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00432}00432\ \ \ \ \ EXPECT\_EQ(a[0],\ 4);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00433}00433\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00434}00434\ \ \ \ \ EXPECT\_EQ(b[2],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00435}00435\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00437}00437\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Non‑member\ Functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00438}\doxymbox{\hyperlink{gtest__vector_8cpp_a0e24779306e55393d5200ef63334d7c9}{00438}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EqualityOperator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00439}00439\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v1\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00440}00440\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v2\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00441}00441\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v3\{1,\ 2\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00442}00442\ \ \ \ \ EXPECT\_TRUE(v1\ ==\ v2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00443}00443\ \ \ \ \ EXPECT\_FALSE(v1\ ==\ v3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00444}00444\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00446}\doxymbox{\hyperlink{gtest__vector_8cpp_ab5cff955082e4786736139cd7e15a058}{00446}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ SpaceshipOperator)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00447}00447\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ a\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00448}00448\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ b\{1,\ 2,\ 4\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00449}00449\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ c\{1,\ 2\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00450}00450\ \ \ \ \ EXPECT\_LT(a,\ b);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00451}00451\ \ \ \ \ EXPECT\_GT(b,\ a);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00452}00452\ \ \ \ \ EXPECT\_GT(a,\ c);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00453}00453\ \ \ \ \ EXPECT\_EQ(a\ <=>\ a,\ std::strong\_ordering::equal);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00454}00454\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00456}\doxymbox{\hyperlink{gtest__vector_8cpp_a9edcb605d44daf9d98714d3c6c221cc4}{00456}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ NonMemberSwap)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00457}00457\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ a\{10,\ 20\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00458}00458\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ b\{30,\ 40,\ 50\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00459}00459\ \ \ \ \ \textcolor{keyword}{using\ }std::swap;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00460}00460\ \ \ \ \ \doxymbox{\hyperlink{vector_8h_a7f6ca257d707bbf1ae3ed86f36655f73}{swap}}(a,\ b);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00461}00461\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00462}00462\ \ \ \ \ EXPECT\_EQ(a[0],\ 30);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00463}00463\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00464}00464\ \ \ \ \ EXPECT\_EQ(b[1],\ 20);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00465}00465\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00467}\doxymbox{\hyperlink{gtest__vector_8cpp_accc83cb676ca168388890e97b83abad0}{00467}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EraseValue)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00468}00468\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3,\ 2,\ 4\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00469}00469\ \ \ \ \ \textcolor{keyword}{auto}\ removed\ =\ \doxymbox{\hyperlink{vector_8h_ae0b864ef9c6d8ba07a7318c892c52633}{erase}}(v,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00470}00470\ \ \ \ \ EXPECT\_EQ(removed,\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00471}00471\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00472}00472\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00473}00473\ \ \ \ \ EXPECT\_EQ(v[1],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00474}00474\ \ \ \ \ EXPECT\_EQ(v[2],\ 4);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00475}00475\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00476}00476\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00477}\doxymbox{\hyperlink{gtest__vector_8cpp_a0958a7689ffd57e34c4c40beaf048d18}{00477}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EraseIf)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00478}00478\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00479}00479\ \ \ \ \ \textcolor{keyword}{auto}\ removed\ =\ \doxymbox{\hyperlink{vector_8h_a26045fc8523579c2d1a7abcff2a5599b}{erase\_if}}(v,\ [](\textcolor{keywordtype}{int}\ x)\ \{\ \textcolor{keywordflow}{return}\ x\ \%\ 2\ ==\ 0;\ \});}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00480}00480\ \ \ \ \ EXPECT\_EQ(removed,\ 2u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00481}00481\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00482}00482\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00483}00483\ \ \ \ \ EXPECT\_EQ(v[1],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00484}00484\ \ \ \ \ EXPECT\_EQ(v[2],\ 5);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00485}00485\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00487}00487\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Additional\ edge\ case\ tests\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00488}\doxymbox{\hyperlink{gtest__vector_8cpp_aa38384ef6001e06e511a0c2f9b5059bd}{00488}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ LargeInsert)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00489}00489\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00490}00490\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 1000;\ ++i)}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a2d666056bdf8de09cf704a507d23c32a}{push\_back}}(i);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00492}00492\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 1000u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00493}00493\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a50ff0e4eccfdabf16696498bc42a823c}{front}}(),\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00494}00494\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_a0977f3472b15fe46a8895efb09494bed}{back}}(),\ 999);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00495}00495\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00497}\doxymbox{\hyperlink{gtest__vector_8cpp_a2e0d6bc548ef9854c18d1db7e51ec035}{00497}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ InsertAtEnd)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00498}00498\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00499}00499\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{classVector_abd11b2e148ae8a3f0f5b9209571b97f8}{insert}}(v.\doxymbox{\hyperlink{classVector_a8bb1d0ca8b8eefdb6c18c1ea1a90cec9}{cend}}(),\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00500}00500\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 3u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00501}00501\ \ \ \ \ EXPECT\_EQ(v[2],\ 3);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00502}00502\ \ \ \ \ EXPECT\_EQ(it,\ v.\doxymbox{\hyperlink{classVector_acc34fa06e93fae345aac75c3c5170588}{begin}}()\ +\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00503}00503\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00505}\doxymbox{\hyperlink{gtest__vector_8cpp_a308fa268135bde729deac8993240173e}{00505}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ EraseAllElements)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00506}00506\ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<int>}}\ v\{1,\ 2,\ 3\};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00507}00507\ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(v.\doxymbox{\hyperlink{classVector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}(),\ v.\doxymbox{\hyperlink{classVector_a8bb1d0ca8b8eefdb6c18c1ea1a90cec9}{cend}}());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00508}00508\ \ \ \ \ EXPECT\_TRUE(v.\doxymbox{\hyperlink{classVector_a9c3d67183ca7348dce8bc2ecb73a6af4}{empty}}());}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00509}00509\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{classVector_ab2c95baaf6ab881b529c7224d7b8b1ee}{size}}(),\ 0u);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00510}00510\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00512}00512\ \textcolor{comment}{//\ Custom\ type\ to\ test\ correct\ construction/destruction}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00513}\doxymbox{\hyperlink{structCounted}{00513}}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structCounted_a777eb3fb2f931b3b1f946434096b82d3}{Counted}}\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00514}\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{00514}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{alive}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00515}\doxymbox{\hyperlink{structCounted_a3e049fc52a91f5c003cd5c24807ffce5}{00515}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structCounted_a3e049fc52a91f5c003cd5c24807ffce5}{value}};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00516}\doxymbox{\hyperlink{structCounted_a777eb3fb2f931b3b1f946434096b82d3}{00516}}\ \ \ \ \ \doxymbox{\hyperlink{structCounted_a777eb3fb2f931b3b1f946434096b82d3}{Counted}}(\textcolor{keywordtype}{int}\ v)\ :\ \doxymbox{\hyperlink{structCounted_a3e049fc52a91f5c003cd5c24807ffce5}{value}}(v)\ \{\ ++\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{alive}};\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00517}\doxymbox{\hyperlink{structCounted_a43fea6251e51c774c42c2b05ed1c14ea}{00517}}\ \ \ \ \ \doxymbox{\hyperlink{structCounted_a43fea6251e51c774c42c2b05ed1c14ea}{Counted}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structCounted_a777eb3fb2f931b3b1f946434096b82d3}{Counted}}\&\ o)\ :\ \doxymbox{\hyperlink{structCounted_a3e049fc52a91f5c003cd5c24807ffce5}{value}}(o.\doxymbox{\hyperlink{structCounted_a3e049fc52a91f5c003cd5c24807ffce5}{value}})\ \{\ ++\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{alive}};\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00518}\doxymbox{\hyperlink{structCounted_a0b99df5e7e372b1463a6f8ccbbe238ce}{00518}}\ \ \ \ \ \doxymbox{\hyperlink{structCounted_a0b99df5e7e372b1463a6f8ccbbe238ce}{Counted}}(\doxymbox{\hyperlink{structCounted_a777eb3fb2f931b3b1f946434096b82d3}{Counted}}\&\&\ o)\ noexcept\ :\ \doxymbox{\hyperlink{structCounted_a3e049fc52a91f5c003cd5c24807ffce5}{value}}(o.value)\ \{\ o.value\ =\ -\/1;\ ++\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{alive}};\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00519}\doxymbox{\hyperlink{structCounted_a454b3f50a61ed524f202e3d38ebfac4a}{00519}}\ \ \ \ \ \doxymbox{\hyperlink{structCounted_a454b3f50a61ed524f202e3d38ebfac4a}{\string~Counted}}()\ \{\ -\/-\/\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{alive}};\ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00520}00520\ \};}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00522}\doxymbox{\hyperlink{gtest__vector_8cpp_a7ec8785beaeda9ecd32703896a84b9ed}{00522}}\ \doxymbox{\hyperlink{gtest__vector_8cpp_aa1b8b5f1b5aea6a31c1ef67199f6b48d}{TEST}}(VectorTest,\ CountedElementLifecycle)\ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00523}00523\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classVector}{Vector<Counted>}}\ v;}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a5d19b8e8fd6ded1e2e99045c3962c7e9}{emplace\_back}}(1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a5d19b8e8fd6ded1e2e99045c3962c7e9}{emplace\_back}}(2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ EXPECT\_EQ(\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{Counted::alive}},\ 2);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ v.\doxymbox{\hyperlink{classVector_a96a0a7cacee7603cb7bce3e82c34d0ae}{pop\_back}}();}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ EXPECT\_EQ(\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{Counted::alive}},\ 1);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00530}00530\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00531}00531\ \ \ \ \ EXPECT\_EQ(\doxymbox{\hyperlink{structCounted_a183382e0c38d43c4381ade5aae9ff3cb}{Counted::alive}},\ 0);}
+\DoxyCodeLine{\Hypertarget{gtest__vector_8cpp_source_l00532}00532\ \}}
+
+\end{DoxyCode}

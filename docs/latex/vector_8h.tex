@@ -1,0 +1,194 @@
+\doxysection{vector/\+vector.h Failo Nuoroda}
+\hypertarget{vector_8h}{}\label{vector_8h}\index{vector/vector.h@{vector/vector.h}}
+{\ttfamily \+\#include $<$memory$>$}\newline
+{\ttfamily \+\#include $<$iterator$>$}\newline
+{\ttfamily \+\#include $<$utility$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \+\#include $<$compare$>$}\newline
+{\ttfamily \+\#include $<$cassert$>$}\newline
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classVector}{Vector$<$ T, Allocator $>$}}
+\begin{DoxyCompactList}\small\item\em Dinaminio masyvo konteineris, atitinkantis std::\+vector sąsają (C++20). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T, class Alloc$>$ }\\bool \doxymbox{\hyperlink{vector_8h_a1a9580c876dfc3bc2354cd9b82a5464d}{operator==}} (const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&lhs, const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Palygina du vektorius lygybei. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T, class Alloc$>$ }\\auto \doxymbox{\hyperlink{vector_8h_aa5a6644837b9c26ffa9420369c8d5f7b}{operator$<$=$>$}} (const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&lhs, const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&rhs) -\/$>$ std::\+compare\+\_\+three\+\_\+way\+\_\+result\+\_\+t$<$ T $>$
+\begin{DoxyCompactList}\small\item\em Atlieka trijų krypčių palyginimą (C++20). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T, class Alloc$>$ }\\void \doxymbox{\hyperlink{vector_8h_a7f6ca257d707bbf1ae3ed86f36655f73}{swap}} (\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&lhs, \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&rhs) noexcept(noexcept(lhs.\+swap(rhs)))
+\begin{DoxyCompactList}\small\item\em Sukeičia dviejų vektorių turinius (specializacija std::\+swap). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T, class Alloc, class U$>$ }\\\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$::\+size\+\_\+type \doxymbox{\hyperlink{vector_8h_ae0b864ef9c6d8ba07a7318c892c52633}{erase}} (\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&c, const U \&value)
+\begin{DoxyCompactList}\small\item\em Pašalina visus elementus, lygius {\ttfamily value}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T, class Alloc, class Pred$>$ }\\\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$::\+size\+\_\+type \doxymbox{\hyperlink{vector_8h_a26045fc8523579c2d1a7abcff2a5599b}{erase\+\_\+if}} (\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&c, Pred pred)
+\begin{DoxyCompactList}\small\item\em Pašalina visus elementus, tenkinančius predikatą {\ttfamily pred}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{vector_8h_doc-func-members}
+\Hypertarget{vector_8h_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{vector_8h_ae0b864ef9c6d8ba07a7318c892c52633}\index{vector.h@{vector.h}!erase@{erase}}
+\index{erase@{erase}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \label{vector_8h_ae0b864ef9c6d8ba07a7318c892c52633} 
+template$<$class T, class Alloc, class U$>$ \\
+\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$::\+size\+\_\+type erase (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{c}{, }\item[{const U \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Pašalina visus elementus, lygius {\ttfamily value}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elemento tipas. \\
+\hline
+{\em Alloc} & Paskirstytojas. \\
+\hline
+{\em U} & Palyginamos reikšmės tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parametrai}
+{\em c} & Vektorius, iš kurio šalinama. \\
+\hline
+{\em value} & Reikšmė, su kuria lyginama. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Gražina}
+Pašalintų elementų skaičius. 
+\end{DoxyReturn}
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l01004}{1004}}.
+
+\Hypertarget{vector_8h_a26045fc8523579c2d1a7abcff2a5599b}\index{vector.h@{vector.h}!erase\_if@{erase\_if}}
+\index{erase\_if@{erase\_if}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{erase\_if()}{erase\_if()}}
+{\footnotesize\ttfamily \label{vector_8h_a26045fc8523579c2d1a7abcff2a5599b} 
+template$<$class T, class Alloc, class Pred$>$ \\
+\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$::\+size\+\_\+type erase\+\_\+if (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{c}{, }\item[{Pred}]{pred}{}\end{DoxyParamCaption})}
+
+
+
+Pašalina visus elementus, tenkinančius predikatą {\ttfamily pred}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elemento tipas. \\
+\hline
+{\em Alloc} & Paskirstytojas. \\
+\hline
+{\em Pred} & Predikato tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parametrai}
+{\em c} & Vektorius, iš kurio šalinama. \\
+\hline
+{\em pred} & Predikatas, grąžinantis true šalinamiems elementams. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Gražina}
+Pašalintų elementų skaičius. 
+\end{DoxyReturn}
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l01022}{1022}}.
+
+\Hypertarget{vector_8h_aa5a6644837b9c26ffa9420369c8d5f7b}\index{vector.h@{vector.h}!operator$<$=$>$@{operator$<$=$>$}}
+\index{operator$<$=$>$@{operator$<$=$>$}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=$>$()}{operator<=>()}}
+{\footnotesize\ttfamily \label{vector_8h_aa5a6644837b9c26ffa9420369c8d5f7b} 
+template$<$class T, class Alloc$>$ \\
+auto operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{rhs}{}\end{DoxyParamCaption}) -\/$>$ std::\+compare\+\_\+three\+\_\+way\+\_\+result\+\_\+t$<$ T $>$}
+
+
+
+Atlieka trijų krypčių palyginimą (C++20). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elemento tipas. \\
+\hline
+{\em Alloc} & Paskirstytojas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parametrai}
+{\em lhs} & Pirmasis vektorius. \\
+\hline
+{\em rhs} & Antrasis vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Gražina}
+Rezultatas pagal \texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>} operatorių. 
+\end{DoxyReturn}
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00973}{973}}.
+
+\Hypertarget{vector_8h_a1a9580c876dfc3bc2354cd9b82a5464d}\index{vector.h@{vector.h}!operator==@{operator==}}
+\index{operator==@{operator==}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{vector_8h_a1a9580c876dfc3bc2354cd9b82a5464d} 
+template$<$class T, class Alloc$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Palygina du vektorius lygybei. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elemento tipas. \\
+\hline
+{\em Alloc} & Paskirstytojas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parametrai}
+{\em lhs} & Pirmasis vektorius. \\
+\hline
+{\em rhs} & Antrasis vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Gražina}
+true jei abiejų dydžiai lygūs ir visi elementai lygūs, kitaip false. 
+\end{DoxyReturn}
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00956}{956}}.
+
+\Hypertarget{vector_8h_a7f6ca257d707bbf1ae3ed86f36655f73}\index{vector.h@{vector.h}!swap@{swap}}
+\index{swap@{swap}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily \label{vector_8h_a7f6ca257d707bbf1ae3ed86f36655f73} 
+template$<$class T, class Alloc$>$ \\
+void swap (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{lhs}{, }\item[{\doxymbox{\hyperlink{classVector}{Vector}}$<$ T, Alloc $>$ \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Sukeičia dviejų vektorių turinius (specializacija std::\+swap). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elemento tipas. \\
+\hline
+{\em Alloc} & Paskirstytojas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parametrai}
+{\em lhs} & Pirmasis vektorius. \\
+\hline
+{\em rhs} & Antrasis vektorius. \\
+\hline
+\end{DoxyParams}
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00989}{989}}.
+

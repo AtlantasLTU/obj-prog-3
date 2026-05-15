@@ -125,14 +125,38 @@ Reikalavimai:</h1>
 <p>C++ kompiliatorius su C++20 palaikymu. Unix OS (Linux arba MacOS) arba WSL (Windows Subsystem for Linux) git</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Programos diegimas:</h1>
-<p>git clone <a href="https://github.com/AtlantasLTU/obj-prog-2.git">https://github.com/AtlantasLTU/obj-prog-2.git</a> cd ./obj-prog-2 make ./main</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<p>git clone <a href="https://github.com/AtlantasLTU/obj-prog-2.git">https://github.com/AtlantasLTU/obj-prog-2.git</a> cd ./obj-prog-2</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+main (paprastas programos veikimas):</h2>
+<p>make main ./main</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+test (programos testas):</h2>
+<p>make test</p>
+<p>Jei jau sukompiliuotas tests paleidimo failas, tai tiesiog: ./tests</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+clean (ištrina main bei tests sukompiliuotas programas):</h2>
+<p>make clean</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Programos naudojimas:</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+main:</h2>
 <p>Funkcijos: Pasirinktina išvestis į failą arba į terminalą. Pasirinktinas galutinio rezultato skaičiavimas, remiantis vidurkiu arba mediana. Direktorijoje esančių .txt failų pasirinkimas. Rūšiavimas pasirinktu būdu.</p>
 <p>1 parinktis - rankinis duomenų įvedimas, studento vardo, pavardės, namų darbų rezultatų, egzamino rezultato, jų apdorojimas ir išvedimas. 2 parinktis - pusiau rankinis duomenų įvedimas, studento vardo, pavardės, rezultatų generavimas, duomenų apdorojimas ir išvedimas. 3 parinktis - automatinis studentų vardų, pavardžių, rezultatų generavimas, jų apdorojimas ir išvedimas. 4 parinktis - skaitymas iš pasirinktino failo, rūšiavimas pasirinktinu būdu, duomenų apdorojimas ir išvedimas. 5 parinktis - testavimas su failais, pasirenkamas failas, konteinerio tipas, strategija, testų skaičius, failai apdorojami (nuskaitymas, skaičiavimas, rūšiavimas, skirstymas) ir išvedami testo rezultatai į terminalą. 6 parinktis - studentų failų generavimas, studentų, namų darbų kiekio pasirinkimas ir išvedimas į studentai*.txt failą. 7 parinktis - studento klasės testavimas. 8 parinktis - programos nutraukimas.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+test:</h2>
+<p><span class="tt">make test</span> paleidžia testus, kurie ištestuoja rule of five, pasitelkiant gtest bibliotekos įrankiais.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+v2.0:</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Pridėta doxygen sukurta dokumentacija:</h2>
+<p>Aprašyti metodai bei klasės. Sukurtos nuorodos tarp metodų.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Pridėtas unit testing:</h2>
+<p>Naudojamas gtest Automatinis studento klasės rule of five testavimas</p>
+<p><img src="https://github.com/user-attachments/assets/aa687d6d-d466-4190-a34f-a915b069e7c7" alt="image" width="709" height="797" class="inline"/></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 v1.5:</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Pridėta bazinė klasė Zmogus:</h2>
 <p>Klasė studentas dabar išvestinė. Studento klasė paveldi iš žmogaus klasės vardą bei pavardę, metodus susijusiais su šiais kintamaisiais Klasė abstrakti dėl virtualaus destruktoriaus.</p>
 <ul>
@@ -141,32 +165,32 @@ Pridėta bazinė klasė Zmogus:</h2>
 <li>Išlaikytas v1.2 testas bei funkcionalumas.</li>
 </ul>
 <p>Bandant sukurti Zmogaus tipo objektą, išmeta klaidą, kad klasė abstrakti: <img src="https://github.com/user-attachments/assets/cd726a52-8453-4cb9-9fb5-59956c8ef023" alt="image" width="693" height="157" class="inline"/></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 v1.2:</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 Realizuota "Rule of Five":</h2>
 <p>Destruktorius Copy konstruktorius Copy assignment operatorius Move konstruktorius Move assignment operatorius</p><ul>
 <li>Realizuotas įvesties ir išvesties operatorių perdengimas.</li>
 <li>Sukurtas studento klasės metodų testas.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Įvesties operatoriaus naudojimas (veikia su visais įvedimo srautais):</h3>
 <p>Kai naudojamas <span class="tt">operator&gt;&gt;</span> su failo srautu, pažymių kiekis nustatomas automatiškai: visi skaičiai po vardo ir pavardės laikomi namų darbų pažymiais, o pats paskutinis – egzamino balu. </p><pre class="fragment">Studentas A;
 std::istringstream iss("Jonas Jonaitis 1 2 10");
 iss &gt;&gt; A; // įvestis iš įvedimo srauto.
 std::cin &gt;&gt; A; // įvestis iš konsolės.
-</pre> <h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+</pre> <h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Išvesties operatoriaus naudojimas (veikia su visais išvesties srautais):</h3>
 <p><a class="el" href="classStudentas.html" title="Klasė, sukurianti studento objektą su pažymiais.">Studentas</a> A; std::cout &lt;&lt; A; // išvestis į ekraną std::ostringstream out; out &lt;&lt; A; // išvesties srauto kūrimas std::ofstream fout("studentai.txt"); fout &lt;&lt; A; // išveda į failą</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Studento klasės metodų testas.</h2>
 <p><img src="https://github.com/user-attachments/assets/9ad64abe-d4fd-44e7-9725-a9ab8de91735" alt="image" width="488" height="654" class="inline"/></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 v1.1 testavimas:</h1>
 <ul>
 <li>Kompiuterio, su kuriuo testuota parametrai: <img src="https://github.com/user-attachments/assets/76e93716-e1de-4997-9bfb-c176b49e5e1e" alt="image" width="1000" height="606" class="inline"/></li>
 </ul>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 Skirstymo strategijos:</h4>
 <ul>
 <li>0 - pradiniame relize naudota strategija. Dviejų konteinerių "vargšiukų" ir "kietiakų" sukūrimas, duomenys perkeliami iš "studentai" konteinerio su std::move.</li>
@@ -174,7 +198,7 @@ Skirstymo strategijos:</h4>
 <li>2 strategija: Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai". Studentai konteineris išrūšiuotas, randamas iteratorius rodantis į pirmąjį galvočių, viskas iki iteratoriaus perkeliama į vargšiukų konteinerį ir ištrinama iš studentai konteinerio. Iteratoriui rasti naudojamas lower_bound metodas</li>
 <li>3 strategija: Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) panaudojant greičiausiai veikianti 1 arba 2 strategiją įtraukiant į ją "efektyvius" darbo su konteineriais metodus. Šioje strategijoje naudojamas partition metodas.</li>
 </ul>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 Atlikta programos veikimo greičio (spartos) analizė:</h4>
 <ul>
 <li>lyginamas v1.0 struct tipas su v1.1 realizuota klasė.</li>
@@ -183,9 +207,9 @@ Atlikta programos veikimo greičio (spartos) analizė:</h4>
 <li>lyginamos kompiliatoriaus optimizavimo vėliavėlės (-Ofast, -O1, -O2, -O3).</li>
 </ul>
 <p>Testuota tik naudojant terminalą, visos kitos pašalinės programos testavimo metu buvo išjungtos bei įrenginys "performance" režime. Visi testavimo atvejai testuoti 10 kartų, su medianų skaičiavimu.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 Spartos palyginimas:</h2>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 100000 studentų:</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -207,7 +231,7 @@ Spartos palyginimas:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">class  </td><td class="markdownTableBodyNone">-O3  </td><td class="markdownTableBodyNone">5.94076 s  </td><td class="markdownTableBodyNone">332.7 KB  </td></tr>
 </table>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 1000000 studentų:</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -229,13 +253,16 @@ Spartos palyginimas:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">class  </td><td class="markdownTableBodyNone">-O3  </td><td class="markdownTableBodyNone">55.4038 s  </td><td class="markdownTableBodyNone">332.7 KB  </td></tr>
 </table>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Pastebėjimai</h3>
 <p>Ta pati programa perdaryta su class tipu lėtesnė ~3x negu su struct, priklausomai nuo optimzacijos vėliavėlės. Taip yra todėl, kad class tipo programoje, galutinis balas skaičiuojamas, kai jo prireikia ir nėra saugojamas atminty, tai sutaupo atminties, tačiau padidina skaičiavimų laiką. Pagrinde -Ofast vėliavėlė greičiausia, tačiau esant milijonui studentų -O3 aplenkia -Ofast vėliavėlė, galbūt -O3 geriau suoptimizuoja failų skaitymą. Mažiausią failą sukuria -O1 vėliavėlė, o didžiausią -O3. Taip yra todėl, kad -O1 skirtas balansui tarp greičio ir dydžio, o -O3 skirtas našesniam programos veikimui.</p>
 <p>Nors struct tipas greitesnis, tačiau class tipas saugesnis ir plečiant programos apimtį, enkapsuliacija, paveldamumas ir kitos class tipo ypatybės padaro jį naudingesniu.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 Relizų aprašas</h1>
-<p>v1.2 </p><pre class="fragment">Realizuota rule of five.
+<p>v1.5 </p><pre class="fragment">Sukurta bazinė klasė Zmogus.
+Klasė Studentas paveldi vardą bei pavardę iš klasės Zmogus.
+Kodas pritaikytas darbui su bazine klase.
+</pre><p> v1.2 </p><pre class="fragment">Realizuota rule of five.
 Realizuotas įvesties išvesties operatorių perkrovimas.
 Sukurtas studento klasės metodų testas.
 </pre><p> v1.1 </p><pre class="fragment">Studento struktūra paversta į klasę
