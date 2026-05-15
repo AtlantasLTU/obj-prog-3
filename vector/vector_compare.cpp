@@ -12,7 +12,7 @@ void vector_compare(){
             v1.push_back(i);
             if(v1.size() == v1.capacity()) perskirstymai++;
         }
-        std::cout << "Vektoriaus dydis - " << x << " Užpildymo laikas - " << t.elapsed() << "s." << " Perskirstymų kiekis - " << perskirstymai << "\n";
+        std::cout << "Vektoriaus v1 dydis - " << x << " Užpildymo laikas - " << t.elapsed() << "s." << " Perskirstymų kiekis - " << perskirstymai << "\n";
         perskirstymai = 0;
         t.reset();
         Vector<int> v2;
@@ -22,6 +22,6 @@ void vector_compare(){
             if(v2.size() == v2.capacity()) perskirstymai++;
         }
 
-        std::cout << "Vektoriaus dydis - " << x << " Užpildymo laikas - " << t.elapsed() << "s." << " Perskirstymų kiekis - " << perskirstymai << "\n";
+        std::cout << "Vektoriaus v2 dydis - " << x << " Užpildymo laikas - " << t.elapsed() << "s." << " Perskirstymų kiekis - " << perskirstymai << "\n";
     }
 }
