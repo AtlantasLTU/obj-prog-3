@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <initializer_list>
+#include <compare>
 
 // taikomasi į C++20 vektoriaus funkcionalumą;
 template <class T, class Allocator = std::allocator<T>>
@@ -314,6 +315,10 @@ class Vector{
             {
                 return reverse_iterator(end());
             };
+            const_reverse_iterator rbegin() const
+            {
+                return reverse_iterator(end());
+            };
             // crbegin:
             const_reverse_iterator crbegin() const noexcept
             {
@@ -321,6 +326,10 @@ class Vector{
             };
             // rend:
             reverse_iterator rend()
+            {
+                return reverse_iterator(begin());
+            };
+            const_reverse_iterator rend() const
             {
                 return reverse_iterator(begin());
             };
@@ -362,11 +371,20 @@ class Vector{
             // shrink_to_fit:
             void shrink_to_fit()
             {
-                if (size_ < capacity_){
-                    reallocate(size_);
-                } 
-                return;
-            };
+                if(size_ < capacity_)
+                {
+                    if (size_ == 0)
+                    {
+                        std::allocator_traits<Allocator>::deallocate(alloc_, data_, capacity_);
+                        data_ = nullptr;
+                        capacity_ = 0;
+                    } 
+                    else 
+                    {
+                        reallocate(size_);
+                    }
+                }
+            }
         // modifiers:
             // clear:
             void clear()
@@ -456,7 +474,7 @@ class Vector{
                     std::allocator_traits<Allocator>::construct(
                         alloc_,
                         data_+index+i,
-                        std::move(value)
+                        value
                     );
                 }
                 size_ += count;
@@ -511,7 +529,7 @@ class Vector{
                     );
                     std::allocator_traits<Allocator>::destroy(
                         alloc_,
-                        data_+i-1;
+                        data_+i-1
                     );
                 }
                 std::allocator_traits<Allocator>::construct(
@@ -547,6 +565,7 @@ class Vector{
 
                 return begin() + index;
             };
+
             iterator erase(const_iterator first, const_iterator last)
             {
                 size_type index_first = first - cbegin();
@@ -626,8 +645,6 @@ class Vector{
                 ++size_;
                 return back();
             };
-            // append_range
-
             // pop_back
             void pop_back()
             {
@@ -704,13 +721,6 @@ class Vector{
                 std::swap(capacity_, other.capacity_);
                 std::swap(alloc_, other.alloc_);
             }
-
-    // non-member functions:
-        // operator==:
-        // operator<=>:
-        //std::swap(vector);
-        // erase
-        // erase_if
     private:
         pointer data_ = nullptr;
         size_type size_ = 0;
@@ -752,3 +762,49 @@ class Vector{
             capacity_ = new_cap;
         }
 };
+
+// non-member functions:
+// operator==:
+template<class T, class Alloc>
+bool operator==(const Vector<T, Alloc>& lhs, const Vector<T, Alloc>& rhs)
+{
+    if (lhs.size() != rhs.size())
+        return false;
+    for (typename Vector<T, Alloc>::size_type i = 0; i < lhs.size(); ++i)
+        if (lhs[i] != rhs[i])
+            return false;
+    return true;
+}
+// operator<=>:
+template<class T, class Alloc>
+auto operator<=>(const Vector<T, Alloc>& lhs, const Vector<T, Alloc>& rhs)
+{
+    for (typename Vector<T, Alloc>::size_type i = 0; i < lhs.size() && i < rhs.size(); ++i)
+        if (auto cmp = lhs[i] <=> rhs[i]; cmp != 0)
+            return cmp;
+    return lhs.size() <=> rhs.size();
+}
+//std::swap(vector);
+template<class T, class Alloc >
+void swap(Vector<T, Alloc>& lhs, Vector<T, Alloc>& rhs)noexcept(noexcept(lhs.swap(rhs)))
+{
+    lhs.swap(rhs);
+}
+// erase
+template<class T, class Alloc, class U>
+typename Vector<T, Alloc>::size_type erase(Vector<T, Alloc>& c, const U& value)
+{
+    auto it = std::remove(c.begin(), c.end(), value);
+    auto count = static_cast<typename Vector<T, Alloc>::size_type>(c.end() - it);
+    c.erase(it, c.end());
+    return count;
+}
+// erase_if
+template<class T, class Alloc, class Pred>
+typename Vector<T, Alloc>::size_type erase_if(Vector<T, Alloc>& c, Pred pred)
+{
+    auto it = std::remove_if(c.begin(), c.end(), pred);
+    auto count = static_cast<typename Vector<T, Alloc>::size_type>(c.end() - it);
+    c.erase(it, c.end());
+    return count;
+}
