@@ -103,8 +103,14 @@
       v.swap(v2);
 
   ## Nuosavo vektoriaus unit test:
-  <img width="628" height="1440" alt="image" src="https://github.com/user-attachments/assets/69fa03f3-e1b4-4910-8600-b9f7fc42015e" />
+  <img width="631" height="1440" alt="image" src="https://github.com/user-attachments/assets/d1755bdd-6f2c-4abe-98cd-45c19e888f09" />
+  <img width="629" height="1440" alt="image" src="https://github.com/user-attachments/assets/29ed1a10-6854-407b-88df-5025df83452a" />
 
+  ## v3.0 testavimas:
+  - Kompiuterio, su kuriuo testuota parametrai:
+<img width="1006" height="625" alt="image" src="https://github.com/user-attachments/assets/92e41e62-f418-441b-9928-5543b3e09995" />
+
+  - Atlikta efektyvumo/spartos analizę: originalusis std::vector vs mano Vector. Palyginu kiek vidutiniškai laiko užtrunka std::vector tipo ir mano Vector tipo tuščius vektorius užpildyti: 10000, 100000, 1000000, 10000000 ir 100000000 int elementų naudojant push_back() funkciją:
 
 # v2.0:
   ## Pridėta doxygen sukurta dokumentacija:
