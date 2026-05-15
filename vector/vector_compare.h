@@ -6,6 +6,7 @@
 #include "Timer.h"
 #include <iostream>
 
+/** @brief Palygina STL vektorių su nuosavu vektoriu. */
 void vector_compare();
 
 #endif

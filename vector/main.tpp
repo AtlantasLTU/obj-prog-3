@@ -4,7 +4,7 @@
 
 /**
  * @brief Pasirenka skirstymo strategiją.
- * @tparam Konteineris (list, vector, deque).
+ * @tparam Konteineris (list, STL vector, deque, nuosavas vector).
  * @param sPasirinkimas Strategijos numeris (0-3).
  * @param studentai Studentų konteineris.
  * @param galvociai Konteineris studentams, kurių galutinis >=5.
@@ -17,7 +17,7 @@ void skirstymoPasirinkimas(int sPasirinkimas, Konteineris &studentai, Konteineri
 
 /**
  * @brief Atlieka failo testavimą su duotu konteinerio tipu.
- * @tparam Konteineris (vector, deque, list).
+ * @tparam Konteineris (STL vector, deque, list, nuosavas vector).
  * @param failoPavadinimas Failo pavadinimas.
  * @param rezervas Rezervavimo dydis.
  * @param tPasirinkimas Kiek kartų testuoti.
@@ -86,7 +86,7 @@ void failoTestavimas(const std::string &failoPavadinimas, int rezervas, int tPas
 
 /**
  * @brief Įgyvendina skirstymo strategijos pasirinkimą.
- * @tparam Konteineris (vector, deque, list).
+ * @tparam Konteineris (STL vector, deque, list, nuosavas vector).
  */
 template <class Konteineris>
 void skirstymoPasirinkimas(int sPasirinkimas, Konteineris &studentai, Konteineris &galvociai, Konteineris &vargsiukai, bool medianos, int ndKiekis = 0)

@@ -11,7 +11,7 @@
 
 /**
  * @brief Parodo pagrindinį meniu ir grąžina vartotojo pasirinkimą.
- * @return Pasirinkimo numeris (1-8).
+ * @return Pasirinkimo numeris (1-9).
  */
 int menu();
 
@@ -23,7 +23,7 @@ int rusiavimoPasirinkimas();
 
 /**
  * @brief Pasirinkimas, kokį konteinerį naudoti testavimui.
- * @return 1 – vector, 2 – deque, 3 – list.
+ * @return 1 – STL vector, 2 – deque, 3 – list, 4 - nuosavas vector.
  */
 int gautiTipoPasirinkima();
 

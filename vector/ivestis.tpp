@@ -1,6 +1,6 @@
 /**
  * @brief Nuskaito studentus iš failo.
- * @tparam Konteineris (vector, deque, list).
+ * @tparam Konteineris (STL vector, deque, list, nuosavas vector).
  * @param failoPavadinimas Failo pavadinimas.
  * @param ndKiekis Išvestinis namų darbų skaičius (nustatomas iš antraštės).
  * @param rezervas Preliminarus konteinerio rezervavimo dydis (jei palaikomas).
