@@ -318,7 +318,59 @@ class Vector{
             // emplace
 
             // erase
+            iterator erase(const_iterator pos)
+            {
+                size_type index = pos - cbegin();
+                for(size_type i = index; i < size_ - 1; ++i)
+                {
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_ + i
+                    );
+                    std::allocator_traits<Allocator>::construct(
+                        alloc_,
+                        data_ + i,
+                        std::move(*(data_ + i + 1))
+                    );
+                }
 
+                std::allocator_traits<Allocator>::destroy(
+                    alloc_,
+                    data_ + size_ - 1
+                )
+                --size_;
+
+                return begin() + index;
+            };
+            iterator erase(const_iterator first, const_iterator last)
+            {
+                size_type index_first = first - cbegin();
+                size_type index_last = last - cbegin();
+                size_type count = index_last - index_first;
+                for(size_type i = index_last; i < size_; ++i)
+                {
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_ + i - count
+                    );
+                    std::allocator_traits<Allocator>::construct(
+                        alloc,
+                        data_ + i - count,
+                        std::move(*(data_ + i))
+                    );
+                }
+
+                for(size_type i = size_ - count; i < size_; ++i)
+                {
+                    std::allocator_traits<Allocator>::destroy(
+                        alloc_,
+                        data_ + i
+                    )
+                }
+
+                size_ -= count;
+                return begin() + index_first;
+            };
             // push_back
             void push_back(const_reference value)
             {
@@ -355,7 +407,19 @@ class Vector{
             template<class... Args >
             reference emplace_back(Args&&... args)
             {
-
+                if(size_ >= capacity_)
+                {
+                    reserve(capacity_ == 0 ? 1 : capacity_ * 2);
+                }
+                
+                std::allocator_traits<Allocator>::construct(
+                    alloc_, 
+                    data_ + size_, 
+                    std::forward<Args>(args)...
+                );
+                
+                ++size_;
+                return back();
             };
             // append_range
 
