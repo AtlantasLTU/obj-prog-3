@@ -127,6 +127,17 @@
 |std::vector<int>|100000000|0.17368 s|27|
 |Vector<int>|100000000|	0.19285 s|27|
 
+  - Atlikta spartos analizę, t.y. naudojant duomenų failus su 100 000, 1 000 000 ir 10 000 000 studentų įrašų, palyginta kiek laiko užtrunka programos veikimas naudojant std::vector ir mano Vector realizaciją (kompiliuota su -Ofast vėliavėle, naudojama 0 strategija (aprašyta žemiau prie v1.1), imamas 10-ties kartų bendras laikas, skaičiuota su medianomis).
+
+|Konteineris|Studentų kiekis|Bendras veikimo laikas (s)|
+|---------|---------------------------|------------------------------|
+|std::vector<int>|100000|4.44626 s|17|
+|Vector<int>|100000|4.44697 s|17|
+|std::vector<int>|1000000|56.3967 s|20|
+|Vector<int>|1000000|56.005 s|20|
+|std::vector<int>|10000000|604.32 s|24|
+|Vector<int>|10000000|607.029 s|24|
+
 # v2.0:
   ## Pridėta doxygen sukurta dokumentacija:
       Aprašyti metodai bei klasės.
