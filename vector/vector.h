@@ -28,6 +28,57 @@ class Vector{
         // constructors:
             // default:
                 Vector() : data_(nullptr), size_(0), capacity_(0), alloc_(Allocator{}) {}
+                explicit Vector (size_type count) : data_(nullptr), size_(0), capacity_(0), alloc_(Allocator{})
+                {
+                    reserve(count);
+                    for(size_type i = 0; i < count; ++i)
+                    {
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_ + i
+                        );
+                    }
+                    size_ = count;
+                }
+                Vector(size_type count, const_reference value, const Allocator& alloc = Allocator{})
+                    : data_(nullptr),
+                    size_(0),
+                    capacity_(0),
+                    alloc_(alloc)
+                {
+                    reserve(count);
+                    for(size_type i = 0; i < count; ++i)
+                    {
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_+i,
+                            value
+                        );
+                    }
+                    size_ = count;
+                }
+                template<class InputIt, class = typename std::enable_if<!std::is_integral<InputIt>::value>::type>
+                Vector(InputIt first, InputIt last, const Allocator& alloc = Allocator{})
+                    : data_(nullptr),
+                    size_(0),
+                    capacity_(0),
+                    alloc_(alloc)
+                {
+                    size_type count = static_cast<size_type>(std::distance(first, last));
+                    reserve(count);
+                    for(size_type i = 0; first != last; ++first, ++i)
+                    {
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_+i,
+                            *first
+                        );
+                    }
+                    size_ = count;
+                }
+
+                Vector(std::initializer_list<T> ilist, const Allocator& alloc = Allocator{})
+                    : Vector(ilist.begin(), ilist.end(), alloc) {}
             // copy constructor:
                 Vector(const Vector& other)
                     : data_(nullptr),
@@ -456,26 +507,58 @@ class Vector{
 
             iterator insert(const_iterator pos, size_type count, const_reference value)
             {
+                if(count == 0) return begin() + (pos - cbegin());
+
                 size_type index = pos - cbegin();
+
                 if(size_ + count > capacity_) reserve(size_ + count);
-                for(size_type i = size_; i > index; --i)
+
+                size_type elements_after = size_ - index;
+                
+                if(elements_after > count)
                 {
-                    std::allocator_traits<Allocator>::construct(
-                        alloc_,
-                        data_+i+count-1,
-                        std::move(*(data_+i-1))
+                    for(size_type i = 0; i < count; ++i)
+                    {
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_ + size_ + i,
+                            std::move(*(data_ + size_ - count + i))
+                        );
+                    }
+
+                    std::move_backward(
+                        data_ + index,
+                        data_ + size_ - count,
+                        data_ + size_
                     );
-                    std::allocator_traits<Allocator>::destroy(
-                        alloc_,
-                        data_+i-1
-                    );
+
+                    std::fill_n(data_ + index, count, value);
                 }
-                for(size_type i = 0; i < count; ++i){
-                    std::allocator_traits<Allocator>::construct(
-                        alloc_,
-                        data_+index+i,
-                        value
-                    );
+                else
+                {
+                    for(size_type i = 0; i < elements_after; ++i)
+                    {
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_+index+count+i,
+                            std::move(*(data_+index+i))
+                        );
+                    }
+                    for(size_type i = 0; i < elements_after; ++i)
+                    {
+                        std::allocator_traits<Allocator>::destroy(
+                            alloc_,
+                            data_+index+i
+                        );
+                    }
+                    for(size_type i = 0; i < count; ++i)
+                    {
+                        std::allocator_traits<Allocator>::construct(
+                            alloc_,
+                            data_+index+i,
+                            value
+                        );
+                    }
                 }
                 size_ += count;
                 return begin() + index;
