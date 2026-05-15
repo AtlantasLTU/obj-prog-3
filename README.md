@@ -110,7 +110,22 @@
   - Kompiuterio, su kuriuo testuota parametrai:
 <img width="1006" height="625" alt="image" src="https://github.com/user-attachments/assets/92e41e62-f418-441b-9928-5543b3e09995" />
 
+  - Programa kompiliuota su -Ofast vėliavėlė bei naudojamas *-10 nice* value ant Linux, t.y. ekvivalentu high-priority ant Windows
+  - Vidurkis skaičiuotas 10-ties bandymų.
   - Atlikta efektyvumo/spartos analizę: originalusis std::vector vs mano Vector. Palyginu kiek vidutiniškai laiko užtrunka std::vector tipo ir mano Vector tipo tuščius vektorius užpildyti: 10000, 100000, 1000000, 10000000 ir 100000000 int elementų naudojant push_back() funkciją:
+
+|Konteineris|*int* elementų kiekis|Vidurkis (s)|Perskirstymų kiekis|
+|---------|---------------------------|------------------------------|-------------------------------|
+|std::vector<int>|10000|0.00004433 s|14|
+|Vector<int>|10000|0.00009393 s|14|
+|std::vector<int>|100000|0.0006383 s|17|
+|Vector<int>|100000|0.0002412 s|17|
+|std::vector<int>|1000000|0.002686 s|20|
+|Vector<int>|1000000|0.002162 s|20|
+|std::vector<int>|10000000|0.02199 s|24|
+|Vector<int>|10000000|0.02555 s|24|
+|std::vector<int>|100000000|0.17368 s|27|
+|Vector<int>|100000000|	0.19285 s|27|
 
 # v2.0:
   ## Pridėta doxygen sukurta dokumentacija:
