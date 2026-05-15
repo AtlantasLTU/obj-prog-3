@@ -241,9 +241,12 @@ class Vector{
             size_type size() const
             {
                 return size_;
-            }
+            };
             // max_size:
-
+            size_type max_size() const
+            {
+                return std::allocator_traits<Allocator>::max_size(alloc_);
+            };
             // reserve:
             void reserve(size_type new_cap)
             {
@@ -287,7 +290,13 @@ class Vector{
                 return capacity_;
             };
             // shrink_to_fit:
-
+            void shrink_to_fit()
+            {
+                if (capacity_ > size_)
+                {
+                    resize(size_);
+                }
+            };
         // modifiers:
             // clear:
             void clear()
@@ -343,7 +352,11 @@ class Vector{
                 ++size_;
             };
             // emplace_back
+            template<class... Args >
+            reference emplace_back(Args&&... args)
+            {
 
+            };
             // append_range
 
             // pop_back
@@ -360,7 +373,60 @@ class Vector{
                 );
             };
             // resize
-
+            void resize(size_type count){
+                if(count < size_)
+                {
+                    for(size_type i = count; i < size_; ++i){
+                        std::allocator_traits<Allocator>::destroy(alloc_, data_ + i);
+                    }
+                    size_ = count;
+                } 
+                else if(count > size_)
+                {
+                    if(count > capacity_)
+                    {
+                        size_type new_cap = capacity_;
+                        if(new_cap == 0){
+                            new_cap = 1;
+                        }
+                        while(new_cap < count){
+                            new_cap *= 2;
+                        }
+                        reserve(new_cap);
+                    }
+                    for(size_type i = size_; i < count; ++i){
+                        std::allocator_traits<Allocator>::construct(alloc_, data_ + i);
+                    }
+                    size_ = count;
+                }
+            }
+            void resize(size_type count, const_reference value){
+                if(count < size_)
+                {
+                    for(size_type i = count; i < size_; ++i){
+                        std::allocator_traits<Allocator>::destroy(alloc_, data_ + i);
+                    }
+                    size_ = count;
+                } 
+                else if(count > size_)
+                {
+                    if(count > capacity_)
+                    {
+                        size_type new_cap = capacity_;
+                        if(new_cap == 0){
+                            new_cap = 1;
+                        }
+                        while(new_cap < count){
+                            new_cap *= 2;
+                        }
+                        reserve(new_cap);
+                    }
+                    for(size_type i = size_; i < count; ++i){
+                        std::allocator_traits<Allocator>::construct(alloc_, data_ + i, value);
+                    }
+                    size_ = count;
+                }
+            }
             // swap
 
     // non-member functions:
