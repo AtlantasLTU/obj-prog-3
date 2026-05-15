@@ -3,7 +3,7 @@
 
 int menu()
 {
-    return gautiSkaiciu("Pasirinkite programos eigą:\n1 - ranką,\n2 - generuoti tik pažymius,\n3 - generuoti studentų vardus, pavardės ir pažymius,\n4 - skaityti studentus iš failo,\n5 - testavimas su failais,\n6 - generuoti failą,\n7 - testuoti klasę Studentas,\n8 - baigti darbą: ", 1, 8);
+    return gautiSkaiciu("Pasirinkite programos eigą:\n1 - ranką,\n2 - generuoti tik pažymius,\n3 - generuoti studentų vardus, pavardės ir pažymius,\n4 - skaityti studentus iš failo,\n5 - testavimas su failais,\n6 - generuoti failą,\n7 - testuoti klasę Studentas,\n8 - nuosavo vektoriaus ir STL vektoriaus palyginimas,\n9 - baigti darbą: ", 1, 9);
 }
 
 int rusiavimoPasirinkimas()

@@ -11,6 +11,7 @@
 #include "main.tpp"
 #include <deque>
 #include <list>
+#include "vector_compare.h"
 
 #ifdef _WIN32 // naudojame preprocesorių, kad kompiliatorius, naudojant Windows, pridėtų windows.h antraščių failą, kad vėliau galėtume pakeistį terminalo išvesties ir įvesties užkodavimą į UTF-8
 #include <windows.h> // windows antraščių failas

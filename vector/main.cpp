@@ -120,7 +120,12 @@ int main()
                     testas();
                     break;
                 }
-                case 8: // darbo baigtis
+                case 8: // nuosavo vektoriaus ir STL vektoriaus testas
+                {
+                    vector_compare();
+                    break;
+                }
+                case 9: // darbo baigtis
                 {
                     std::cout << "Darbas su programa baigtas.";
                     veikimas = false;
