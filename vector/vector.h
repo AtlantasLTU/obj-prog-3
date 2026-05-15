@@ -1,5 +1,7 @@
 #include <memory>
 #include <iterator>
+#include <utility>
+#include <stdexcept>
 
 // taikomasi į C++20 vektoriaus funkcionalumą;
 template <class T, class Allocator = std::allocator<T>>
@@ -135,7 +137,9 @@ class Vector{
         // assign_range, jei bus noro
 
         // get_allocator:
-
+            allocator_type get_allocator() const {
+                return alloc_;
+            };
         // element access:
             // at:
             reference at(size_type pos)
@@ -253,36 +257,7 @@ class Vector{
                 if(new_cap <= capacity_)
                     return;
                 
-                pointer new_data = 
-                    std::allocator_traits<Allocator>::allocate(
-                        alloc_,
-                        new_cap
-                    );
-                
-                for(size_type i = 0; i < size_; i++){
-                    std::allocator_traits<Allocator>::construct(
-                        alloc_,
-                        new_data + i,
-                        std::move_if_noexcept(*(data_+i))
-                    );
-
-                    std::allocator_traits<Allocator>::destroy(
-                        alloc_,
-                        data_ + i
-                    );
-                }
-
-                if(data_)
-                {
-                    std::allocator_traits<Allocator>::deallocate(
-                        alloc_,
-                        data_,
-                        capacity_
-                    );
-                }
-
-                data_ = new_data;
-                capacity_ = new_cap;
+                reallocate(new_cap);
             };
             // capacity:
             size_type capacity() const
@@ -292,10 +267,10 @@ class Vector{
             // shrink_to_fit:
             void shrink_to_fit()
             {
-                if (capacity_ > size_)
-                {
-                    resize(size_);
-                }
+                if (size_ < capacity_){
+                    reallocate(size_);
+                } 
+                return;
             };
         // modifiers:
             // clear:
@@ -337,7 +312,7 @@ class Vector{
                 std::allocator_traits<Allocator>::destroy(
                     alloc_,
                     data_ + size_ - 1
-                )
+                );
                 --size_;
 
                 return begin() + index;
@@ -354,7 +329,7 @@ class Vector{
                         data_ + i - count
                     );
                     std::allocator_traits<Allocator>::construct(
-                        alloc,
+                        alloc_,
                         data_ + i - count,
                         std::move(*(data_ + i))
                     );
@@ -365,7 +340,7 @@ class Vector{
                     std::allocator_traits<Allocator>::destroy(
                         alloc_,
                         data_ + i
-                    )
+                    );
                 }
 
                 size_ -= count;
@@ -492,6 +467,13 @@ class Vector{
                 }
             }
             // swap
+            void swap(Vector& other) noexcept
+            {
+                std::swap(data_, other.data_);
+                std::swap(size_, other.size_);
+                std::swap(capacity_, other.capacity_);
+                std::swap(alloc_, other.alloc_);
+            }
 
     // non-member functions:
         // operator==:
@@ -504,4 +486,39 @@ class Vector{
         size_type size_ = 0;
         size_type capacity_ = 0;
         allocator_type alloc_;
+
+        void reallocate(size_type new_cap)
+        {
+            pointer new_data =
+                std::allocator_traits<Allocator>::allocate(
+                    alloc_,
+                    new_cap
+                );
+
+            for (size_type i = 0; i < size_; ++i)
+            {
+                std::allocator_traits<Allocator>::construct(
+                    alloc_,
+                    new_data + i,
+                    std::move_if_noexcept(*(data_+i))
+                );
+
+                std::allocator_traits<Allocator>::destroy(
+                    alloc_,
+                    data_ + i
+                );
+            }
+
+            if (data_)
+            {
+                std::allocator_traits<Allocator>::deallocate(
+                    alloc_,
+                    data_,
+                    capacity_
+                );
+            }
+
+            data_ = new_data;
+            capacity_ = new_cap;
+        }
 };
