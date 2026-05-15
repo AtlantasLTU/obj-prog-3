@@ -286,7 +286,7 @@ class Vector{
                 size_ = count;
             }
 
-            template <class InputIt>
+            template <class InputIt, class = typename std::enable_if<!std::is_integral<InputIt>::value>::type>
             void assign(InputIt first, InputIt last)
             {
                 size_type new_size = static_cast<size_type>(std::distance(first, last));

@@ -27,5 +27,16 @@ tests:
 test: tests
 	./tests
 
+testV:
+	g++ --std=c++20 -Og $(GTEST_INC) \
+		./gtest_vector.cpp \
+		./$(GTEST_SRC) \
+		./$(GTEST_MAIN_SRC) \
+		-lpthread \
+		-o testv
+
+testVector: testV
+	./testv
+
 clean:
 	rm -f main tests *.o
