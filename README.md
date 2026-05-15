@@ -1,10 +1,22 @@
 # Programos naudojimas:
   ## Reikalavimai:
+  Paprastiems vartotojams:
+    Windows OS
+
+  Patyrusiems vartotojams, kurie nori redaguoti kodą arba kompiliuotis savarankiškai:
+  
     C++ kompiliatorius su C++20 palaikymu.
     Unix OS (Linux arba MacOS) arba WSL (Windows Subsystem for Linux)
     git
 
-  ## Programos diegimas:
+  ## Programos diegimas (paprastiems vartotojams):
+
+    Atsisiųsti setup.exe failą esanti https://github.com/AtlantasLTU/obj-prog-3 puslapyje.
+    Paleisti setup.exe failą ir suteikti jam administratoriaus privilegijas (paprašo paleidimo metu).
+    Sekti setup.exe nurodymus.
+    Pasibaigus setup'ui, turėtų būti programos paleisties nuorodos Atlantas-Alisauskas darbalaukyje bei starto meniu.
+
+  ## Programos diegimas (patyrusiems vartotojams iš source):
     git clone https://github.com/AtlantasLTU/obj-prog-3.git
     cd ./obj-prog-3
   
@@ -27,7 +39,7 @@
     make clean
     
   ## Programos naudojimas:
-  ### main:
+  ### main arba studenturezultatai.exe (Atlantas-Alisauskas.lnk):
     Funkcijos:
       Pasirinktina išvestis į failą arba į terminalą.
       Pasirinktinas galutinio rezultato skaičiavimas, remiantis vidurkiu arba mediana.
@@ -44,10 +56,10 @@
     8 parinktis - nuosavo vektoriaus ir STL vektoriaus palyginimas.
     9 parinktis - programos nutraukimas.
 
-  ### test:
+  ### test (patyrusiems vartotojams):
       `make test` paleidžia testus, kurie ištestuoja rule of five, pasitelkiant gtest bibliotekos įrankiais.
 
-  ### testVector:
+  ### testVector (patyrusiems vartotojams):
       'make testV' paleidžia testus, kurie ištestuoja mano realizuotą vektoriaus konteinerį, pasitelkiant gtest biblioteka.
 
 # v3.0:
@@ -89,6 +101,10 @@
 
       Vector<int> v2
       v.swap(v2);
+
+  ## Nuosavo vektoriaus unit test:
+  <img width="628" height="1440" alt="image" src="https://github.com/user-attachments/assets/69fa03f3-e1b4-4910-8600-b9f7fc42015e" />
+
 
 # v2.0:
   ## Pridėta doxygen sukurta dokumentacija:
